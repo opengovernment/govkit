@@ -8,22 +8,24 @@ Setup
 
 Add govkit to your environment.rb or Gemfile
 
-Run <pre>./script/generate govkit</pre> to copy a config file into config/initializers/govkit.rb. You will need to add your API keys to this config file.
+Run <code>./script/generate govkit</code> to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
 
 Example
 =======
 
-The Fifty States project (http://fiftystates-dev.sunlightlabs.com/) has a RESTful API for accessing data about state legislators, bills, votes, etc.
+[http://fiftystates-dev.sunlightlabs.com/](The Fifty States project) has a RESTful API for accessing data about state legislators, bills, votes, etc.
 
->> Govkit::FiftyStates::State.find_by_abbrev('CA')
+  >> Govkit::FiftyStates::State.find_by_abbrev('CA')
 
+(TODO: add usage examples...)
 
 Bugs? Questions?
 ================
 
-Please join the "Govkit Google Group":http://groups.google.com/group/govkit, especially if you'd like to talk about a new feature, or report a bug.
+Please join the [Govkit Google Group][http://groups.google.com/group/govkit], especially if you'd like to talk about a new feature and get announcements.
 
-Govkit's main repo is on Github: "http://github.com/opengovernment/govkit":http://github.com/opengovernment/govkit, where your contributions, forkings, comments and feedback are greatly welcomed.
+[Report a bug](https://participatorypolitics.lighthouseapp.com/projects/51485-govkit) on our Lighthouse page.
 
+Govkit's main repo is on Github: [http://github.com/opengovernment/govkit](http://github.com/opengovernment/govkit), where your contributions, forks, and feedback are greatly welcomed.
 
 Copyright (c) 2010 Participatory Politics Foundation, released under the MIT license
