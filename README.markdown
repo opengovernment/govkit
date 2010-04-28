@@ -22,7 +22,7 @@ Example
 Bugs? Questions?
 ================
 
-Please join the [Govkit Google Group][http://groups.google.com/group/govkit], especially if you'd like to talk about a new feature and get announcements.
+Please join the [Govkit Google Group](http://groups.google.com/group/govkit), especially if you'd like to talk about a new feature and get announcements.
 
 [Report a bug](https://participatorypolitics.lighthouseapp.com/projects/51485-govkit) on our Lighthouse page.
 
