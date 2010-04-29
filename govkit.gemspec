@@ -27,8 +27,8 @@ Gem::Specification.new do |s|
      "generators/govkit_generator.rb",
      "generators/templates/govkit.rb",
      "govkit.gemspec",
-     "lib/fifty_states.rb",
      "lib/govkit.rb",
+     "lib/govkit/fifty_states.rb",
      "rails/init.rb"
   ]
   s.homepage = %q{http://github.com/opengovernment/govkit}
@@ -42,9 +42,15 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<httparty>, [">= 0.5.2"])
+      s.add_runtime_dependency(%q<json>, [">= 1.2.4"])
     else
+      s.add_dependency(%q<httparty>, [">= 0.5.2"])
+      s.add_dependency(%q<json>, [">= 1.2.4"])
     end
   else
+    s.add_dependency(%q<httparty>, [">= 0.5.2"])
+    s.add_dependency(%q<json>, [">= 1.2.4"])
   end
 end
 
