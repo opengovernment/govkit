@@ -1,3 +1,7 @@
-# Govkit
-require 'json'
-require 'fifty_states'
+$LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
+
+require 'active_support'
+
+module Govkit
+  autoload :FiftyStates, 'govkit/fifty_states'
+end

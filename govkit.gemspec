@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.0.0"
+  s.version = "0.0.0.pre"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Carl Tashian"]
   s.date = %q{2010-04-28}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Fifty States API and the Project Vote Smart API.}
   s.email = %q{carl@ppolitics.org}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "generators/govkit_generator.rb",
      "generators/templates/govkit.rb",
+     "govkit.gemspec",
      "lib/fifty_states.rb",
      "lib/govkit.rb",
      "rails/init.rb"
