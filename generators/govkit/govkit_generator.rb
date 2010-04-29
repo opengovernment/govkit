@@ -10,7 +10,7 @@ class GovkitGenerator < Rails::Generator::Base
       m.template 'govkit.rb',   File.join('config', 'initializers', 'govkit.rb')
     end
   end
-    
+
   protected
   
   def banner

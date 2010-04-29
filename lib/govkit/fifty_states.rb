@@ -35,8 +35,8 @@ module Govkit::FiftyStates
   class Base
     include HTTParty
     format :json
-    default_params :output => 'json'
-    base_uri 'fiftystates-dev.sunlightlabs.com/api'
+    default_params :output => 'json', :apikey => Govkit::configuration.fiftystates_apikey
+    base_uri Govkit::configuration.fiftystates_base_url
 
     attr_accessor :attributes
 
