@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version = "0.0.0.pre"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Carl Tashian"]
+  s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
   s.date = %q{2010-04-28}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Fifty States API and the Project Vote Smart API.}
   s.email = %q{carl@ppolitics.org}
