@@ -53,6 +53,10 @@ module Govkit::FiftyStates
       def instantiate_collection(collection)
         collection.collect! { |record| instantiate_record(record) }
       end
+      
+      def parse(json)
+        instantiate_record(json)
+      end
     end
 
     def unload(attributes)
