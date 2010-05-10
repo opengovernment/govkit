@@ -7,6 +7,7 @@ Installation
 ============
 
 From gemcutter:
+
    gem install govkit
 
 Setup
