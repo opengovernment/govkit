@@ -18,7 +18,7 @@ Run <code>./script/generate govkit</code> to copy a config file into <code>confi
 
 [http://fiftystates-dev.sunlightlabs.com/](The Fifty States project) has a RESTful API for accessing data about state legislators, bills, votes, etc.
 
-    >> Govkit::FiftyStates::State.find_by_abbrev('CA')
+    >> Govkit::FiftyStates::State.find_by_abbreviation('CA')
 
 (TODO: add usage examples...)
 
