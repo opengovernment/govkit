@@ -171,7 +171,14 @@ module Govkit::FiftyStates
 
   class Action < Base; end
 
-  class Vote < Base; end
+  class Vote < Base
+    def self.find(vote_id)
+      response = get("/votes/#{vote_id}")
+      instantiate_record(response)
+    end
+  end
+
+  class Roll < Base; end
 
   class Sponsor < Base; end
 
