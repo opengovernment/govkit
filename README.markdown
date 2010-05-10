@@ -3,6 +3,12 @@ Govkit
 
 Govkit is a Ruby gem that provides simple access to open government APIs around the web.
 
+Installation
+============
+
+From gemcutter:
+   gem install govkit
+
 Setup
 =====
 
