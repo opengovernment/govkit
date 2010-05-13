@@ -1,26 +1,28 @@
-Govkit
-======
+# Govkit
 
 Govkit is a Ruby gem that provides simple access to open government APIs around the web.
 
-Setup
-=====
+# Installation
+
+From gemcutter:
+
+    gem install govkit
+
+# Setup
 
 Add govkit to your environment.rb or Gemfile
 
 Run <code>./script/generate govkit</code> to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
 
-Example
-=======
+# Example
 
 [http://fiftystates-dev.sunlightlabs.com/](The Fifty States project) has a RESTful API for accessing data about state legislators, bills, votes, etc.
 
-  >> Govkit::FiftyStates::State.find_by_abbrev('CA')
+    >> Govkit::FiftyStates::State.find_by_abbreviation('CA')
 
 (TODO: add usage examples...)
 
-Bugs? Questions?
-================
+# Bugs? Questions?
 
 Please join the [Govkit Google Group](http://groups.google.com/group/govkit), especially if you'd like to talk about a new feature and get announcements.
 
