@@ -5,4 +5,5 @@ require 'govkit/configuration'
 
 module Govkit
   autoload :FiftyStates, 'govkit/fifty_states'
+  autoload :VoteSmart, 'govkit/vote_smart'
 end
