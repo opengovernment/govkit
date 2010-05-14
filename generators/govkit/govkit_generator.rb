@@ -1,9 +1,9 @@
-class GovkitGenerator < Rails::Generator::Base
-  
+class GovKitGenerator < Rails::Generator::Base
+
   def initialize(*runtime_args)
     super
   end
-  
+
   def manifest
     record do |m|
       m.directory File.join('config', 'initializers')
@@ -12,9 +12,9 @@ class GovkitGenerator < Rails::Generator::Base
   end
 
   protected
-  
+
   def banner
     %{Usage: #{$0} #{spec.name}\nCopies a config initializer to config/initializers/govkit.rb}
   end
-  
+
 end

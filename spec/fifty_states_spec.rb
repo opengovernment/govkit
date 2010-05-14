@@ -2,8 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 #TODO: Mock http requests, rather than making an actual call to the api
 
-module Govkit::FiftyStates
-  describe Govkit::FiftyStates do
+module GovKit::FiftyStates
+  describe GovKit::FiftyStates do
     it "should have the base uri set properly" do
       [State, Bill, Legislator].each do |klass|
         klass.base_uri.should == "http://fiftystates-dev.sunlightlabs.com/api"
