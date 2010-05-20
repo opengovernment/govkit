@@ -2,6 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'rake/rdoctask'
 
+
 begin
   require 'spec/rake/spectask'
 rescue LoadError
