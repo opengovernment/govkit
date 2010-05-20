@@ -18,5 +18,22 @@ module GovKit
         instantiate_record(response['webaddress'])
       end
     end
+    
+    # See http://api.votesmart.org/docs/Committee.html
+    class Committee < VoteSmartResource
+      # Find a committee by VoteSmart typeId and stateId (abbreviation)
+      # If type_id is nil, defaults to all types.
+      # This method maps to Committee.getCommitteesByTypeState()
+      def self.find_by_type_and_state(type_id, state_abbrev)
+        response = get("/Committee.getCommitteesByTypeState", :query => {"typeId" => type_id, "stateId" => state_abbrev})
+        instantiate_record(response['committees'])
+      end
+      
+      # Find a committee by VoteSmart committeeId. Maps to Committee.getCommittee()
+      def self.find(committee_id)
+        response = get("/Committee.getCommittee", :query => {"committeeId" => committee_id})
+        instantiate_record(response['committee'])
+      end
+    end
   end
 end
