@@ -2,6 +2,9 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.i
 
 require 'active_support'
 require 'gov_kit/configuration'
+require 'gov_kit/search_engines/google_news'
+require 'gov_kit/search_engines/google_blog_search'
+require 'gov_kit/search_engines/technorati'
 
 module GovKit
   autoload :FiftyStates, 'gov_kit/fifty_states'
