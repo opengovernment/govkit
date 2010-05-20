@@ -18,7 +18,19 @@ module GovKit
         instantiate_record(response['webaddress'])
       end
     end
-    
+
+    class Bill < VoteSmartResource
+      def self.find(bill_id)
+        response = get("/Votes.getBill", :query => {"billId" => bill_id})
+        instantiate_record(response['bill'])
+      end
+
+      def self.find_by_year_and_state(year, state_abbrev)
+        response = get("/Votes.getBillsByYearState", :query => {"year" => year, "state" => :state_abbrev})
+        instantiate_record(response['bills'])
+      end
+    end
+
     # See http://api.votesmart.org/docs/Committee.html
     class Committee < VoteSmartResource
       # Find a committee by VoteSmart typeId and stateId (abbreviation)
