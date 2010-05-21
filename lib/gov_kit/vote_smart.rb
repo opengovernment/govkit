@@ -26,7 +26,7 @@ module GovKit
       end
 
       def self.find_by_year_and_state(year, state_abbrev)
-        response = get("/Votes.getBillsByYearState", :query => {"year" => year, "state" => :state_abbrev})
+        response = get("/Votes.getBillsByYearState", :query => {"year" => year, "stateId" => state_abbrev})
         instantiate_record(response['bills'])
       end
     end
