@@ -40,7 +40,7 @@ module GovKit
         response = get("/Committee.getCommitteesByTypeState", :query => {"typeId" => type_id, "stateId" => state_abbrev})
         instantiate_record(response['committees'])
       end
-      
+
       # Find a committee by VoteSmart committeeId. Maps to Committee.getCommittee()
       def self.find(committee_id)
         response = get("/Committee.getCommittee", :query => {"committeeId" => committee_id})
