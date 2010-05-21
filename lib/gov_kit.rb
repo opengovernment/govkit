@@ -20,4 +20,35 @@ module GovKit
   class Version < Resource; end
   class Source < Resource; end
   class Address < Resource; end
+
+  module ActsAsCiteable
+    def self.included(base)
+      base.extend ActMethods
+    end
+
+    module ActMethods
+      def acts_as_citeable(options={})
+        options[:keywords] ||= []
+        attr_accessor :keywords
+        unless included_modules.include? InstanceMethods
+          extend ClassMethods
+          include InstanceMethods
+        end
+      end
+    end
+
+    module ClassMethods
+
+    end
+
+    module InstanceMethods
+      def citations
+        {
+          :google_news => SearchEngines::GoogleNewsSearch.search(self.keywords),
+          :google_blogs => SearchEngines::GoogleBlogSearch.search(self.keywords),
+          :technorati => SearchEngines::TechnoratiSearch.search(self.keywords)
+        }
+      end
+    end
+  end
 end

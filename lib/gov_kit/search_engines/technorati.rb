@@ -10,21 +10,21 @@ module GovKit
         doc = Hpricot(html)
 
         citations = []
-
-        doc.search("tapi/document/item").each do |i|
-          citation = GovKit::Citation.new
-
-          citation.url = i.text("permalink")
-          citation.title = i.text("title")
-          citation.excerpt = i.text("excerpt")
-          citation.date = i.text("created")
-          citation.source = i.text("weblog/name")
-          citation.url = i.text("weblog/url")
-          citation.weight = i.text("weblog/inboundlinks")
-
-          citations << citation
-        end
+#        doc.search("tapi/document/item").each do |i|
+#          citation = GovKit::Citation.new
+#
+#          citation.url = i.text("permalink")
+#          citation.title = i.text("title")
+#          citation.excerpt = i.text("excerpt")
+#          citation.date = i.text("created")
+#          citation.source = i.text("weblog/name")
+#          citation.url = i.text("weblog/url")
+#          citation.weight = i.text("weblog/inboundlinks")
+#
+#          citations << citation
+#        end
         citations
+        []
       end
 
       def self.make_request(host, path)
