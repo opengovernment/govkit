@@ -2,12 +2,12 @@ module GovKit
   module SearchEngines
     class GoogleBlogSearch
       def self.search(options=[])
-        query = options.to_query('q')
+        query = options.join('+')
         host = "blogsearch.google.com"
         path = "/blogsearch?hl=en&q=#{query}&btnG=Search+Blogs&num=50"
 
         html = make_request(host, path)
-        doc = Hpricot(html)
+        doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
         stories = doc.search("td.j")
         titles = (doc/"a").select { |a| (a.attributes["id"] && a.attributes["id"].match(/p-(.*)/)) }
 

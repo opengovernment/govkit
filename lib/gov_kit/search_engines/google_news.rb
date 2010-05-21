@@ -5,12 +5,12 @@ module GovKit
   module SearchEngines
     class GoogleNewsSearch
       def self.search(options=[])
-        query = options.to_query('q')
+        query = options.join('+')
         host = "news.google.com"
         path = "/news?hl=en&ned=us&q=#{query}&btnG=Search+News&num=50"
 
         html = make_request(host, path)
-        doc = Hpricot(html)
+        doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
         stories = doc.search("div.search-results > div.story")
 
         citations = []
@@ -18,11 +18,11 @@ module GovKit
         stories.each do |story|
           citation = GovKit::Citation.new
 
-          citation.title = story.at("h2.title a").inner_text
+          citation.title = story.at("h2.title a").inner_text.html_safe!
           citation.url = story.at("h2.title a").attributes["href"]
-          citation.date = story.at("div.sub-title > span.date").inner_html
-          citation.source = story.at("div.sub-title > span.source").inner_html
-          citation.excerpt = story.at("div.body > div.snippet").inner_html #.unpack("C*").pack("U*")
+          citation.date = story.at("div.sub-title > span.date").inner_html.html_safe!
+          citation.source = story.at("div.sub-title > span.source").inner_html.html_safe!
+          citation.excerpt = story.at("div.body > div.snippet").inner_html.html_safe!
 
           citations << citation
         end
@@ -30,6 +30,7 @@ module GovKit
       end
 
       def self.make_request(host, path)
+        puts host +path
         response = Net::HTTP.get(host, path)
       end
     end

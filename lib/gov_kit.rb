@@ -5,6 +5,7 @@ require 'gov_kit/configuration'
 require 'gov_kit/search_engines/google_news'
 require 'gov_kit/search_engines/google_blog_search'
 require 'gov_kit/search_engines/technorati'
+require 'iconv'
 
 module GovKit
   autoload :FiftyStates, 'gov_kit/fifty_states'
@@ -29,7 +30,10 @@ module GovKit
     module ActMethods
       def acts_as_citeable(options={})
         options[:keywords] ||= []
-        attr_accessor :keywords
+
+        class_inheritable_accessor :options
+        self.options = options
+
         unless included_modules.include? InstanceMethods
           extend ClassMethods
           include InstanceMethods
@@ -38,15 +42,19 @@ module GovKit
     end
 
     module ClassMethods
-
     end
 
     module InstanceMethods
-      def citations
+      def raw_citations
+        params = self.options[:keywords]
+        self.options[:with].each do |attr|
+          params << self.instance_eval("#{attr}")
+        end
+        
         {
-          :google_news => SearchEngines::GoogleNewsSearch.search(self.keywords),
-          :google_blogs => SearchEngines::GoogleBlogSearch.search(self.keywords),
-          :technorati => SearchEngines::TechnoratiSearch.search(self.keywords)
+          :google_news => SearchEngines::GoogleNewsSearch.search(params),
+          :google_blogs => SearchEngines::GoogleBlogSearch.search(params),
+          :technorati => SearchEngines::TechnoratiSearch.search(params)
         }
       end
     end

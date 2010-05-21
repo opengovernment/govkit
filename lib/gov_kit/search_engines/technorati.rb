@@ -7,7 +7,7 @@ module GovKit
         path = "/search?key=#{API_KEYS["technorati_api_key"]}&limit=50&language=en&query=#{query}"
 
         html = make_request(host, path)
-        doc = Hpricot(html)
+        doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
 
         citations = []
 #        doc.search("tapi/document/item").each do |i|
