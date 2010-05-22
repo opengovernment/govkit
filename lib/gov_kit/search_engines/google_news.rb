@@ -30,6 +30,7 @@ module GovKit
       end
 
       def self.make_request(host, path)
+        puts host+path
         response = Net::HTTP.get(host, path)
       end
     end

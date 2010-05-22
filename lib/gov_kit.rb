@@ -11,16 +11,26 @@ module GovKit
   autoload :FiftyStates, 'gov_kit/fifty_states'
   autoload :VoteSmart, 'gov_kit/vote_smart'
 
-  class Bill < Resource; end
-  class Vote < Resource; end
-  class Session < Resource; end
-  class Role < Resource; end
-  class Legislator < Resource; end
-  class Vote < Resource; end
-  class Sponsor < Resource; end
-  class Version < Resource; end
-  class Source < Resource; end
-  class Address < Resource; end
+  class Bill < Resource;
+  end
+  class Vote < Resource;
+  end
+  class Session < Resource;
+  end
+  class Role < Resource;
+  end
+  class Legislator < Resource;
+  end
+  class Vote < Resource;
+  end
+  class Sponsor < Resource;
+  end
+  class Version < Resource;
+  end
+  class Source < Resource;
+  end
+  class Address < Resource;
+  end
 
   module ActsAsCiteable
     def self.included(base)
@@ -46,11 +56,12 @@ module GovKit
 
     module InstanceMethods
       def raw_citations
-        params = self.options[:keywords]
-        self.options[:with].each do |attr|
+        params = self.options[:keywords].clone
+        attributes = self.options[:with].clone
+
+        attributes.each do |attr|
           params << self.instance_eval("#{attr}")
         end
-        
         {
           :google_news => SearchEngines::GoogleNewsSearch.search(params),
           :google_blogs => SearchEngines::GoogleBlogSearch.search(params),
