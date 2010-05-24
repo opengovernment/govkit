@@ -2,14 +2,15 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.i
 
 require 'active_support'
 require 'gov_kit/configuration'
-require 'gov_kit/search_engines/google_news'
-require 'gov_kit/search_engines/google_blog_search'
-require 'gov_kit/search_engines/technorati'
 require 'iconv'
 
 module GovKit
   autoload :FiftyStates, 'gov_kit/fifty_states'
   autoload :VoteSmart, 'gov_kit/vote_smart'
+  autoload :ActsAsCiteable, 'gov_kit/acts_as_citeable'
+  autoload :"SearchEngines::GoogleNews", 'gov_kit/search_engines/google_news'
+  autoload :"SearchEngines::GoogleBlogSearch", 'gov_kit/search_engines/google_blog_search'
+  autoload :"SearchEngines::Technorati", 'gov_kit/search_engines/technorati'
 
   class Bill < Resource;
   end
@@ -32,42 +33,8 @@ module GovKit
   class Address < Resource;
   end
 
-  module ActsAsCiteable
-    def self.included(base)
-      base.extend ActMethods
-    end
-
-    module ActMethods
-      def acts_as_citeable(options={})
-        options[:keywords] ||= []
-
-        class_inheritable_accessor :options
-        self.options = options
-
-        unless included_modules.include? InstanceMethods
-          extend ClassMethods
-          include InstanceMethods
-        end
-      end
-    end
-
-    module ClassMethods
-    end
-
-    module InstanceMethods
-      def raw_citations
-        params = self.options[:keywords].clone
-        attributes = self.options[:with].clone
-
-        attributes.each do |attr|
-          params << self.instance_eval("#{attr}")
-        end
-        {
-          :google_news => SearchEngines::GoogleNewsSearch.search(params),
-          :google_blogs => SearchEngines::GoogleBlogSearch.search(params),
-          :technorati => SearchEngines::TechnoratiSearch.search(params)
-        }
-      end
-    end
+  class Citation
+    attr_accessor :url, :excerpt, :title, :source, :date, :weight
   end
+
 end
