@@ -3,7 +3,7 @@ require 'net/http'
 
 module GovKit
   module SearchEngines
-    class GoogleNewsSearch
+    class GoogleNews
       def self.search(options=[])
         query = options.join('+')
         host = "news.google.com"

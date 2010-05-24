@@ -3,14 +3,12 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.i
 require 'active_support'
 require 'gov_kit/configuration'
 require 'iconv'
+require 'gov_kit/search_engines'
 
 module GovKit
   autoload :FiftyStates, 'gov_kit/fifty_states'
   autoload :VoteSmart, 'gov_kit/vote_smart'
   autoload :ActsAsCiteable, 'gov_kit/acts_as_citeable'
-  autoload :"SearchEngines::GoogleNews", 'gov_kit/search_engines/google_news'
-  autoload :"SearchEngines::GoogleBlogSearch", 'gov_kit/search_engines/google_blog_search'
-  autoload :"SearchEngines::Technorati", 'gov_kit/search_engines/technorati'
 
   class Bill < Resource;
   end

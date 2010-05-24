@@ -1,6 +1,6 @@
 module GovKit
   module SearchEngines
-    class GoogleBlogSearch
+    class GoogleBlog
       def self.search(options=[])
         query = options.join('+')
         host = "blogsearch.google.com"

@@ -1,4 +1,5 @@
 module GovKit::ActsAsCiteable
+
   def self.included(base)
     base.extend ActMethods
   end
@@ -21,6 +22,7 @@ module GovKit::ActsAsCiteable
   end
 
   module InstanceMethods
+
     def raw_citations
       params = self.options[:keywords].clone
       attributes = self.options[:with].clone
@@ -29,9 +31,9 @@ module GovKit::ActsAsCiteable
         params << self.instance_eval("#{attr}")
       end
       {
-        :google_news => SearchEngines::GoogleNewsSearch.search(params),
-        :google_blogs => SearchEngines::GoogleBlogSearch.search(params),
-        :technorati => SearchEngines::TechnoratiSearch.search(params)
+        :google_news => GovKit::SearchEngines::GoogleNews.search(params),
+        :google_blogs => GovKit::SearchEngines::GoogleBlog.search(params),
+        :technorati => GovKit::SearchEngines::Technorati.search(params)
       }
     end
   end

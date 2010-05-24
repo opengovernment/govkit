@@ -1,6 +1,6 @@
 module GovKit
   module SearchEngines
-    class TechnoratiSearch
+    class Technorati
       def self.search(options=[])
         query = options.to_query('q')
         host = "api.technorati.com"
