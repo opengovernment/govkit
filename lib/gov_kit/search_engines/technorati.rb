@@ -4,7 +4,7 @@ module GovKit
       def self.search(options=[])
         query = options.to_query('q')
         host = "api.technorati.com"
-        path = "/search?key=#{API_KEYS["technorati_api_key"]}&limit=50&language=en&query=#{query}"
+        path = "/search?key=#{API_KEYS["technorati_api_key"]}&limit=50&language=en&query=#{URI::encode(query)}"
 
         html = make_request(host, path)
         doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))

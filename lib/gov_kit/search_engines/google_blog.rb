@@ -4,7 +4,7 @@ module GovKit
       def self.search(options=[])
         query = options.join('+')
         host = "blogsearch.google.com"
-        path = "/blogsearch?hl=en&q=#{query}&btnG=Search+Blogs&num=50"
+        path = "/blogsearch?hl=en&q=#{URI::encode(query)}&btnG=Search+Blogs&num=50"
 
         html = make_request(host, path)
         doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
