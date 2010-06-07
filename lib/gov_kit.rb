@@ -9,6 +9,7 @@ module GovKit
   autoload :FiftyStates, 'gov_kit/fifty_states'
   autoload :VoteSmart, 'gov_kit/vote_smart'
   autoload :ActsAsCiteable, 'gov_kit/acts_as_citeable'
+  autoload :FollowTheMoney, 'gov_kit/follow_the_money'
 
   class Bill < Resource;
   end
