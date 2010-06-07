@@ -18,7 +18,7 @@ module GovKit
 
           next_page = doc.search("/").first.attributes['next_page']
 
-          page += 1
+          page_num += 1
 
           result += doc.search('//business_detail').collect do |business|
             business.attributes.to_hash
@@ -39,7 +39,7 @@ module GovKit
 
           next_page = doc.search("/").first.attributes['next_page']
 
-          page += 1
+          page_num += 1
 
           result = doc.search('//contribution').collect do |contribution|
             contribution.attributes.to_hash
