@@ -1,6 +1,11 @@
 # Govkit
 
-Govkit is a Ruby gem that provides simple access to open government APIs around the web.
+Govkit is a Ruby gem that provides simple access to open government APIs around the web, including:
+
+[http://www.opencongress.org/api](OpenCongress), which has an API for federal bills, votes, people, and news and blog coverage
+[http://fiftystates-dev.sunlightlabs.com/](The Fifty States project), which has a RESTful API for accessing data about state legislators, bills, votes, etc.
+[http://www.votesmart.org/services_api.php](Project Vote Smart), which has an API with congressional addresses, etc.
+[http://www.followthemoney.org/](Follow The Money), whose API reveals campaign contribution data for state officials.
 
 # Installation
 
@@ -14,14 +19,11 @@ Add govkit to your environment.rb or Gemfile
 
 Run <code>./script/generate govkit</code> to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
 
-# Example
-
-[http://fiftystates-dev.sunlightlabs.com/](The Fifty States project) has a RESTful API for accessing data about state legislators, bills, votes, etc.
+# Examples
 
     >> Govkit::FiftyStates::State.find_by_abbreviation('CA')
-    >> Govkit::VoteSmart::Address.find(legislator_id)
-
-(TODO: add usage examples...)
+    >> Govkit::VoteSmart::Address.find(votesmart_candidate_id)
+    >> GovKit::OpenCongress::Bill.find(:number => 5479, :type => 'h', :congress => '111')
 
 # Bugs? Questions?
 

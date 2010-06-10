@@ -10,6 +10,7 @@ module GovKit
   autoload :VoteSmart, 'gov_kit/vote_smart'
   autoload :ActsAsCiteable, 'gov_kit/acts_as_citeable'
   autoload :FollowTheMoney, 'gov_kit/follow_the_money'
+  autoload :OpenCongress, 'gov_kit/open_congress'
 
   class Bill < Resource;
   end
