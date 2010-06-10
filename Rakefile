@@ -24,7 +24,8 @@ begin
     gem.homepage = "http://github.com/opengovernment/govkit"
     gem.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
     gem.add_dependency('httparty', '>= 0.5.2')
-    gem.add_dependency('json', '>= 1.2.4')
+    gem.add_dependency('json', '>= 1.4.3')
+    gem.add_dependency('hpricot', '>= 0.8.2')
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new

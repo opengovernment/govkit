@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.0.2"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2010-05-14}
+  s.date = %q{2010-06-10}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Fifty States API and the Project Vote Smart API.}
   s.email = %q{carl@ppolitics.org}
   s.extra_rdoc_files = [
@@ -28,14 +28,26 @@ Gem::Specification.new do |s|
      "generators/govkit/templates/govkit.rb",
      "govkit.gemspec",
      "lib/gov_kit.rb",
+     "lib/gov_kit/acts_as_citeable.rb",
      "lib/gov_kit/configuration.rb",
      "lib/gov_kit/fifty_states.rb",
+     "lib/gov_kit/follow_the_money.rb",
+     "lib/gov_kit/open_congress.rb",
+     "lib/gov_kit/open_congress/bill.rb",
+     "lib/gov_kit/open_congress/blog_post.rb",
+     "lib/gov_kit/open_congress/news_post.rb",
+     "lib/gov_kit/open_congress/person.rb",
+     "lib/gov_kit/open_congress/person_stat.rb",
+     "lib/gov_kit/open_congress/roll_call.rb",
+     "lib/gov_kit/open_congress/roll_call_comparison.rb",
+     "lib/gov_kit/open_congress/voting_comparison.rb",
      "lib/gov_kit/resource.rb",
+     "lib/gov_kit/search_engines.rb",
+     "lib/gov_kit/search_engines/google_blog.rb",
+     "lib/gov_kit/search_engines/google_news.rb",
+     "lib/gov_kit/search_engines/technorati.rb",
      "lib/gov_kit/vote_smart.rb",
      "lib/govkit.rb",
-     "lib/govkit/configuration.rb",
-     "lib/govkit/fifty_states.rb",
-     "lib/govkit/vote_smart.rb",
      "rails/init.rb",
      "spec/fifty_states_spec.rb",
      "spec/spec.opts",
@@ -44,7 +56,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/opengovernment/govkit}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simple access to open government APIs around the web}
   s.test_files = [
     "spec/fifty_states_spec.rb",
@@ -55,16 +67,19 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<httparty>, [">= 0.5.2"])
-      s.add_runtime_dependency(%q<json>, [">= 1.2.4"])
+      s.add_runtime_dependency(%q<json>, [">= 1.4.3"])
+      s.add_runtime_dependency(%q<hpricot>, [">= 0.8.2"])
     else
       s.add_dependency(%q<httparty>, [">= 0.5.2"])
-      s.add_dependency(%q<json>, [">= 1.2.4"])
+      s.add_dependency(%q<json>, [">= 1.4.3"])
+      s.add_dependency(%q<hpricot>, [">= 0.8.2"])
     end
   else
     s.add_dependency(%q<httparty>, [">= 0.5.2"])
-    s.add_dependency(%q<json>, [">= 1.2.4"])
+    s.add_dependency(%q<json>, [">= 1.4.3"])
+    s.add_dependency(%q<hpricot>, [">= 0.8.2"])
   end
 end
 
