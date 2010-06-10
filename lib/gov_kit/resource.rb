@@ -12,16 +12,13 @@ module GovKit
     end
   end
 
-  class NotauthorizedError < GovKitError;
+  class NotAuthorized < GovKitError;
   end
 
-  class InvalidRequestError < GovKitError;
+  class InvalidRequest < GovKitError;
   end
 
-  class NotFoundError < GovKitError;
-  end
-
-  class NameError < GovKitError;
+  class ResourceNotFound < GovKitError;
   end
 
   class Resource
@@ -37,6 +34,7 @@ module GovKit
 
     class << self
       def instantiate_record(record)
+        raise GovKit::ResourceNotFound, "Resource not found" unless record
         new(record)
       end
 
