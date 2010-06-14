@@ -19,6 +19,13 @@ module GovKit
       end
     end
 
+    class Bio < VoteSmartResource
+      def self.find(candidate_id)
+        response = get("/CandidateBio.getBio", :query => {"candidateId" => candidate_id})
+        instantiate_record(response['bio']['candidate'])
+      end
+    end
+
     class Bill < VoteSmartResource
       def self.find(bill_id)
         response = get("/Votes.getBill", :query => {"billId" => bill_id})
