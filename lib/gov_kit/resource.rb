@@ -45,6 +45,15 @@ module GovKit
       def parse(json)
         instantiate_record(json)
       end
+
+      def instantiate(record)
+        case record
+          when Array
+            instantiate_collection(record)
+          when Hash
+            instantiate_record(record)
+        end
+      end
     end
 
     def unload(attributes)
