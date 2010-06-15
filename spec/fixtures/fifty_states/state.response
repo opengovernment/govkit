@@ -1,0 +1,60 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 21:44:48 GMT
+Content-Type: 
+Connection: close
+Vary: Authorization
+
+{
+    "lower_chamber_name": "Assembly", 
+    "lower_chamber_title": "Assemblymember", 
+    "upper_chamber_title": "Senator", 
+    "name": "California", 
+    "sessions": [
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 1"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 2"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 3"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 4"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 5"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 6"
+        }, 
+        {
+            "end_year": 2010, 
+            "start_year": 2009, 
+            "name": "20092010 Special Session 7"
+        }
+    ], 
+    "upper_chamber_term": 4, 
+    "abbreviation": "ca", 
+    "upper_chamber_name": "Senate", 
+    "legislature_name": "California State Legislature", 
+    "lower_chamber_term": 3
+}

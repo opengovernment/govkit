@@ -8,7 +8,7 @@ module GovKit
     end
 
     def to_s
-      "Failed with #{response.code} #{response.message if response.respond_to?(:message)}"
+      "Failed with #{response.code if response.respond_to?(:code)} #{response.message if response.respond_to?(:message)}"
     end
   end
 
@@ -34,7 +34,7 @@ module GovKit
 
     class << self
       def instantiate_record(record)
-        raise GovKit::ResourceNotFound, "Resource not found" unless record
+        raise GovKit::ResourceNotFound, "Resource not found" unless !record.blank?
         new(record)
       end
 

@@ -12,7 +12,7 @@ module GovKit
 
     class State < FiftyStatesResource
       def self.find_by_abbreviation(abbreviation)
-        response = get("/#{abbreviation}")
+        response = get("/#{abbreviation}/")
         instantiate_record(response)
       end
     end
@@ -25,7 +25,7 @@ module GovKit
       end
 
       def self.search(query, options = {})
-        response = get('/bills/search', :query => {:q => query}.merge(options))
+        response = get('/bills/search/', :query => {:q => query}.merge(options))
         instantiate_collection(response)
       end
 
@@ -37,19 +37,19 @@ module GovKit
 
     class Legislator < FiftyStatesResource
       def self.find(legislator_id)
-        response = get("/legislators/#{legislator_id}")
+        response = get("/legislators/#{legislator_id}/")
         instantiate_record(response)
       end
 
       def self.search(options = {})
-        response = get('/legislators/search', :query => options)
+        response = get('/legislators/search/', :query => options)
         instantiate_collection(response)
       end
     end
 
     class Vote < FiftyStatesResource
       def self.find(vote_id)
-        response = get("/votes/#{vote_id}")
+        response = get("/votes/#{vote_id}/")
         instantiate_record(response)
       end
     end

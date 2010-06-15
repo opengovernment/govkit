@@ -1,16 +1,20 @@
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 
 require 'active_support'
-require 'gov_kit/configuration'
+require 'hpricot'
 require 'iconv'
-require 'gov_kit/search_engines'
+require 'httparty'
+require 'json'
+require 'gov_kit/configuration'
 
 module GovKit
+  autoload :Resource, 'gov_kit/resource'
   autoload :FiftyStates, 'gov_kit/fifty_states'
   autoload :VoteSmart, 'gov_kit/vote_smart'
   autoload :ActsAsCiteable, 'gov_kit/acts_as_citeable'
   autoload :FollowTheMoney, 'gov_kit/follow_the_money'
   autoload :OpenCongress, 'gov_kit/open_congress'
+  autoload :SearchEngines, 'gov_kit/search_engines'
 
   class Bill < Resource;
   end

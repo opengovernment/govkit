@@ -1,0 +1,6 @@
+HTTP/1.1 410 GONE
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 22:34:56 GMT
+Content-Type: text/plain
+Connection: close
+Vary: Authorization

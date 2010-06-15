@@ -1,0 +1,144 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 22:07:40 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Vary: Authorization
+
+[
+    {
+        "first_name": "Paul", 
+        "nimsp_candidate_id": 96302, 
+        "middle_name": "", 
+        "suffix": "", 
+        "roles": [
+            {
+                "end_date": null, 
+                "district": "43", 
+                "contact_info": [], 
+                "chamber": "lower", 
+                "state": "ca", 
+                "session": "20092010", 
+                "committee": "", 
+                "party": "Democrat", 
+                "votesmart_committee_id": null, 
+                "type": "member", 
+                "start_date": null
+            }
+        ], 
+        "updated_at": "2010-03-27 22:06:53", 
+        "sources": [], 
+        "leg_id": 2560, 
+        "last_name": "Krekorian", 
+        "votesmart_id": null, 
+        "full_name": "Krekorian, Paul"
+    }, 
+    {
+        "first_name": "Wesley", 
+        "nimsp_candidate_id": 97762, 
+        "middle_name": "", 
+        "suffix": "", 
+        "roles": [
+            {
+                "end_date": null, 
+                "district": "1", 
+                "contact_info": [], 
+                "chamber": "lower", 
+                "state": "ca", 
+                "session": "20092010", 
+                "committee": "", 
+                "party": "Democrat", 
+                "votesmart_committee_id": null, 
+                "type": "member", 
+                "start_date": null
+            }
+        ], 
+        "updated_at": "2010-03-27 22:07:47", 
+        "sources": [], 
+        "leg_id": 2561, 
+        "last_name": "Chesbro", 
+        "votesmart_id": 16646, 
+        "full_name": "Chesbro, Wesley"
+    }, 
+    {
+        "first_name": "Ted", 
+        "nimsp_candidate_id": 96263, 
+        "middle_name": "", 
+        "suffix": "", 
+        "roles": [
+            {
+                "end_date": null, 
+                "district": "4", 
+                "contact_info": [], 
+                "chamber": "lower", 
+                "state": "ca", 
+                "session": "20092010", 
+                "committee": "", 
+                "party": "Republican", 
+                "votesmart_committee_id": null, 
+                "type": "member", 
+                "start_date": null
+            }
+        ], 
+        "updated_at": "2010-03-27 22:07:48", 
+        "sources": [], 
+        "leg_id": 2562, 
+        "last_name": "Gaines", 
+        "votesmart_id": 59841, 
+        "full_name": "Gaines, Ted"
+    }, 
+    {
+        "first_name": "Jim", 
+        "nimsp_candidate_id": 97994, 
+        "middle_name": "", 
+        "suffix": "", 
+        "roles": [
+            {
+                "end_date": null, 
+                "district": "2", 
+                "contact_info": [], 
+                "chamber": "lower", 
+                "state": "ca", 
+                "session": "20092010", 
+                "committee": "", 
+                "party": "Republican", 
+                "votesmart_committee_id": null, 
+                "type": "member", 
+                "start_date": null
+            }
+        ], 
+        "updated_at": "2010-03-27 22:07:49", 
+        "sources": [], 
+        "leg_id": 2563, 
+        "last_name": "Nielsen", 
+        "votesmart_id": 104331, 
+        "full_name": "Nielsen, Jim"
+    }, 
+    {
+        "first_name": "Tom", 
+        "nimsp_candidate_id": 97726, 
+        "middle_name": "", 
+        "suffix": "", 
+        "roles": [
+            {
+                "end_date": null, 
+                "district": "13", 
+                "contact_info": [], 
+                "chamber": "lower", 
+                "state": "ca", 
+                "session": "20092010", 
+                "committee": "", 
+                "party": "Democrat", 
+                "votesmart_committee_id": null, 
+                "type": "member", 
+                "start_date": null
+            }
+        ], 
+        "updated_at": "2010-03-27 22:07:47", 
+        "sources": [], 
+        "leg_id": 2564, 
+        "last_name": "Ammiano", 
+        "votesmart_id": 70419, 
+        "full_name": "Ammiano, Tom"
+    }
+]

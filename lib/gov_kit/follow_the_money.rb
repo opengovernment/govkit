@@ -1,4 +1,4 @@
-module GovKit
+module GovKit 
   class FollowTheMoneyResource < Resource
     default_params :key => GovKit::configuration.ftm_apikey
     base_uri GovKit::configuration.ftm_base_url

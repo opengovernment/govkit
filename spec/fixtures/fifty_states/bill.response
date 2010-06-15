@@ -1,0 +1,240 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 21:50:08 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Vary: Authorization
+
+{
+    "votes": [
+        {
+            "other_count": 6, 
+            "sources": [], 
+            "yes_count": 34, 
+            "updated_at": "2010-03-27 21:30:38", 
+            "motion": "Special Consent #12 AB667 Block By Alquist", 
+            "chamber": "upper", 
+            "passed": true, 
+            "date": "2009-07-09 05:50:00", 
+            "vote_id": 13695, 
+            "no_count": 0
+        }, 
+        {
+            "other_count": 3, 
+            "sources": [], 
+            "yes_count": 77, 
+            "updated_at": "2010-03-27 21:30:38", 
+            "motion": "AB 667 BLOCK  Consent Calendar Second Day  Regular Session", 
+            "chamber": "lower", 
+            "passed": true, 
+            "date": "2009-05-21 08:07:00", 
+            "vote_id": 13694, 
+            "no_count": 0
+        }, 
+        {
+            "other_count": 3, 
+            "sources": [], 
+            "yes_count": 10, 
+            "updated_at": "2010-03-27 21:30:38", 
+            "motion": "Do pass and be re-referred to the Committee on Appropriations.", 
+            "chamber": "lower", 
+            "passed": true, 
+            "date": "2009-04-13 20:00:00", 
+            "vote_id": 13693, 
+            "no_count": 0
+        }, 
+        {
+            "other_count": 0, 
+            "sources": [], 
+            "yes_count": 7, 
+            "updated_at": "2010-03-27 21:30:38", 
+            "motion": "Do pass, to Consent Calendar.", 
+            "chamber": "lower", 
+            "passed": true, 
+            "date": "2009-05-12 20:00:00", 
+            "vote_id": 13692, 
+            "no_count": 0
+        }, 
+        {
+            "other_count": 0, 
+            "sources": [], 
+            "yes_count": 7, 
+            "updated_at": "2010-03-27 21:30:38", 
+            "motion": "Do pass, but re-refer to the Committee on Appropriations.", 
+            "chamber": "upper", 
+            "passed": true, 
+            "date": "2009-04-27 20:00:00", 
+            "vote_id": 13691, 
+            "no_count": 4
+        }, 
+        {
+            "other_count": 0, 
+            "sources": [], 
+            "yes_count": 5, 
+            "updated_at": "2010-03-27 21:30:37", 
+            "motion": "Do pass, but re-refer to the Committee on Appropriations.", 
+            "chamber": "upper", 
+            "passed": true, 
+            "date": "2009-06-21 20:00:00", 
+            "vote_id": 13690, 
+            "no_count": 2
+        }
+    ], 
+    "last_action": "2009-08-05 20:00:00", 
+    "first_action": "2009-02-24 19:00:00", 
+    "title": "An act to amend Section 1750.1 of the Business and Professions Code, and to amend Section 104830 of, and to add Section 104762 to, the Health and Safety Code, relating to oral health.", 
+    "updated_at": "2010-03-27 21:30:38", 
+    "actions": [
+        {
+            "date": "2009-08-05 20:00:00", 
+            "action": "Chaptered by Secretary of State - Chapter   119, Statutes of 2009.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Secretary of State"
+        }, 
+        {
+            "date": "2009-08-04 20:00:00", 
+            "action": "Approved by the Governor.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Governor"
+        }, 
+        {
+            "date": "2009-07-29 20:00:00", 
+            "action": "Enrolled and to the Governor at   2:30 p.m.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Governor"
+        }, 
+        {
+            "date": "2009-07-08 20:00:00", 
+            "action": "In Assembly.  To enrollment.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (E&E Enrollment)"
+        }, 
+        {
+            "date": "2009-07-08 20:00:00", 
+            "action": "Read third time, passed, and to Assembly.  (Ayes 34. Noes  0. Page  1667.)", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Desk)"
+        }, 
+        {
+            "date": "2009-07-01 20:00:00", 
+            "action": "Ordered to Special Consent Calendar.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Floor Special Consent)"
+        }, 
+        {
+            "date": "2009-06-29 20:00:00", 
+            "action": "Read second time.  To third reading.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Floor Third Reading)"
+        }, 
+        {
+            "date": "2009-06-28 20:00:00", 
+            "action": "From committee:  Be placed on second reading file pursuant to Senate Rule 28.8.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Floor Second Reading)"
+        }, 
+        {
+            "date": "2009-06-21 20:00:00", 
+            "action": "From committee:  Do pass, and re-refer to Com. on  APPR. Re-referred.  (Ayes 10. Noes  0.) (June  22).", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Committee)"
+        }, 
+        {
+            "date": "2009-06-03 20:00:00", 
+            "action": "Referred to Com. on  B., P. & E.D.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Committee CS42)"
+        }, 
+        {
+            "date": "2009-05-20 20:00:00", 
+            "action": "Read third time, passed, and to Senate.  (Ayes 77. Noes  0. Page  1628.)", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (E&E Engrossing)"
+        }, 
+        {
+            "date": "2009-05-20 20:00:00", 
+            "action": "In Senate.  Read first time.  To Com. on RLS. for assignment.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Senate (Rules)"
+        }, 
+        {
+            "date": "2009-05-17 20:00:00", 
+            "action": "Read second time.  To Consent Calendar.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Floor Consent)"
+        }, 
+        {
+            "date": "2009-05-13 20:00:00", 
+            "action": "From committee:  Do pass.  To Consent Calendar.   (May  13).", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Floor Second Reading)"
+        }, 
+        {
+            "date": "2009-05-04 20:00:00", 
+            "action": "Re-referred to Com. on  APPR.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Committee CX25)"
+        }, 
+        {
+            "date": "2009-05-03 20:00:00", 
+            "action": "From committee chair, with author's amendments:  Amend, and re-refer to Com. on  APPR. Read second time and amended.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (E&E Engrossing)"
+        }, 
+        {
+            "date": "2009-04-28 20:00:00", 
+            "action": "From committee:  Do pass, and re-refer to Com. on  APPR. with recommendation:  To Consent Calendar.  Re-referred.  (Ayes 10. Noes  0.) (April  28).", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Committee)"
+        }, 
+        {
+            "date": "2009-04-14 20:00:00", 
+            "action": "From committee:  Do pass, and re-refer to Com. on  B. & P. with recommendation:  To Consent Calendar.  Re-referred.  (Ayes 19. Noes  0.) (April  14).", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Committee)"
+        }, 
+        {
+            "date": "2009-04-12 20:00:00", 
+            "action": "Re-referred to Com. on  HEALTH.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Committee CX08)"
+        }, 
+        {
+            "date": "2009-04-01 20:00:00", 
+            "action": "From committee chair, with author's amendments:  Amend, and re-refer to Com. on  HEALTH. Read second time and amended.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (E&E Engrossing)"
+        }, 
+        {
+            "date": "2009-03-22 20:00:00", 
+            "action": "Referred to Com. on  HEALTH.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Committee CX08)"
+        }, 
+        {
+            "date": "2009-02-25 19:00:00", 
+            "action": "From printer.  May be heard in committee  March  28.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Desk)"
+        }, 
+        {
+            "date": "2009-02-24 19:00:00", 
+            "action": "Read first time.  To print.", 
+            "updated_at": "2010-03-27 21:30:37", 
+            "actor": "Assembly (Desk)"
+        }
+    ], 
+    "sponsors": [
+        {
+            "leg_id": 2504, 
+            "type": "LEAD_AUTHOR", 
+            "full_name": "Block, Marty"
+        }
+    ], 
+    "chamber": "lower", 
+    "state": "ca", 
+    "session": "20092010", 
+    "sources": [], 
+    "versions": [], 
+    "bill_id": "AB667"
+}

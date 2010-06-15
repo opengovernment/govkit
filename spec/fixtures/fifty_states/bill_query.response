@@ -1,0 +1,1990 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 21:56:32 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Vary: Authorization
+
+[
+    {
+        "votes": [], 
+        "last_action": "2009-02-09 19:00:00", 
+        "first_action": "2008-11-09 19:00:00", 
+        "title": "Relating to participation by single-employee businesses in private purchasing cooperatives or health group cooperatives.", 
+        "updated_at": "2010-04-17 09:48:07", 
+        "actions": [
+            {
+                "date": "2009-02-09 19:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:12:40", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-02-09 19:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:12:40", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2008-11-09 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:12:40", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2008-11-09 19:00:00", 
+                "action": "Received by the Secretary of the Senate", 
+                "updated_at": "2010-04-14 20:12:40", 
+                "actor": "upper"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 354, 
+                "type": "author", 
+                "full_name": "Jane Nelson"
+            }
+        ], 
+        "chamber": "upper", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/senate_bills/SB00001_SB00099/SB 77.xml", 
+                "retrieved": "2010-06-07 04:14:30"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00001_SB00099", 
+                "retrieved": "2010-06-07 04:14:33"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00001_SB00099/SB00077I.HTM", 
+                "name": "SB00077I", 
+                "updated_at": "2010-04-17 09:48:07"
+            }
+        ], 
+        "bill_id": "SB 77"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-05-20 20:00:00", 
+        "first_action": "2009-02-17 19:00:00", 
+        "title": "Relating to access by the members of electric cooperatives to meetings of the boards of directors and certain information of the electric cooperatives.", 
+        "updated_at": "2010-04-17 09:49:44", 
+        "actions": [
+            {
+                "date": "2009-05-20 20:00:00", 
+                "action": "Placed on Major State Calendar", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-18 20:00:00", 
+                "action": "Considered in Calendars", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-14 20:00:00", 
+                "action": "Rules suspended", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-14 20:00:00", 
+                "action": "Committee report sent to Calendars", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-13 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-13 20:00:00", 
+                "action": "Comte report filed with Committee Coordinator", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Reported favorably as substituted", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Considered in formal meeting", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Posting rule suspended", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "No action taken in committee", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Posting rule suspended", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-23 20:00:00", 
+                "action": "Received from the Senate", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Reported engrossed", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Passed", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Read 3rd time", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Three day rule suspended", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Passed to engrossment as amended", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Vote recorded in Journal", 
+                "updated_at": "2010-04-14 20:22:11", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Amended", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Amendment(s) offered", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Vote recorded in Journal", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Amended", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Amendment(s) offered", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Read 2nd time", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-21 20:00:00", 
+                "action": "Rules suspended-Regular order of business", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-13 20:00:00", 
+                "action": "Placed on intent calendar", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-07 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-07 20:00:00", 
+                "action": "Reported favorably w/o amendments", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Testimony taken in committee", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Scheduled for public hearing on  . . .", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-08 20:00:00", 
+                "action": "Referred to Business & Commerce", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-08 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-02-17 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-02-17 19:00:00", 
+                "action": "Received by the Secretary of the Senate", 
+                "updated_at": "2010-04-14 20:22:10", 
+                "actor": "upper"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 380, 
+                "type": "author", 
+                "full_name": "Troy Fraser"
+            }
+        ], 
+        "chamber": "upper", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/senate_bills/SB00900_SB00999/SB 921.xml", 
+                "retrieved": "2010-06-07 06:03:14"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999", 
+                "retrieved": "2010-06-07 06:03:18"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00921E.HTM", 
+                "name": "SB00921E", 
+                "updated_at": "2010-04-17 09:49:44"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00921H.HTM", 
+                "name": "SB00921H", 
+                "updated_at": "2010-04-17 09:49:44"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00921I.HTM", 
+                "name": "SB00921I", 
+                "updated_at": "2010-04-17 09:49:44"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00921S.HTM", 
+                "name": "SB00921S", 
+                "updated_at": "2010-04-17 09:49:44"
+            }
+        ], 
+        "bill_id": "SB 921"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-03-23 20:00:00", 
+        "first_action": "2009-01-14 19:00:00", 
+        "title": "Relating to participation by single-employee businesses in private purchasing cooperatives or health group cooperatives.", 
+        "updated_at": "2010-04-17 09:53:23", 
+        "actions": [
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-02-17 19:00:00", 
+                "action": "Referred to Insurance", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-02-17 19:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-01-14 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:38:36", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 295, 
+                "type": "author", 
+                "full_name": "Guillen, Ryan"
+            }, 
+            {
+                "leg_id": 469, 
+                "type": "author", 
+                "full_name": "King, Susan"
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB00600_HB00699/HB 663.xml", 
+                "retrieved": "2010-06-07 11:05:30"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB00600_HB00699", 
+                "retrieved": "2010-06-07 11:05:34"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB00600_HB00699/HB00663I.HTM", 
+                "name": "HB00663I", 
+                "updated_at": "2010-04-17 09:53:23"
+            }
+        ], 
+        "bill_id": "HB 663"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-02-22 19:00:00", 
+        "first_action": "2009-02-02 19:00:00", 
+        "title": "Relating to access by the members of electric cooperatives to meetings of the boards of directors and certain information of the electric cooperatives.", 
+        "updated_at": "2010-04-17 09:53:31", 
+        "actions": [
+            {
+                "date": "2009-02-22 19:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:39:13", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-02-22 19:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:39:13", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-02-02 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:39:13", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 425, 
+                "type": "author", 
+                "full_name": "Bolton, Valinda"
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB01000_HB01099/HB 1002.xml", 
+                "retrieved": "2010-06-07 11:48:18"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01000_HB01099", 
+                "retrieved": "2010-06-07 11:48:23"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01000_HB01099/HB01002I.HTM", 
+                "name": "HB01002I", 
+                "updated_at": "2010-04-17 09:53:31"
+            }
+        ], 
+        "bill_id": "HB 1002"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-04-06 20:00:00", 
+        "first_action": "2009-02-17 19:00:00", 
+        "title": "Relating to access by the members of electric cooperatives to meetings of the boards of directors and certain information of the electric cooperatives.", 
+        "updated_at": "2010-04-17 09:54:20", 
+        "actions": [
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-01 19:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-01 19:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-02-17 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:43:10", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 392, 
+                "type": "coauthor", 
+                "full_name": "Strama, Mark"
+            }, 
+            {
+                "leg_id": 403, 
+                "type": "coauthor", 
+                "full_name": "Miller, Doug"
+            }, 
+            {
+                "leg_id": 463, 
+                "type": "coauthor", 
+                "full_name": "Maldonado, Diana"
+            }, 
+            {
+                "leg_id": 470, 
+                "type": "coauthor", 
+                "full_name": "Howard, Donna"
+            }, 
+            {
+                "leg_id": 425, 
+                "type": "coauthor", 
+                "full_name": "Bolton, Valinda"
+            }, 
+            {
+                "leg_id": 457, 
+                "type": "author", 
+                "full_name": "Aycock, Jimmie Don"
+            }, 
+            {
+                "leg_id": 342, 
+                "type": "author", 
+                "full_name": "Gattis, Dan"
+            }, 
+            {
+                "leg_id": 329, 
+                "type": "author", 
+                "full_name": "Rose, Patrick M."
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB01300_HB01399/HB 1390.xml", 
+                "retrieved": "2010-06-07 12:36:22"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01300_HB01399", 
+                "retrieved": "2010-06-07 12:36:26"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01300_HB01399/HB01390I.HTM", 
+                "name": "HB01390I", 
+                "updated_at": "2010-04-17 09:54:20"
+            }
+        ], 
+        "bill_id": "HB 1390"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-04-06 20:00:00", 
+        "first_action": "2009-03-11 20:00:00", 
+        "title": "Relating to the governance and disclosure requirements of electric cooperative corporations and the review of complaints of electric cooperative corporation members by the Office of the Attorney General.", 
+        "updated_at": "2010-04-17 09:55:08", 
+        "actions": [
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-06 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-22 20:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-22 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-11 20:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:46:49", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 468, 
+                "type": "coauthor", 
+                "full_name": "Sheffield, Ralph"
+            }, 
+            {
+                "leg_id": 312, 
+                "type": "coauthor", 
+                "full_name": "Phillips, Larry"
+            }, 
+            {
+                "leg_id": 343, 
+                "type": "coauthor", 
+                "full_name": "Otto, John"
+            }, 
+            {
+                "leg_id": 371, 
+                "type": "coauthor", 
+                "full_name": "Orr, Rob"
+            }, 
+            {
+                "leg_id": 311, 
+                "type": "coauthor", 
+                "full_name": "Morrison, Geanie"
+            }, 
+            {
+                "leg_id": 369, 
+                "type": "coauthor", 
+                "full_name": "Miller, Sid"
+            }, 
+            {
+                "leg_id": 450, 
+                "type": "coauthor", 
+                "full_name": "McReynolds, Jim"
+            }, 
+            {
+                "leg_id": 394, 
+                "type": "coauthor", 
+                "full_name": "Madden, Jerry"
+            }, 
+            {
+                "leg_id": 341, 
+                "type": "coauthor", 
+                "full_name": "Laubenberg, Jodie"
+            }, 
+            {
+                "leg_id": 417, 
+                "type": "coauthor", 
+                "full_name": "Kuempel, Edmund"
+            }, 
+            {
+                "leg_id": 293, 
+                "type": "coauthor", 
+                "full_name": "Kolkhorst, Lois W."
+            }, 
+            {
+                "leg_id": 346, 
+                "type": "coauthor", 
+                "full_name": "Kleinschmidt, Tim"
+            }, 
+            {
+                "leg_id": 469, 
+                "type": "coauthor", 
+                "full_name": "King, Susan"
+            }, 
+            {
+                "leg_id": 415, 
+                "type": "coauthor", 
+                "full_name": "King, Phil"
+            }, 
+            {
+                "leg_id": 362, 
+                "type": "coauthor", 
+                "full_name": "Keffer, Jim"
+            }, 
+            {
+                "leg_id": 447, 
+                "type": "coauthor", 
+                "full_name": "Hughes, Bryan"
+            }, 
+            {
+                "leg_id": 445, 
+                "type": "coauthor", 
+                "full_name": "Homer, Mark"
+            }, 
+            {
+                "leg_id": 391, 
+                "type": "coauthor", 
+                "full_name": "Hamilton, Mike "
+            }, 
+            {
+                "leg_id": 347, 
+                "type": "coauthor", 
+                "full_name": "Gonzalez Toureilles, Yvonne"
+            }, 
+            {
+                "leg_id": 339, 
+                "type": "coauthor", 
+                "full_name": "Frost, Stephen"
+            }, 
+            {
+                "leg_id": 379, 
+                "type": "coauthor", 
+                "full_name": "Flynn, Dan"
+            }, 
+            {
+                "leg_id": 461, 
+                "type": "coauthor", 
+                "full_name": "Darby, Drew"
+            }, 
+            {
+                "leg_id": 448, 
+                "type": "coauthor", 
+                "full_name": "Creighton, Brandon"
+            }, 
+            {
+                "leg_id": 449, 
+                "type": "coauthor", 
+                "full_name": "Cook, Byron"
+            }, 
+            {
+                "leg_id": 443, 
+                "type": "coauthor", 
+                "full_name": "Chisum, Warren"
+            }, 
+            {
+                "leg_id": 430, 
+                "type": "coauthor", 
+                "full_name": "Brown, Fred"
+            }, 
+            {
+                "leg_id": 457, 
+                "type": "coauthor", 
+                "full_name": "Aycock, Jimmie Don"
+            }, 
+            {
+                "leg_id": 377, 
+                "type": "coauthor", 
+                "full_name": "Anderson, Charles "
+            }, 
+            {
+                "leg_id": 399, 
+                "type": "author", 
+                "full_name": "Jones, Delwin"
+            }, 
+            {
+                "leg_id": 331, 
+                "type": "author", 
+                "full_name": "Hardcastle, Rick"
+            }, 
+            {
+                "leg_id": 320, 
+                "type": "author", 
+                "full_name": "Hopson, Chuck"
+            }, 
+            {
+                "leg_id": 437, 
+                "type": "author", 
+                "full_name": "Heflin, Joe"
+            }, 
+            {
+                "leg_id": 372, 
+                "type": "author", 
+                "full_name": "Swinford, David"
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB03800_HB03899/HB 3820.xml", 
+                "retrieved": "2010-06-07 17:39:30"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB03800_HB03899", 
+                "retrieved": "2010-06-07 17:39:34"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB03800_HB03899/HB03820I.HTM", 
+                "name": "HB03820I", 
+                "updated_at": "2010-04-17 09:55:08"
+            }
+        ], 
+        "bill_id": "HB 3820"
+    }, 
+    {
+        "votes": [
+            {
+                "other_count": 0, 
+                "sources": [], 
+                "yes_count": 133, 
+                "updated_at": "2010-04-20 12:49:29", 
+                "motion": "final passage", 
+                "chamber": "lower", 
+                "passed": true, 
+                "date": "2009-05-07 20:00:00", 
+                "vote_id": 18976, 
+                "no_count": 3
+            }
+        ], 
+        "last_action": "2009-05-12 20:00:00", 
+        "first_action": "2009-02-22 19:00:00", 
+        "title": "Relating to limited agricultural cooperatives; providing penalties.", 
+        "updated_at": "2010-04-20 12:49:29", 
+        "actions": [
+            {
+                "date": "2009-05-12 20:00:00", 
+                "action": "Referred to Agriculture & Rural Affairs", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-05-12 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-05-10 20:00:00", 
+                "action": "Received from the House", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-05-10 20:00:00", 
+                "action": "Reported engrossed", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-07 20:00:00", 
+                "action": "Statement(s) of vote recorded in Journal", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-07 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-07 20:00:00", 
+                "action": "Passed", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-07 20:00:00", 
+                "action": "Read 3rd time", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-06 20:00:00", 
+                "action": "Passed to engrossment", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-06 20:00:00", 
+                "action": "Read 2nd time", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Placed on General State Calendar", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-03 20:00:00", 
+                "action": "Considered in Calendars", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-05 20:00:00", 
+                "action": "Committee report sent to Calendars", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-02 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-02 20:00:00", 
+                "action": "Comte report filed with Committee Coordinator", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Reported favorably as substituted", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-23 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-02 19:00:00", 
+                "action": "Referred to Agriculture & Livestock", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-02 19:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-02-22 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:23:46", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 372, 
+                "type": "author", 
+                "full_name": "Swinford, David"
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB01600_HB01699/HB 1617.xml", 
+                "retrieved": "2010-06-07 13:04:23"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01600_HB01699", 
+                "retrieved": "2010-06-07 13:04:27"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01600_HB01699/HB01617E.HTM", 
+                "name": "HB01617E", 
+                "updated_at": "2010-04-17 09:50:01"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01600_HB01699/HB01617H.HTM", 
+                "name": "HB01617H", 
+                "updated_at": "2010-04-17 09:50:01"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB01600_HB01699/HB01617I.HTM", 
+                "name": "HB01617I", 
+                "updated_at": "2010-04-17 09:50:01"
+            }
+        ], 
+        "bill_id": "HB 1617"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-05-21 20:00:00", 
+        "first_action": "2009-02-18 19:00:00", 
+        "title": "Relating to small and large employer health group cooperatives.", 
+        "updated_at": "2010-04-17 09:52:55", 
+        "actions": [
+            {
+                "date": "2009-05-21 20:00:00", 
+                "action": "Placed on General State Calendar", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-19 20:00:00", 
+                "action": "Considered in Calendars", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-18 20:00:00", 
+                "action": "Committee report sent to Calendars", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-17 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-17 20:00:00", 
+                "action": "Comte report filed with Committee Coordinator", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-06 20:00:00", 
+                "action": "Reported favorably as amended", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-06 20:00:00", 
+                "action": "Amendment(s) considered in committee", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-06 20:00:00", 
+                "action": "Considered in formal meeting", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-04 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-04 20:00:00", 
+                "action": "Amendment(s) considered in committee", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-04 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-04 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-04 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-15 20:00:00", 
+                "action": "Referred to Insurance", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-15 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Received from the Senate", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Reported engrossed", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Passed", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Read 3rd time", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Three day rule suspended", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Vote recorded in Journal", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Read 2nd time & passed to engrossment", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Laid before the Senate", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Placed on local & uncontested calendar", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-25 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-25 20:00:00", 
+                "action": "Recommended for local & uncontested calendar", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-25 20:00:00", 
+                "action": "Reported favorably as substituted", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-22 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-18 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-18 20:00:00", 
+                "action": "Testimony taken in committee", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-18 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-18 20:00:00", 
+                "action": "Scheduled for public hearing on  . . .", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-17 20:00:00", 
+                "action": "Co-author authorized", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-08 20:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-08 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-02-18 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-02-18 19:00:00", 
+                "action": "Received by the Secretary of the Senate", 
+                "updated_at": "2010-04-14 20:36:30", 
+                "actor": "upper"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 354, 
+                "type": "coauthor", 
+                "full_name": "Jane Nelson"
+            }, 
+            {
+                "leg_id": 307, 
+                "type": "author", 
+                "full_name": "Kip Averitt"
+            }
+        ], 
+        "chamber": "upper", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/senate_bills/SB00900_SB00999/SB 972.xml", 
+                "retrieved": "2010-06-07 06:09:41"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999", 
+                "retrieved": "2010-06-07 06:09:45"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00972E.HTM", 
+                "name": "SB00972E", 
+                "updated_at": "2010-04-17 09:52:55"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00972H.HTM", 
+                "name": "SB00972H", 
+                "updated_at": "2010-04-17 09:52:55"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00972I.HTM", 
+                "name": "SB00972I", 
+                "updated_at": "2010-04-17 09:52:55"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00900_SB00999/SB00972S.HTM", 
+                "name": "SB00972S", 
+                "updated_at": "2010-04-17 09:52:55"
+            }
+        ], 
+        "bill_id": "SB 972"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-03-25 20:00:00", 
+        "first_action": "2009-03-12 20:00:00", 
+        "title": "Relating to the recovery of transmission costs imposed on electric cooperatives and certain utilities in ERCOT.", 
+        "updated_at": "2010-04-17 09:48:32", 
+        "actions": [
+            {
+                "date": "2009-03-25 20:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:15:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-25 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:15:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-12 20:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:15:05", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB04600_HB04699/HB 4645.xml", 
+                "retrieved": "2010-06-07 19:23:15"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB04600_HB04699", 
+                "retrieved": "2010-06-07 19:23:20"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB04600_HB04699/HB04645I.HTM", 
+                "name": "HB04645I", 
+                "updated_at": "2010-04-17 09:48:32"
+            }
+        ], 
+        "bill_id": "HB 4645"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-05-10 20:00:00", 
+        "first_action": "2009-03-12 20:00:00", 
+        "title": "Relating to the exemption of certain electric cooperatives from certain regulations.", 
+        "updated_at": "2010-04-17 09:52:45", 
+        "actions": [
+            {
+                "date": "2009-05-10 20:00:00", 
+                "action": "Placed on General State Calendar", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-07 20:00:00", 
+                "action": "Considered in Calendars", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-04 20:00:00", 
+                "action": "Committee report sent to Calendars", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-03 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-03 20:00:00", 
+                "action": "Comte report filed with Committee Coordinator", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-29 20:00:00", 
+                "action": "Reported favorably as substituted", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-29 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-29 20:00:00", 
+                "action": "Considered in formal meeting", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-22 20:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-22 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-12 20:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:35:30", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 443, 
+                "type": "author", 
+                "full_name": "Chisum, Warren"
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB04100_HB04199/HB 4107.xml", 
+                "retrieved": "2010-06-07 18:15:55"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB04100_HB04199", 
+                "retrieved": "2010-06-07 18:15:59"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB04100_HB04199/HB04107H.HTM", 
+                "name": "HB04107H", 
+                "updated_at": "2010-04-17 09:52:45"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB04100_HB04199/HB04107I.HTM", 
+                "name": "HB04107I", 
+                "updated_at": "2010-04-17 09:52:45"
+            }
+        ], 
+        "bill_id": "HB 4107"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-05-07 20:00:00", 
+        "first_action": "2009-03-04 19:00:00", 
+        "title": "Relating to small and large employer health group cooperatives.", 
+        "updated_at": "2010-04-17 09:52:50", 
+        "actions": [
+            {
+                "date": "2009-05-07 20:00:00", 
+                "action": "Placed on General State Calendar", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-05 20:00:00", 
+                "action": "Considered in Calendars", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Committee report sent to Calendars", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Comte report filed with Committee Coordinator", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-27 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Scheduled for formal meeting on . . .", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Reported favorably as substituted", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Amendment(s) considered in committee", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-08 20:00:00", 
+                "action": "Considered in formal meeting", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Testimony taken/registration(s) recorded in committee", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Committee substitute considered in committee", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-16 20:00:00", 
+                "action": "Scheduled for public hearing on . . .", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-11 20:00:00", 
+                "action": "Referred to Insurance", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-11 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-03-04 19:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:36:05", 
+                "actor": "lower"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 358, 
+                "type": "author", 
+                "full_name": "Smithee, John T."
+            }
+        ], 
+        "chamber": "lower", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/house_bills/HB02500_HB02599/HB 2586.xml", 
+                "retrieved": "2010-06-07 15:05:27"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB02500_HB02599", 
+                "retrieved": "2010-06-07 15:05:31"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB02500_HB02599/HB02586H.HTM", 
+                "name": "HB02586H", 
+                "updated_at": "2010-04-17 09:52:50"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/house_bills/HB02500_HB02599/HB02586I.HTM", 
+                "name": "HB02586I", 
+                "updated_at": "2010-04-17 09:52:50"
+            }
+        ], 
+        "bill_id": "HB 2586"
+    }, 
+    {
+        "votes": [], 
+        "last_action": "2009-05-22 20:00:00", 
+        "first_action": "2009-03-12 20:00:00", 
+        "title": "Relating to the exemption of certain electric cooperatives from certain regulations.", 
+        "updated_at": "2010-04-17 09:53:05", 
+        "actions": [
+            {
+                "date": "2009-05-22 20:00:00", 
+                "action": "Placed on Major State Calendar", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-20 20:00:00", 
+                "action": "Considered in Calendars", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-19 20:00:00", 
+                "action": "Committee report sent to Calendars", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-19 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-19 20:00:00", 
+                "action": "Comte report filed with Committee Coordinator", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-17 20:00:00", 
+                "action": "Reported favorably w/o amendment(s)", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-17 20:00:00", 
+                "action": "Considered in formal meeting", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-03 20:00:00", 
+                "action": "Referred to State Affairs", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-05-03 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Received from the Senate", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "lower"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Reported engrossed", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Passed", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Read 3rd time", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Record vote", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Three day rule suspended", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Vote recorded in Journal", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Passed to engrossment as amended", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Vote recorded in Journal", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Amended", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Amendment(s) offered", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Read 2nd time", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-28 20:00:00", 
+                "action": "Rules suspended-Regular order of business", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-26 20:00:00", 
+                "action": "Placed on intent calendar", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-22 20:00:00", 
+                "action": "Committee report printed and distributed", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-22 20:00:00", 
+                "action": "Recommended for local & uncontested calendar", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-22 20:00:00", 
+                "action": "Reported favorably as substituted", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-20 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-13 20:00:00", 
+                "action": "Left pending in committee", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-13 20:00:00", 
+                "action": "Testimony taken in committee", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-13 20:00:00", 
+                "action": "Considered in public hearing", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-04-13 20:00:00", 
+                "action": "Scheduled for public hearing on  . . .", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-30 20:00:00", 
+                "action": "Referred to Natural Resources", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-30 20:00:00", 
+                "action": "Read first time", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-12 20:00:00", 
+                "action": "Filed", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }, 
+            {
+                "date": "2009-03-12 20:00:00", 
+                "action": "Received by the Secretary of the Senate", 
+                "updated_at": "2010-04-14 20:37:08", 
+                "actor": "upper"
+            }
+        ], 
+        "sponsors": [
+            {
+                "leg_id": 292, 
+                "type": "author", 
+                "full_name": "Kel Seliger"
+            }
+        ], 
+        "chamber": "upper", 
+        "state": "tx", 
+        "session": "81", 
+        "sources": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/senate_bills/SB02200_SB02299/SB 2236.xml", 
+                "retrieved": "2010-06-07 08:49:58"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB02200_SB02299", 
+                "retrieved": "2010-06-07 08:50:00"
+            }
+        ], 
+        "versions": [
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB02200_SB02299/SB02236E.HTM", 
+                "name": "SB02236E", 
+                "updated_at": "2010-04-17 09:53:05"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB02200_SB02299/SB02236H.HTM", 
+                "name": "SB02236H", 
+                "updated_at": "2010-04-17 09:53:05"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB02200_SB02299/SB02236I.HTM", 
+                "name": "SB02236I", 
+                "updated_at": "2010-04-17 09:53:05"
+            }, 
+            {
+                "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB02200_SB02299/SB02236S.HTM", 
+                "name": "SB02236S", 
+                "updated_at": "2010-04-17 09:53:05"
+            }
+        ], 
+        "bill_id": "SB 2236"
+    }
+]
