@@ -1,26 +1,4 @@
 module GovKit
-  class GovKitError < StandardError
-    attr_reader :response
-
-    def initialize(response, message = nil)
-      @response = response
-      @message  = message
-    end
-
-    def to_s
-      "Failed with #{response.code if response.respond_to?(:code)} #{response.message if response.respond_to?(:message)}"
-    end
-  end
-
-  class NotAuthorized < GovKitError;
-  end
-
-  class InvalidRequest < GovKitError;
-  end
-
-  class ResourceNotFound < GovKitError;
-  end
-
   class Resource
     include HTTParty
     format :json
@@ -34,7 +12,7 @@ module GovKit
 
     class << self
       def instantiate_record(record)
-        raise GovKit::ResourceNotFound, "Resource not found" unless !record.blank?
+        raise ResourceNotFoundError, "Resource not found" unless !record.blank?
         new(record)
       end
 

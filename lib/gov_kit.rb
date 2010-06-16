@@ -41,4 +41,25 @@ module GovKit
     attr_accessor :url, :excerpt, :title, :source, :date, :weight
   end
 
+  class GovKitError < StandardError
+    attr_reader :response
+
+    def initialize(response, message = nil)
+      @response = response
+      @message  = message
+    end
+
+    def to_s
+      "Failed with #{response.code if response.respond_to?(:code)} #{response.message if response.respond_to?(:message)}"
+    end
+  end
+
+  class NotAuthorizedError < GovKitError;
+  end
+
+  class InvalidRequestError < GovKitError;
+  end
+
+  class ResourceNotFoundError < GovKitError;
+  end
 end
