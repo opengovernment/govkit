@@ -3,19 +3,21 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 module GovKit::FiftyStates
   describe GovKit::FiftyStates do
     before(:all) do
+      base_uri = GovKit::FiftyStatesResource.base_uri.gsub(/\./, '\.')
+      
       urls = [
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/ca/\?|,                             'state.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/ca/20092010/lower/bills/AB667/|,    'bill.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/bills/search/\?|,                   'bill_query.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/bills/latest/\?|,                   'bill_query.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/legislators/2462/\?|,               'legislator.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/legislators/410/\?|,                '410.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/legislators/401/\?|,                '401.response'],
-        [%r|http://fiftystates-dev\.sunlightlabs\.com/api/legislators/search/\?|,             'legislator_query.response']
+        ['/ca/\?',                             'state.response'],
+        ['/ca/20092010/lower/bills/AB667/',    'bill.response'],
+        ['/bills/search/\?',                   'bill_query.response'],
+        ['/bills/latest/\?',                   'bill_query.response'],
+        ['/legislators/2462/\?',               'legislator.response'],
+        ['/legislators/410/\?',                '410.response'],
+        ['/legislators/401/\?',                '401.response'],
+        ['/legislators/search/\?',             'legislator_query.response']
       ]
 
       urls.each do |u|
-        FakeWeb.register_uri(:get, u[0], :response => File.join(FIXTURES_DIR, 'fifty_states', u[1]))
+        FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'fifty_states', u[1]))
       end
     end
 
@@ -25,10 +27,11 @@ module GovKit::FiftyStates
       end
     end
 
-    it "should raise GovKit::NotAuthorized if the api key is not valid" do
+    it "should raise NotAuthorizedError if the api key is not valid" do
+      # The Fifty States API returns a 401 Not Authorized if the API key is invalid.
       lambda do 
         @legislator = Legislator.find(401)
-      end.should raise_error(GovKit::NotAuthorized)
+      end.should raise_error(GovKit::NotAuthorizedError)
       
       @legislator.should be_nil
     end
@@ -43,7 +46,7 @@ module GovKit::FiftyStates
             @state = State.find_by_abbreviation('ca')
           end.should_not raise_error
 
-          @state.should_not be_nil
+          @state.should be_an_instance_of(State)
           @state.name.should == "California"
           @state.sessions.size.should == 8
         end
@@ -57,7 +60,7 @@ module GovKit::FiftyStates
             @bill = Bill.find('ca', 20092010, 'lower', 'AB667')
           end.should_not raise_error
 
-          @bill.should_not be_nil
+          @bill.should be_an_instance_of(Bill)
           @bill.title.should include("An act to amend Section 1750.1 of the Business and Professions Code, and to amend Section 104830 of")
         end
       end
@@ -66,7 +69,10 @@ module GovKit::FiftyStates
         it "should find bills by given criteria" do
           @bills = Bill.search('cooperatives')
 
-          @bills.should_not be_nil
+          @bills.should be_an_instance_of(Array)
+          @bills.each do |b|
+            b.should be_an_instance_of(Bill)
+          end
           @bills.collect(&:bill_id).should include("SB 921")
         end
       end
@@ -77,6 +83,10 @@ module GovKit::FiftyStates
             @latest = Bill.latest('2010-01-01','tx')
           end.should_not raise_error
 
+          @latest.should be_an_instance_of(Array)
+          @latest.each do |b|
+            b.should be_an_instance_of(Bill)
+          end
           @latest.collect(&:bill_id).should include("SB 2236")
         end
       end
@@ -88,15 +98,16 @@ module GovKit::FiftyStates
           lambda do
             @legislator = Legislator.find(2462)
           end.should_not raise_error
-
+          
+          @legislator.should be_an_instance_of(Legislator)
           @legislator.first_name.should == "Dave"
           @legislator.last_name.should == "Cox"
         end
         
-        it "should return an error if the legislator is not found" do
+        it "should raise a GovKitError if the legislator is not found" do
           lambda do
             @legislator = Legislator.find(410)
-          end.should raise_error(GovKit::ResourceNotFound)
+          end.should raise_error(GovKit::ResourceNotFoundError)
 
           @legislator.should be_nil
         end
@@ -107,8 +118,11 @@ module GovKit::FiftyStates
           lambda do
             @legislators = Legislator.search(:state => 'ca')
           end.should_not raise_error
-
-          @legislators.should_not be_nil
+          
+          @legislators.should be_an_instance_of(Array)
+          @legislators.each do |l|
+            l.should be_an_instance_of(Legislator)
+          end
         end
       end
     
