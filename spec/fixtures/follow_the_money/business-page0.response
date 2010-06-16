@@ -1,0 +1,28 @@
+HTTP/1.1 200 OK
+Date: Wed, 16 Jun 2010 21:59:36 GMT
+Server: Apache/1.3.37 (Unix) PHP/5.2.0 mod_ssl/2.8.28 OpenSSL/0.9.8b
+X-Powered-By: PHP/5.2.0
+Transfer-Encoding: chunked
+Content-Type: text/xml
+
+<base_level.industries.list sort="" page="0" next_page="yes" record_count="19" origin="Institute on Money in State Politics" process_timestamp="06-16-2010 14:59:36" update_timestamp="06-16-2010 02:08:46">
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="1" industry_name="Miscellaneous Agriculture" business_name="Miscellaneous agriculture"></business_detail>
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="2" industry_name="Crop Production &amp; Basic Processing" business_name="Farmers, in general"></business_detail>
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="2" industry_name="Crop Production &amp; Basic Processing" business_name="Cotton growers, cotton ginners"></business_detail>
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="2" industry_name="Crop Production &amp; Basic Processing" business_name="Includes all sugar growers and sugar co-ops"></business_detail>
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="3" industry_name="Tobacco" business_name="Tobacco &amp; tobacco products"></business_detail>
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="2" industry_name="Crop Production &amp; Basic Processing" business_name="Vegetables, fruits &amp; tree nuts"></business_detail>
+<business_detail imsp_sector_code="1" sector_name="Agriculture" imsp_industry_code="2" industry_name="Crop Production &amp; Basic Processing" business_name="Wheat, corn, soybeans &amp; cash grain"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="11" industry_name="General Contractors" business_name="Construction &amp; public works"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="11" industry_name="General Contractors" business_name="Builders associations"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="11" industry_name="General Contractors" business_name="Public works, industrial &amp; commercial construction"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="11" industry_name="General Contractors" business_name="Construction, unclassified"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="12" industry_name="Home Builders" business_name="Residential construction"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="12" industry_name="Home Builders" business_name="Mobile home construction"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="13" industry_name="Special Trade Contractors" business_name="Special trade contractors"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="13" industry_name="Special Trade Contractors" business_name="Electrical contractors"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="13" industry_name="Special Trade Contractors" business_name="Plumbing, heating &amp; air conditioning"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="13" industry_name="Special Trade Contractors" business_name="Landscaping &amp; excavation services"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="14" industry_name="Construction Services" business_name="Engineering, architecture &amp; construction management services"></business_detail>
+<business_detail imsp_sector_code="2" sector_name="Construction" imsp_industry_code="14" industry_name="Construction Services" business_name="Architectural services"></business_detail>
+</base_level.industries.list>

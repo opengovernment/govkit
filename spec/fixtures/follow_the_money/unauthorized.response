@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Date: Wed, 16 Jun 2010 17:31:45 GMT
+Server: Apache/1.3.37 (Unix) PHP/5.2.0 mod_ssl/2.8.28 OpenSSL/0.9.8b
+X-Powered-By: PHP/5.2.0
+Connection: close
+Content-Type: text/xml
+
+<error code="100" text="invalid key" origin="Institute on Money in State Politics" process_timestamp="06-16-2010 10:30:03" update_timestamp="06-16-2010 02:08:46"></error>
