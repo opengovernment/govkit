@@ -12,7 +12,7 @@ module GovKit
 
     class << self
       def instantiate_record(record)
-        raise ResourceNotFoundError, "Resource not found" unless !record.blank?
+        raise ResourceNotFound, "Resource not found" unless !record.blank?
         new(record)
       end
 
@@ -21,7 +21,7 @@ module GovKit
       end
 
       def parse(json)
-        instantiate_record(json)
+        instantiate(json)
       end
 
       def instantiate(record)
@@ -76,7 +76,7 @@ module GovKit
     end
 
     def find_or_create_resource_for(name)
-      resource_name = name.to_s.camelize
+      resource_name = name.to_s.gsub(/^_/,'').camelize
       ancestors = self.class.name.split("::")
       if ancestors.size > 1
         find_resource_in_modules(resource_name, ancestors)

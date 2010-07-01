@@ -1,4 +1,4 @@
-module GovKit 
+module GovKit
   class FollowTheMoneyResource < Resource
     default_params :key => GovKit::configuration.ftm_apikey
     base_uri GovKit::configuration.ftm_base_url
@@ -13,9 +13,9 @@ module GovKit
       if e.size > 0
         raise case e.first.attributes['code']
         when "100":
-          GovKit::NotAuthorizedError
+          GovKit::NotAuthorized
         when "300":
-          GovKit::InvalidRequestError
+          GovKit::InvalidRequest
         end, e.first.attributes['text']
       end
 

@@ -54,12 +54,12 @@ module GovKit
     end
   end
 
-  class NotAuthorizedError < GovKitError;
+  class NotAuthorized < GovKitError;
   end
 
-  class InvalidRequestError < GovKitError;
+  class InvalidRequest < GovKitError;
   end
 
-  class ResourceNotFoundError < GovKitError;
+  class ResourceNotFound < GovKitError;
   end
 end

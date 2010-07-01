@@ -18,11 +18,11 @@ module GovKit
         stories.each do |story|
           citation = GovKit::Citation.new
 
-          citation.title = story.at("h2.title a").inner_text.html_safe!
+          citation.title = story.at("h2.title a").inner_text.html_safe
           citation.url = story.at("h2.title a").attributes["href"]
-          citation.date = story.at("div.sub-title > span.date").inner_html.html_safe!
-          citation.source = story.at("div.sub-title > span.source").inner_html.html_safe!
-          citation.excerpt = story.at("div.body > div.snippet").inner_html.html_safe!
+          citation.date = story.at("div.sub-title > span.date").inner_html.html_safe
+          citation.source = story.at("div.sub-title > span.source").inner_html.html_safe
+          citation.excerpt = story.at("div.body > div.snippet").inner_html.html_safe
 
           citations << citation
         end
