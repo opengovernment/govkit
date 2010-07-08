@@ -99,7 +99,7 @@ module GovKit
         when "="
           attributes[method_name.first(-1)] = arguments.first
         when "?"
-          attributes[method_name.first(-1)]
+          !attributes[method_name.first(-1)].blank?
         when "]"
           attributes[arguments.first.to_s]
         else
