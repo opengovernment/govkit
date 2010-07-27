@@ -16,27 +16,6 @@ module GovKit
   autoload :OpenCongress, 'gov_kit/open_congress'
   autoload :SearchEngines, 'gov_kit/search_engines'
 
-  class Bill < Resource;
-  end
-  class Vote < Resource;
-  end
-  class Session < Resource;
-  end
-  class Role < Resource;
-  end
-  class Legislator < Resource;
-  end
-  class Vote < Resource;
-  end
-  class Sponsor < Resource;
-  end
-  class Version < Resource;
-  end
-  class Source < Resource;
-  end
-  class Address < Resource;
-  end
-
   class Citation
     attr_accessor :url, :excerpt, :title, :source, :date, :weight
   end

@@ -47,6 +47,16 @@ module GovKit
       end
     end
 
+    class Role < FiftyStatesResource; end
+
+    class Sponsor < FiftyStatesResource; end
+
+    class Version < FiftyStatesResource; end
+
+    class Source < FiftyStatesResource; end
+
+    class Address < FiftyStatesResource; end
+
     class Vote < FiftyStatesResource
       def self.find(vote_id)
         response = get("/votes/#{vote_id}/")
