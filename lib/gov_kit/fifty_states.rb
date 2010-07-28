@@ -57,6 +57,8 @@ module GovKit
 
     class Address < FiftyStatesResource; end
 
+    class Action < FiftyStatesResource; end
+
     class Vote < FiftyStatesResource
       def self.find(vote_id)
         response = get("/votes/#{vote_id}/")
