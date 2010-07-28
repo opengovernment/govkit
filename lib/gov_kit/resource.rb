@@ -63,12 +63,8 @@ module GovKit
       find_or_create_resource_for(name.to_s.singularize)
     end
 
-    def find_resource_in_modules(resource_name, module_names)
-      receiver = Object
-      namespaces = module_names[0, module_names.size-1].map do |module_name|
-        receiver = receiver.const_get(module_name)
-      end
-      if namespace = namespaces.reverse.detect { |ns| ns.const_defined?(resource_name) }
+    def find_resource_in_modules(resource_name, ancestors)
+      if namespace = ancestors.detect { |a| a.constants.include?(resource_name.to_sym) }
         return namespace.const_get(resource_name)
       else
         raise NameError, "Namespace for #{namespace} not found"
@@ -77,9 +73,8 @@ module GovKit
 
     def find_or_create_resource_for(name)
       resource_name = name.to_s.gsub(/^_/,'').camelize
-      ancestors = self.class.name.split("::")
-      if ancestors.size > 1
-        find_resource_in_modules(resource_name, ancestors)
+      if self.class.parents.size > 1
+        find_resource_in_modules(resource_name, self.class.parents)
       else
         self.class.const_get(resource_name)
       end
