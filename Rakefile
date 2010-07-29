@@ -19,7 +19,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "govkit"
     gem.summary = %Q{Simple access to open government APIs around the web}
-    gem.description = %Q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Fifty States API and the Project Vote Smart API.}
+    gem.description = %Q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
     gem.email = "carl@ppolitics.org"
     gem.homepage = "http://github.com/opengovernment/govkit"
     gem.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]

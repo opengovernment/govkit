@@ -1,13 +1,13 @@
 module GovKit
   class Configuration
-    attr_accessor :fiftystates_apikey, :fiftystates_base_url
+    attr_accessor :openstates_apikey, :openstates_base_url
     attr_accessor :votesmart_apikey, :votesmart_base_url
     attr_accessor :ftm_apikey, :ftm_base_url
     attr_accessor :opencongress_apikey, :opencongress_base_url
 
     def initialize
-      @fiftystates_apikey = @votesmart_apikey = @ftm_apikey = ''
-      @fiftystates_base_url = 'fiftystates-dev.sunlightlabs.com/api'
+      @openstates_apikey = @votesmart_apikey = @ftm_apikey = ''
+      @openstates_base_url = 'fiftystates-dev.sunlightlabs.com/api'
       @votesmart_base_url = 'api.votesmart.org/'
       @ftm_base_url = 'api.followthemoney.org/'
       @opencongress_base_url = 'www.opencongress.org/'
@@ -22,7 +22,7 @@ module GovKit
   #
   # @example
   #   GovKit.configure do |config|
-  #     config.fiftystates_apikey = ''
+  #     config.openstates_apikey = ''
   #   end
   def self.configure
     self.configuration ||= Configuration.new

@@ -1,23 +1,23 @@
 module GovKit
-  class FiftyStatesResource < Resource
-    default_params :output => 'json', :apikey => GovKit::configuration.fiftystates_apikey
-    base_uri GovKit::configuration.fiftystates_base_url
+  class OpenStatesResource < Resource
+    default_params :output => 'json', :apikey => GovKit::configuration.openstates_apikey
+    base_uri GovKit::configuration.openstates_base_url
   end
 
-  module FiftyStates
+  module OpenStates
     ROLE_MEMBER = "member"
     ROLE_COMMITTEE_MEMBER = "committee member"
     CHAMBER_UPPER = "upper"
     CHAMBER_LOWER = "lower"
 
-    class State < FiftyStatesResource
+    class State < OpenStatesResource
       def self.find_by_abbreviation(abbreviation)
         response = get("/#{abbreviation}/")
         instantiate_record(response)
       end
     end
 
-    class Bill < FiftyStatesResource
+    class Bill < OpenStatesResource
       # http://fiftystates-dev.sunlightlabs.com/api/ca/20092010/lower/bills/AB667/
       def self.find(state_abbrev, session, chamber, bill_id)
         response = get("/#{state_abbrev}/#{session}/#{chamber}/bills/#{bill_id}/")
@@ -35,7 +35,7 @@ module GovKit
       end
     end
 
-    class Legislator < FiftyStatesResource
+    class Legislator < OpenStatesResource
       def self.find(legislator_id)
         response = get("/legislators/#{legislator_id}/")
         instantiate_record(response)
@@ -47,19 +47,19 @@ module GovKit
       end
     end
 
-    class Role < FiftyStatesResource; end
+    class Role < OpenStatesResource; end
 
-    class Sponsor < FiftyStatesResource; end
+    class Sponsor < OpenStatesResource; end
 
-    class Version < FiftyStatesResource; end
+    class Version < OpenStatesResource; end
 
-    class Source < FiftyStatesResource; end
+    class Source < OpenStatesResource; end
 
-    class Address < FiftyStatesResource; end
+    class Address < OpenStatesResource; end
 
-    class Action < FiftyStatesResource; end
+    class Action < OpenStatesResource; end
 
-    class Vote < FiftyStatesResource
+    class Vote < OpenStatesResource
       def self.find(vote_id)
         response = get("/votes/#{vote_id}/")
         instantiate_record(response)

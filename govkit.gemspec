@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
   s.date = %q{2010-06-10}
-  s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Fifty States API and the Project Vote Smart API.}
+  s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{carl@ppolitics.org}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
      "lib/gov_kit.rb",
      "lib/gov_kit/acts_as_citeable.rb",
      "lib/gov_kit/configuration.rb",
-     "lib/gov_kit/fifty_states.rb",
+     "lib/gov_kit/open_states.rb",
      "lib/gov_kit/follow_the_money.rb",
      "lib/gov_kit/open_congress.rb",
      "lib/gov_kit/open_congress/bill.rb",
@@ -49,7 +49,7 @@ Gem::Specification.new do |s|
      "lib/gov_kit/vote_smart.rb",
      "lib/govkit.rb",
      "rails/init.rb",
-     "spec/fifty_states_spec.rb",
+     "spec/open_states_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
   ]
@@ -59,7 +59,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simple access to open government APIs around the web}
   s.test_files = [
-    "spec/fifty_states_spec.rb",
+    "spec/open_states_spec.rb",
      "spec/spec_helper.rb"
   ]
 

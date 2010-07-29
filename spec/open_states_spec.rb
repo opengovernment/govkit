@@ -1,10 +1,10 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-module GovKit::FiftyStates
-  describe GovKit::FiftyStates do
+module GovKit::OpenStates
+  describe GovKit::OpenStates do
     before(:all) do
-      base_uri = GovKit::FiftyStatesResource.base_uri.gsub(/\./, '\.')
-      
+      base_uri = GovKit::OpenStatesResource.base_uri.gsub(/\./, '\.')
+
       urls = [
         ['/ca/\?',                             'state.response'],
         ['/ca/20092010/lower/bills/AB667/',    'bill.response'],
@@ -17,7 +17,7 @@ module GovKit::FiftyStates
       ]
 
       urls.each do |u|
-        FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'fifty_states', u[1]))
+        FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'open_states', u[1]))
       end
     end
 
@@ -28,11 +28,11 @@ module GovKit::FiftyStates
     end
 
     it "should raise NotAuthorizedError if the api key is not valid" do
-      # The Fifty States API returns a 401 Not Authorized if the API key is invalid.
-      lambda do 
+      # The Open States API returns a 401 Not Authorized if the API key is invalid.
+      lambda do
         @legislator = Legislator.find(401)
       end.should raise_error(GovKit::NotAuthorizedError)
-      
+
       @legislator.should be_nil
     end
 
@@ -98,12 +98,12 @@ module GovKit::FiftyStates
           lambda do
             @legislator = Legislator.find(2462)
           end.should_not raise_error
-          
+
           @legislator.should be_an_instance_of(Legislator)
           @legislator.first_name.should == "Dave"
           @legislator.last_name.should == "Cox"
         end
-        
+
         it "should raise a GovKitError if the legislator is not found" do
           lambda do
             @legislator = Legislator.find(410)
@@ -118,14 +118,14 @@ module GovKit::FiftyStates
           lambda do
             @legislators = Legislator.search(:state => 'ca')
           end.should_not raise_error
-          
+
           @legislators.should be_an_instance_of(Array)
           @legislators.each do |l|
             l.should be_an_instance_of(Legislator)
           end
         end
       end
-    
+
     end
   end
 end
