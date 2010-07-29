@@ -12,9 +12,9 @@ module GovKit
       # API Key invalid
       if e.size > 0
         raise case e.first.attributes['code']
-        when "100":
+        when "100"
           GovKit::NotAuthorized
-        when "300":
+        when "300"
           GovKit::InvalidRequest
         end, e.first.attributes['text']
       end
