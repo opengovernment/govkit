@@ -58,14 +58,24 @@ module GovKit
 
     class Bill < VoteSmartResource
       def self.find(bill_id)
-        response = get("/Votes.getBill", :query => {"billId" => bill_id})
+        response = get('/Votes.getBill', :query => {'billId' => bill_id})
         instantiate_record(response['bill'])
       end
 
       def self.find_by_year_and_state(year, state_abbrev)
-        response = get("/Votes.getBillsByYearState", :query => {"year" => year, "stateId" => state_abbrev})
+        response = get('/Votes.getBillsByYearState', :query => {'year' => year, 'stateId' => state_abbrev})
+        instantiate_record(response['bills'])
+      rescue
+        return nil if response.parsed_response && response.parsed_response['error']['errorMessage'] == 'No bills for this state and year.'
+        raise
+      end
+
+      
+      def self.find_recent_by_state(state_abbrev)
+        response = get('/Votes.getBillsByStateRecent', :query => {'stateId' => state_abbrev})
         instantiate_record(response['bills'])
       end
+      
     end
 
     # See http://api.votesmart.org/docs/Committee.html
@@ -74,13 +84,13 @@ module GovKit
       # If type_id is nil, defaults to all types.
       # This method maps to Committee.getCommitteesByTypeState()
       def self.find_by_type_and_state(type_id, state_abbrev)
-        response = get("/Committee.getCommitteesByTypeState", :query => {"typeId" => type_id, "stateId" => state_abbrev})
+        response = get('/Committee.getCommitteesByTypeState', :query => {'typeId' => type_id, 'stateId' => state_abbrev})
         instantiate_record(response['committees'])
       end
 
       # Find a committee by VoteSmart committeeId. Maps to Committee.getCommittee()
       def self.find(committee_id)
-        response = get("/Committee.getCommittee", :query => {"committeeId" => committee_id})
+        response = get('/Committee.getCommittee', :query => {'committeeId' => committee_id})
         instantiate_record(response['committee'])
       end
     end
