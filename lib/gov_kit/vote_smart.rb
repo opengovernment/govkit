@@ -36,9 +36,10 @@ module GovKit
     class SIG < VoteSmartResource
       def self.list(category_id, state_id)
         response = get("/Rating.getSigList", :query => {"categoryId" => category_id, "stateId" => state_id})
+
+        raise(ResourceNotFound, response['error']['errorMessage']) if response['error'] && response['error']['errorMessage'] == 'No SIGs fit this criteria.'
+
         instantiate(response['sigs']['sig'])
-      rescue
-        pp response
       end
 
       def self.find(sig_id)
@@ -50,9 +51,10 @@ module GovKit
     class Rating < VoteSmartResource
       def self.find(candidate_id, sig_id)
         response = get("/Rating.getCandidateRating", :query => {"candidateId" => candidate_id, "sigId" => sig_id})
+
+        raise(ResourceNotFound, response['error']['errorMessage']) if response['error'] && response['error']['errorMessage'] == 'No Ratings fit this criteria.'
+
         instantiate(response['candidateRating']['rating'])
-      rescue
-        pp response
       end
     end
 
@@ -64,10 +66,9 @@ module GovKit
 
       def self.find_by_year_and_state(year, state_abbrev)
         response = get('/Votes.getBillsByYearState', :query => {'year' => year, 'stateId' => state_abbrev})
+        raise(ResourceNotFound, response['error']['errorMessage']) if response['error'] && response['error']['errorMessage'] == 'No bills for this state and year.'
+
         instantiate_record(response['bills'])
-      rescue
-        return nil if response.parsed_response && response.parsed_response['error']['errorMessage'] == 'No bills for this state and year.'
-        raise
       end
 
       
