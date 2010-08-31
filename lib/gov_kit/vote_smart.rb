@@ -71,12 +71,28 @@ module GovKit
         instantiate_record(response['bills'])
       end
 
-      
       def self.find_recent_by_state(state_abbrev)
         response = get('/Votes.getBillsByStateRecent', :query => {'stateId' => state_abbrev})
         instantiate_record(response['bills'])
       end
       
+      def self.find_by_category_and_year_and_state(category_id, year, state_abbrev = nil)
+        response = get('/Votes.getBillsByCategoryYearState', :query => {'stateId' => state_abbrev, 'year' => year, 'categoryId' => category_id})
+        raise(ResourceNotFound, response['error']['errorMessage']) if response['error'] && response['error']['errorMessage'] == 'No bills for this state, category, and year.'
+
+        instantiate_record(response['bills'])
+      end
+
+      def self.find_by_category_and_year(category_id, year)
+        find_by_category_and_year_and_state(category_id, year)
+      end
+    end
+    
+    class BillCategory < VoteSmartResource
+      def self.find(year, state_abbrev)
+        response = get("/Votes.getCategories", :query => {'year' => year, 'stateId' => state_abbrev})
+        instantiate(response['categories']['category'])
+      end
     end
 
     # See http://api.votesmart.org/docs/Committee.html
