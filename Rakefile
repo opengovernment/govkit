@@ -2,13 +2,12 @@ require 'rubygems'
 require 'rake'
 require 'rake/rdoctask'
 
-
 begin
-  require 'spec/rake/spectask'
+  require 'rspec/core/rake_task'
 rescue LoadError
   begin
-    gem 'rspec-rails', '>= 1.0.0'
-    require 'spec/rake/spectask'
+    gem 'rspec-rails', '>= 2.0.0'
+    require 'rspec/core/rake_task'
   rescue LoadError
     puts "[govkit:] RSpec - or one of it's dependencies - is not available. Install it with: sudo gem install rspec-rails"
   end
