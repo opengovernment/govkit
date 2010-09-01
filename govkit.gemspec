@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2010-06-10}
+  s.date = %q{2010-08-31}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{carl@ppolitics.org}
   s.extra_rdoc_files = [
@@ -27,10 +27,10 @@ Gem::Specification.new do |s|
      "generators/govkit/govkit_generator.rb",
      "generators/govkit/templates/govkit.rb",
      "govkit.gemspec",
+     "init.rb",
      "lib/gov_kit.rb",
      "lib/gov_kit/acts_as_citeable.rb",
      "lib/gov_kit/configuration.rb",
-     "lib/gov_kit/open_states.rb",
      "lib/gov_kit/follow_the_money.rb",
      "lib/gov_kit/open_congress.rb",
      "lib/gov_kit/open_congress/bill.rb",
@@ -41,14 +41,28 @@ Gem::Specification.new do |s|
      "lib/gov_kit/open_congress/roll_call.rb",
      "lib/gov_kit/open_congress/roll_call_comparison.rb",
      "lib/gov_kit/open_congress/voting_comparison.rb",
+     "lib/gov_kit/open_states.rb",
+     "lib/gov_kit/railtie.rb",
      "lib/gov_kit/resource.rb",
      "lib/gov_kit/search_engines.rb",
      "lib/gov_kit/search_engines/google_blog.rb",
      "lib/gov_kit/search_engines/google_news.rb",
      "lib/gov_kit/search_engines/technorati.rb",
+     "lib/gov_kit/search_engines/wikipedia.rb",
      "lib/gov_kit/vote_smart.rb",
      "lib/govkit.rb",
-     "rails/init.rb",
+     "spec/fixtures/follow_the_money/business-page0.response",
+     "spec/fixtures/follow_the_money/business-page1.response",
+     "spec/fixtures/follow_the_money/contribution.response",
+     "spec/fixtures/follow_the_money/unauthorized.response",
+     "spec/fixtures/open_states/401.response",
+     "spec/fixtures/open_states/410.response",
+     "spec/fixtures/open_states/bill.response",
+     "spec/fixtures/open_states/bill_query.response",
+     "spec/fixtures/open_states/legislator.response",
+     "spec/fixtures/open_states/legislator_query.response",
+     "spec/fixtures/open_states/state.response",
+     "spec/follow_the_money_spec.rb",
      "spec/open_states_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
@@ -59,7 +73,8 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{Simple access to open government APIs around the web}
   s.test_files = [
-    "spec/open_states_spec.rb",
+    "spec/follow_the_money_spec.rb",
+     "spec/open_states_spec.rb",
      "spec/spec_helper.rb"
   ]
 
