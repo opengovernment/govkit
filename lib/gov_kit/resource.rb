@@ -3,8 +3,8 @@ module GovKit
     include HTTParty
     format :json
 
-    attr_accessor :attributes
-    attr_accessor :raw_response
+    attr_reader :attributes
+    attr_reader :raw_response
 
     def initialize(attributes = {})
       @attributes = {}
