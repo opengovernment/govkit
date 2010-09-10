@@ -4,9 +4,11 @@ module GovKit
     format :json
 
     attr_accessor :attributes
+    attr_accessor :raw_response
 
     def initialize(attributes = {})
       @attributes = {}
+      @raw_response = attributes
       unload(attributes)
     end
 
