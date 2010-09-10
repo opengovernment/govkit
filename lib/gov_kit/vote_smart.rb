@@ -22,6 +22,10 @@ module GovKit
     class Bio < VoteSmartResource
       def self.find(candidate_id)
         response = get("/CandidateBio.getBio", :query => {"candidateId" => candidate_id})
+        
+        # Sometimes this returns nil if no one is found!
+        raise(ResourceNotFound, 'Could not find bio for candidate ' + candidate_id.to_s) if response.blank? || response['error']
+
         instantiate_record(response['bio']['candidate'])
       end
     end
