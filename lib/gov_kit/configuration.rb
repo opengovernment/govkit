@@ -7,7 +7,7 @@ module GovKit
 
     def initialize
       @openstates_apikey = @votesmart_apikey = @ftm_apikey = ''
-      @openstates_base_url = 'fiftystates-dev.sunlightlabs.com/api'
+      @openstates_base_url = 'openstates.sunlightlabs.com/api/v1/'
       @votesmart_base_url = 'api.votesmart.org/'
       @ftm_base_url = 'api.followthemoney.org/'
       @opencongress_base_url = 'www.opencongress.org/'

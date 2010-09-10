@@ -12,20 +12,20 @@ module GovKit
 
     class State < OpenStatesResource
       def self.find_by_abbreviation(abbreviation)
-        response = get("/#{abbreviation}/")
+        response = get("/metadata/#{abbreviation}/")
         instantiate_record(response)
       end
     end
 
     class Bill < OpenStatesResource
-      # http://fiftystates-dev.sunlightlabs.com/api/ca/20092010/lower/bills/AB667/
+      # http://openstates.sunlightlabs.com/api/v1/ca/20092010/lower/bills/AB667/
       def self.find(state_abbrev, session, chamber, bill_id)
         response = get("/#{state_abbrev}/#{session}/#{chamber}/bills/#{bill_id}/")
         instantiate_record(response)
       end
 
       def self.search(query, options = {})
-        response = get('/bills/search/', :query => {:q => query}.merge(options))
+        response = get('/bills/', :query => {:q => query}.merge(options))
         instantiate_collection(response)
       end
 
@@ -42,10 +42,23 @@ module GovKit
       end
 
       def self.search(options = {})
-        response = get('/legislators/search/', :query => options)
+        response = get('/legislators/', :query => options)
         instantiate_collection(response)
       end
     end
+    
+    class Committee < OpenStatesResource
+      def self.find(committee_id)
+        response = get("/committees/#{committee_id}/")
+        instantiate_record(response)
+      end
+
+      def self.search(options = {})
+        response = get('/committees/', :query => options)
+        instantiate_collection(response)
+      end
+    end
+    
 
     class Role < OpenStatesResource; end
 
