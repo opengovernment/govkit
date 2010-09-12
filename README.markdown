@@ -17,12 +17,12 @@ From gemcutter:
 
 Add govkit to your environment.rb or Gemfile
 
-Run <code>./script/generate govkit</code> to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
+Run <code>rails generate govkit</code> to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
 
 # Examples
 
-    >> Govkit::OpenStates::State.find_by_abbreviation('CA')
-    >> Govkit::VoteSmart::Address.find(votesmart_candidate_id)
+    >> GovKit::OpenStates::State.find_by_abbreviation('CA')
+    >> GovKit::VoteSmart::Address.find(votesmart_candidate_id)
     >> GovKit::OpenCongress::Bill.find(:number => 5479, :type => 'h', :congress => '111')
 
 # Bugs? Questions?
