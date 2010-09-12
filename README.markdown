@@ -17,13 +17,30 @@ From gemcutter:
 
 Add govkit to your environment.rb or Gemfile
 
-Run <code>rails generate govkit</code> to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
+Run <code>rails generate govkit</code> (Rails 3.x) or <code>script/generate govkit</code> (Rails 2.x) to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
 
-# Examples
+# Usage Examples
 
     >> GovKit::OpenStates::State.find_by_abbreviation('CA')
     >> GovKit::VoteSmart::Address.find(votesmart_candidate_id)
     >> GovKit::OpenCongress::Bill.find(:number => 5479, :type => 'h', :congress => '111')
+
+Objects returned from GovKit will have attributes for each field coming back from the API:
+
+    >> x = GovKit::OpenStates::State.find_by_abbreviation('CA')
+    => #<GovKit::OpenStates::State:0x00000100f6a5a8 @attributes={"lower_chamber_title"=>"Assemblymember", "lower_chamber_name"=>"Assembly", "upper_chamber_title"=>"Senator", "terms"=>[#<GovKit::OpenStates::State::Term:0x00000100f2a8e0 @attributes={"....
+    >> x.name
+    => "California"
+
+GovKit will raise GovKit::ResourceNotFound if a requested item isn't available.
+
+# Testing & Debugging
+
+For debugging purposes, there's a raw_response reader provided for each object, which typically returns an HTTParty::Response object. To see the body of the HTTP response, you might look here:
+
+    (continuing the example from above)
+    >> x.raw_response.response.body
+    => "{\n    \"lower_chamber_title\": \"Assemblymember\", \n    \"lower_chamber_name\": \"Assembly\", \n  ....
 
 # Bugs? Questions?
 
