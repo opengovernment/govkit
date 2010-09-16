@@ -1,4 +1,4 @@
-class GovKitGenerator < Rails::Generator::Base
+class GovkitGenerator < Rails::Generator::Base
 
   def initialize(*runtime_args)
     super
