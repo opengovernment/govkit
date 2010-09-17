@@ -9,12 +9,16 @@ module GovKit
 
       e = doc.search("//error")
 
-      # API Key invalid
+      # Deal with whatever error comes back
       if e.size > 0
         raise case e.first.attributes['code']
         when "100"
           GovKit::NotAuthorized
         when "300"
+          GovKit::InvalidRequest
+        when "200"
+          GovKit::ResourceNotFound
+        else
           GovKit::InvalidRequest
         end, e.first.attributes['text']
       end

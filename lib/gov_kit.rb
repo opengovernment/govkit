@@ -21,16 +21,6 @@ module GovKit
   end
 
   class GovKitError < StandardError
-    attr_reader :response
-
-    def initialize(response, message = nil)
-      @response = response
-      @message  = message
-    end
-
-    def to_s
-      "Failed with #{response.code if response.respond_to?(:code)} #{response.message if response.respond_to?(:message)}"
-    end
   end
 
   class NotAuthorized < GovKitError; end
