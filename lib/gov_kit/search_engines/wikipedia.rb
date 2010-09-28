@@ -10,7 +10,11 @@ module GovKit
         response = get("/wiki/#{query}")
         doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312', response))
 
-        doc.at('#bodyContent > table.toc').previous_sibling.inner_html.scrub rescue ""
+        bio = doc.at('#bodyContent > p:first').inner_html.scrub rescue ""
+
+        return "" if bio =~ /may refer to:/
+
+        bio
       end
 
       def self.make_request(host, path)
