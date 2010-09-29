@@ -91,7 +91,7 @@ module GovKit
     end
 
     def find_or_create_resource_for(name)
-      resource_name = name.to_s.gsub(/^(\d)/, "n#{$1}").gsub(/\s/, '').camelize
+      resource_name = name.to_s.gsub(/^[_+]/,'').gsub(/^(\d)/, "n#{$1}").gsub(/\s/, '').camelize
       if self.class.parents.size > 1
         find_resource_in_modules(resource_name, self.class.parents)
       else
