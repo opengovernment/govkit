@@ -7,7 +7,7 @@ module GovKit::OpenStates
 
       urls = [
         ['/ca/\?',                             'state.response'],
-        ['/ca/20092010/lower/bills/AB667/',    'bill.response'],
+        ['/bills/ca/20092010/AB667/',    'bill.response'],
         ['/bills/search/\?',                   'bill_query.response'],
         ['/bills/latest/\?',                   'bill_query.response'],
         ['/legislators/2462/\?',               'legislator.response'],

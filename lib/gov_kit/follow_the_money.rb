@@ -46,7 +46,7 @@ module GovKit
           end
         end
 
-        instantiate_collection(result)
+        parse(result)
       end
     end
 
@@ -65,7 +65,7 @@ module GovKit
             contribution.attributes.to_hash
           end
         end
-        instantiate_collection(result)
+        parse(result)
       end
 
       def self.top(nimsp_id)
@@ -75,7 +75,7 @@ module GovKit
           contribution.attributes.to_hash
         end
 
-        instantiate_collection(result)
+        parse(result)
       end
     end
 
@@ -87,7 +87,7 @@ module GovKit
           contribution.attributes.to_hash
         end
 
-        instantiate_collection(result)
+        parse(result)
       end
     end
 
@@ -99,7 +99,7 @@ module GovKit
           contribution.attributes.to_hash
         end
 
-        instantiate_collection(result)
+        parse(result)
       end
     end
 
@@ -111,7 +111,7 @@ module GovKit
           contribution.attributes.to_hash
         end
 
-        instantiate_collection(result)
+        parse(result)
       end
     end
   end

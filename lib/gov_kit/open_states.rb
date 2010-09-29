@@ -13,53 +13,58 @@ module GovKit
     class State < OpenStatesResource
       def self.find_by_abbreviation(abbreviation)
         response = get("/metadata/#{abbreviation}/")
-        instantiate_record(response)
+        parse(response)
       end
     end
 
     class Bill < OpenStatesResource
-      # http://openstates.sunlightlabs.com/api/v1/ca/20092010/lower/bills/AB667/
-      def self.find(state_abbrev, session, chamber, bill_id)
-        response = get("/#{state_abbrev}/#{session}/#{chamber}/bills/#{bill_id}/")
-        instantiate_record(response)
-      end
+      # http://openstates.sunlightlabs.com/api/v1/bills/ca/20092010/AB667/
+      class << self
+        def find(state_abbrev, session, bill_id, chamber = '')
+          response = get("/bills/#{state_abbrev}/#{session}/#{chamber.blank? ? '' : chamber + '/'}#{bill_id}/")
+          parse(response)
+        end
 
-      def self.search(query, options = {})
-        response = get('/bills/', :query => {:q => query}.merge(options))
-        instantiate_collection(response)
-      end
+        def search(query, options = {})
+          response = get('/bills/', :query => {:q => query}.merge(options))
+          parse(response)
+        end
 
-      def self.latest(updated_since, state_abbrev)
-        response = get('/bills/latest/', :query => {:updated_since => updated_since, :state => state_abbrev})
-        instantiate_collection(response)
+        def latest(updated_since, state_abbrev)
+          response = get('/bills/latest/', :query => {:updated_since => updated_since, :state => state_abbrev})
+          parse(response)
+        end
       end
     end
 
     class Legislator < OpenStatesResource
-      def self.find(legislator_id)
-        response = get("/legislators/#{legislator_id}/")
-        instantiate_record(response)
-      end
+      class << self
+        def find(legislator_id)
+          response = get("/legislators/#{legislator_id}/")
+          parse(response)
+        end
 
-      def self.search(options = {})
-        response = get('/legislators/', :query => options)
-        instantiate_collection(response)
+        def search(options = {})
+          response = get('/legislators/', :query => options)
+          parse(response)
+        end
       end
     end
     
     class Committee < OpenStatesResource
-      def self.find(committee_id)
-        response = get("/committees/#{committee_id}/")
-        instantiate_record(response)
-      end
+      class << self
+        def find(committee_id)
+          response = get("/committees/#{committee_id}/")
+          parse(response)
+        end
 
-      def self.search(options = {})
-        response = get('/committees/', :query => options)
-        instantiate_collection(response)
+        def search(options = {})
+          response = get('/committees/', :query => options)
+          parse(response)
+        end
       end
     end
     
-
     class Role < OpenStatesResource; end
 
     class Sponsor < OpenStatesResource; end
@@ -75,7 +80,7 @@ module GovKit
     class Vote < OpenStatesResource
       def self.find(vote_id)
         response = get("/votes/#{vote_id}/")
-        instantiate_record(response)
+        parse(response)
       end
     end
   end
