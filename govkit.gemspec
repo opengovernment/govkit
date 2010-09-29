@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.3.2"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2010-09-16}
+  s.date = %q{2010-09-29}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{carl@ppolitics.org}
   s.extra_rdoc_files = [
