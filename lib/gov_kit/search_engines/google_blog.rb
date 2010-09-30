@@ -3,7 +3,7 @@ module GovKit
     class GoogleBlog
       def self.search(options=[])
         query = options.join('+')
-        host = "blogsearch.google.com"
+        host = GovKit::configuration.google_blog_base_url
         path = "/blogsearch?hl=en&q=#{URI::encode(query)}&btnG=Search+Blogs&num=50"
 
         html = make_request(host, path)

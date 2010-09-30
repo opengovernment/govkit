@@ -6,7 +6,7 @@ module GovKit
     class GoogleNews
       def self.search(options=[])
         query = options.join('+')
-        host = "news.google.com"
+        host = GovKit::configuration.google_news_base_url
         path = "/news?hl=en&ned=us&q=#{URI::encode(query)}&btnG=Search+News&num=50"
 
         html = make_request(host, path)

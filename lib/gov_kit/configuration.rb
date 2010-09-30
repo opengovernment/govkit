@@ -4,6 +4,9 @@ module GovKit
     attr_accessor :votesmart_apikey, :votesmart_base_url
     attr_accessor :ftm_apikey, :ftm_base_url
     attr_accessor :opencongress_apikey, :opencongress_base_url
+    attr_accessor :technorati_apikey, :technorati_base_url
+    attr_accessor :google_blog_base_url, :google_news_base_url
+    attr_accessor :wikipedia_base_url
 
     def initialize
       @openstates_apikey = @votesmart_apikey = @ftm_apikey = ''
@@ -11,6 +14,10 @@ module GovKit
       @votesmart_base_url = 'api.votesmart.org/'
       @ftm_base_url = 'api.followthemoney.org/'
       @opencongress_base_url = 'www.opencongress.org/'
+      @technorati_base_url = 'api.technorati.com'
+      @google_blog_base_url = 'blogsearch.google.com'
+      @google_news_base_url = 'news.google.com'
+      @wikipedia_base_url = 'en.wikipedia.org'
     end
   end
 

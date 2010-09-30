@@ -3,8 +3,8 @@ module GovKit
     class Wikipedia
       include HTTParty
       default_params :format => 'xml'
-      base_uri "en.wikipedia.org"
-      headers 'User-Agent' => 'GovKit +http://opengovernment.org'
+      base_uri GovKit::configuration.wikipedia_base_url
+      headers 'User-Agent' => 'GovKit +http://ppolitics.org'
 
       def self.search(query, options={})
         response = get("/wiki/#{query}")

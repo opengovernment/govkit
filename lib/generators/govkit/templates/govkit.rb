@@ -15,5 +15,8 @@ if defined? GovKit
     # Api key for OpenCongress
     # http://www.opencongress.org/api
     config.opencongress_apikey = 'YOUR_OPENCONGRESS_API_KEY'
+    
+    # Technorati API key
+    config.technorati_apikey = 'YOUR_TECHNORATI_APIKEY'
   end
 end
