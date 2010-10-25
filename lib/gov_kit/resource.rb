@@ -13,43 +13,40 @@ module GovKit
       unload(attributes)
     end
 
-    class << self
-      def parse(response)
-        # This method handles the basic responses we might get back from
-        # Net::HTTP. But if a service returns something other than a 404 when an object is not found,
-        # you'll need to handle that in the subclass.
-              
-        raise ResourceNotFound, "Resource not found" unless !response.blank?
+    def self.parse(response)
+      # This method handles the basic responses we might get back from
+      # Net::HTTP. But if a service returns something other than a 404 when an object is not found,
+      # you'll need to handle that in the subclass.
+            
+      raise ResourceNotFound, "Resource not found" unless !response.blank?
 
-        if response.class == HTTParty::Response
-          case response.response
-            when Net::HTTPNotFound
-              raise ResourceNotFound, "404 Not Found"
-            when Net::HTTPUnauthorized
-              raise NotAuthorized, "401 Not Authorized; have you set up your API key?"
-          end
-        end
-        
-        instantiate(response)
-      end
-
-      def instantiate(record)
-        case record
-          when Array
-            instantiate_collection(record)
-          else
-            instantiate_record(record)
+      if response.class == HTTParty::Response
+        case response.response
+          when Net::HTTPNotFound
+            raise ResourceNotFound, "404 Not Found"
+          when Net::HTTPUnauthorized
+            raise NotAuthorized, "401 Not Authorized; have you set up your API key?"
         end
       end
+      
+      instantiate(response)
+    end
 
-      def instantiate_record(record)
-        new(record)
+    def self.instantiate(record)
+      case record
+        when Array
+          instantiate_collection(record)
+        else
+          instantiate_record(record)
       end
+    end
 
-      def instantiate_collection(collection)
-        collection.collect! { |record| instantiate_record(record) }
-      end
+    def self.instantiate_record(record)
+      new(record)
+    end
 
+    def self.instantiate_collection(collection)
+      collection.collect! { |record| instantiate_record(record) }
     end
 
     def unload(attributes)

@@ -19,49 +19,43 @@ module GovKit
 
     class Bill < OpenStatesResource
       # http://openstates.sunlightlabs.com/api/v1/bills/ca/20092010/AB667/
-      class << self
-        def find(state_abbrev, session, bill_id, chamber = '')
-          response = get("/bills/#{state_abbrev}/#{session}/#{chamber.blank? ? '' : chamber + '/'}#{bill_id}/")
-          parse(response)
-        end
+      def self.find(state_abbrev, session, bill_id, chamber = '')
+        response = get("/bills/#{state_abbrev}/#{session}/#{chamber.blank? ? '' : chamber + '/'}#{bill_id}/")
+        parse(response)
+      end
 
-        def search(query, options = {})
-          response = get('/bills/', :query => {:q => query}.merge(options))
-          parse(response)
-        end
+      def self.search(query, options = {})
+        response = get('/bills/', :query => {:q => query}.merge(options))
+        parse(response)
+      end
 
-        def latest(updated_since, state_abbrev)
-          response = get('/bills/latest/', :query => {:updated_since => updated_since, :state => state_abbrev})
-          parse(response)
-        end
+      def self.latest(updated_since, state_abbrev)
+        response = get('/bills/latest/', :query => {:updated_since => updated_since, :state => state_abbrev})
+        parse(response)
       end
     end
 
     class Legislator < OpenStatesResource
-      class << self
-        def find(legislator_id)
-          response = get("/legislators/#{legislator_id}/")
-          parse(response)
-        end
+      def self.find(legislator_id)
+        response = get("/legislators/#{legislator_id}/")
+        parse(response)
+      end
 
-        def search(options = {})
-          response = get('/legislators/', :query => options)
-          parse(response)
-        end
+      def self.search(options = {})
+        response = get('/legislators/', :query => options)
+        parse(response)
       end
     end
     
     class Committee < OpenStatesResource
-      class << self
-        def find(committee_id)
-          response = get("/committees/#{committee_id}/")
-          parse(response)
-        end
+      def self.find(committee_id)
+        response = get("/committees/#{committee_id}/")
+        parse(response)
+      end
 
-        def search(options = {})
-          response = get('/committees/', :query => options)
-          parse(response)
-        end
+      def self.search(options = {})
+        response = get('/committees/', :query => options)
+        parse(response)
       end
     end
     
