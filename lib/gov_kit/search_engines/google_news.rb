@@ -13,20 +13,20 @@ module GovKit
         doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
         stories = doc.search("div.search-results > div.story")
 
-        citations = []
+        mentions = []
 
         stories.each do |story|
-          citation = GovKit::Citation.new
+          mention = GovKit::Mention.new
 
-          citation.title = story.at("h2.title a").inner_text.html_safe
-          citation.url = story.at("h2.title a").attributes["href"]
-          citation.date = story.at("div.sub-title > span.date").inner_html.html_safe
-          citation.source = story.at("div.sub-title > span.source").inner_html.html_safe
-          citation.excerpt = story.at("div.body > div.snippet").inner_html.html_safe
+          mention.title = story.at("h2.title a").inner_text.html_safe
+          mention.url = story.at("h2.title a").attributes["href"]
+          mention.date = story.at("div.sub-title > span.date").inner_html.html_safe
+          mention.source = story.at("div.sub-title > span.source").inner_html.html_safe
+          mention.excerpt = story.at("div.body > div.snippet").inner_html.html_safe
 
-          citations << citation
+          mentions << mention
         end
-        citations
+        mentions
       end
 
       def self.make_request(host, path)

@@ -11,22 +11,22 @@ module GovKit
         stories = doc.search("td.j")
         titles = (doc/"a").select { |a| (a.attributes["id"] && a.attributes["id"].match(/p-(.*)/)) }
 
-        citations = []
+        mentions = []
 
         stories.each do |story|
-          citation = GovKit::Citation.new
+          mention = GovKit::Mention.new
           t = titles.shift
 
-          citation.title = (t.inner_html) if t #.unpack("C*").pack("U*") if t
-          citation.url = t.attributes["href"] if t
-          citation.date = story.at("font:nth(0)").inner_html
-          citation.excerpt = (story.at("br + font").inner_html) #.unpack("C*").pack("U*")
-          citation.source = story.at("a.f1").inner_html
-          citation.url = story.at("a.f1").attributes["href"]
+          mention.title = (t.inner_html) if t #.unpack("C*").pack("U*") if t
+          mention.url = t.attributes["href"] if t
+          mention.date = story.at("font:nth(0)").inner_html
+          mention.excerpt = (story.at("br + font").inner_html) #.unpack("C*").pack("U*")
+          mention.source = story.at("a.f1").inner_html
+          mention.url = story.at("a.f1").attributes["href"]
 
-          citations << citation
+          mentions << mention
         end
-        citations
+        mentions
       end
 
       def self.make_request(host, path)

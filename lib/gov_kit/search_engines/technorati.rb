@@ -9,21 +9,21 @@ module GovKit
         html = make_request(host, path)
         doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
 
-        citations = []
+        mentions = []
 #        doc.search("tapi/document/item").each do |i|
-#          citation = GovKit::Citation.new
+#          mention = GovKit::Mention.new
 #
-#          citation.url = i.text("permalink")
-#          citation.title = i.text("title")
-#          citation.excerpt = i.text("excerpt")
-#          citation.date = i.text("created")
-#          citation.source = i.text("weblog/name")
-#          citation.url = i.text("weblog/url")
-#          citation.weight = i.text("weblog/inboundlinks")
+#          mention.url = i.text("permalink")
+#          mention.title = i.text("title")
+#          mention.excerpt = i.text("excerpt")
+#          mention.date = i.text("created")
+#          mention.source = i.text("weblog/name")
+#          mention.url = i.text("weblog/url")
+#          mention.weight = i.text("weblog/inboundlinks")
 #
-#          citations << citation
+#          mentions << mention
 #        end
-        citations
+        mentions
         []
       end
 

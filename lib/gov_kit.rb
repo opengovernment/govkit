@@ -11,12 +11,12 @@ module GovKit
   autoload :Resource, 'gov_kit/resource'
   autoload :OpenStates, 'gov_kit/open_states'
   autoload :VoteSmart, 'gov_kit/vote_smart'
-  autoload :ActsAsCiteable, 'gov_kit/acts_as_citeable'
+  autoload :ActsAsNoteworthy, 'gov_kit/acts_as_noteworthy'
   autoload :FollowTheMoney, 'gov_kit/follow_the_money'
   autoload :OpenCongress, 'gov_kit/open_congress'
   autoload :SearchEngines, 'gov_kit/search_engines'
 
-  class Citation
+  class Mention
     attr_accessor :url, :excerpt, :title, :source, :date, :weight
   end
 

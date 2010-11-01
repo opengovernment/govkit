@@ -1,11 +1,11 @@
-module GovKit::ActsAsCiteable
+module GovKit::ActsAsNoteworthy
 
   def self.included(base)
     base.extend ActMethods
   end
 
   module ActMethods
-    def acts_as_citeable(options={})
+    def acts_as_noteworthy(options={})
       options[:keywords] ||= []
 
       class_inheritable_accessor :options
@@ -23,7 +23,7 @@ module GovKit::ActsAsCiteable
 
   module InstanceMethods
 
-    def raw_citations
+    def raw_mentions
       params = self.options[:keywords].clone
       attributes = self.options[:with].clone
 
