@@ -14,7 +14,7 @@ module GovKit
 
   class Railtie
     def self.insert
-      ActiveRecord::Base.send(:include, GovKit::ActsAsCiteable)
+      ActiveRecord::Base.send(:include, GovKit::ActsAsNoteworthy)
     end
   end
 end
