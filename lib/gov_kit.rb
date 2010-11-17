@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 
 require 'active_support'
-require 'hpricot'
+require 'nokogiri'
 require 'iconv'
 require 'httparty'
 require 'json'

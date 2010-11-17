@@ -7,10 +7,12 @@ module GovKit
       headers 'User-Agent' => 'GovKit +http://ppolitics.org'
 
       def self.search(query, options={})
-        response = get("/wiki/#{query}")
-        doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312', response))
+        doc = Nokogiri::HTML(get("/wiki/#{query}"))
 
-        bio = doc.at('#bodyContent > p:first').inner_html.scrub rescue ""
+        bio = doc.at('#bodyContent > p:first').inner_html rescue ""
+
+        # Convert HTML => text.
+        bio = Loofah.fragment(bio).text
 
         return "" if bio =~ /may refer to:/
 

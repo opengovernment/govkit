@@ -9,8 +9,7 @@ module GovKit
         host = GovKit::configuration.google_news_base_url
         path = "/news?hl=en&ned=us&q=#{URI::encode(query)}&btnG=Search+News&num=50"
 
-        html = make_request(host, path)
-        doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
+        doc = Nokogiri::HTML(make_request(host, path))
         stories = doc.search("div.search-results > div.story")
 
         mentions = []

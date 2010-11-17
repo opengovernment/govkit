@@ -6,8 +6,7 @@ module GovKit
         host = GovKit::configuration.technorati_base_url
         path = "/search?key=#{GovKit::configuration.technorati_apikey}&limit=50&language=en&query=#{URI::encode(query)}"
 
-        html = make_request(host, path)
-        doc = Hpricot(Iconv.conv('utf-8//IGNORE', 'gb2312',html))
+        doc = Nokogiri::HTML(make_request(host, path))
 
         mentions = []
 #        doc.search("tapi/document/item").each do |i|
