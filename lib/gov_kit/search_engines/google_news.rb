@@ -17,11 +17,11 @@ module GovKit
         stories.each do |story|
           mention = GovKit::Mention.new
 
-          mention.title = story.at("h2.title a").inner_text.html_safe
-          mention.url = story.at("h2.title a").attributes["href"]
-          mention.date = story.at("div.sub-title > span.date").inner_html.html_safe
-          mention.source = story.at("div.sub-title > span.source").inner_html.html_safe
-          mention.excerpt = story.at("div.body > div.snippet").inner_html.html_safe
+          mention.title = story.at("h2.title a").text
+          mention.url = story.at("h2.title a").attributes["href"].value
+          mention.date = story.at("div.sub-title > span.date").text
+          mention.source = story.at("div.sub-title > span.source").text
+          mention.excerpt = story.at("div.body > div.snippet").text
 
           mentions << mention
         end

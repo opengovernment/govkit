@@ -16,11 +16,11 @@ module GovKit
           mention = GovKit::Mention.new
           t = titles.shift
 
-          mention.title = t.inner_html if t #.unpack("C*").pack("U*") if t
+          mention.title = t.text if t #.unpack("C*").pack("U*") if t
           # mention.url = t.attributes["href"].value if t
-          mention.date = story.at("font:nth(1)").inner_html.strip
-          mention.excerpt = (story.at("br + font").inner_html) #.unpack("C*").pack("U*")
-          mention.source = story.at("a.f1").inner_html
+          mention.date = story.at("font:nth(1)").text.strip
+          mention.excerpt = (story.at("br + font").text) #.unpack("C*").pack("U*")
+          mention.source = story.at("a.f1").text
           mention.url = story.at("a.f1").attributes["href"].value
 
           mentions << mention

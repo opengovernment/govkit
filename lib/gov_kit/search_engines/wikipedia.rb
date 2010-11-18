@@ -9,10 +9,10 @@ module GovKit
       def self.search(query, options={})
         doc = Nokogiri::HTML(get("/wiki/#{query}"))
 
-        bio = doc.at('#bodyContent > p:first').inner_html rescue ""
+        bio = doc.at('#bodyContent > p:first').text rescue ""
 
         # Convert HTML => text.
-        bio = Loofah.fragment(bio).text
+        # bio = Loofah.fragment(bio).text
 
         return "" if bio =~ /may refer to:/
 
