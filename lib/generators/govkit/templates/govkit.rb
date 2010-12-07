@@ -2,7 +2,7 @@ if defined? GovKit
   GovKit.configure do |config|
     # Get an API key for Sunlight's Open States project here:
     # http://services.sunlightlabs.com/accounts/register/
-    config.openstates_apikey = 'YOUR_OPENSTATES_API_KEY'
+    config.sunlight_apikey = 'YOUR_SUNLIGHT_API_KEY'
 
     ##API key for Votesmart
     # http://votesmart.org/services_api.php

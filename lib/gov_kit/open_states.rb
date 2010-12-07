@@ -1,6 +1,6 @@
 module GovKit
   class OpenStatesResource < Resource
-    default_params :output => 'json', :apikey => GovKit::configuration.openstates_apikey
+    default_params :output => 'json', :apikey => GovKit::configuration.sunlight_apikey
     base_uri GovKit::configuration.openstates_base_url
   end
 

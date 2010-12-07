@@ -33,11 +33,10 @@ module GovKit
     end
 
     def self.instantiate(record)
-      case record
-        when Array
-          instantiate_collection(record)
-        else
-          instantiate_record(record)
+      if record.is_a?(Array)
+        instantiate_collection(record)
+      else
+        instantiate_record(record)
       end
     end
 
