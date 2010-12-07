@@ -13,6 +13,13 @@ module GovKit
         parse(response)
       end
     end
+
+    class Entity < TransparencyDataResource
+      def self.find_by_id(id)
+        response = get("/entities/#{id}.json")
+        parse(response)
+      end
+    end
   end
 
 end
