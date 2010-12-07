@@ -29,8 +29,8 @@ module GovKit
         parse(response)
       end
 
-      def self.latest(updated_since, state_abbrev)
-        response = get('/bills/latest/', :query => {:updated_since => updated_since, :state => state_abbrev})
+      def self.latest(updated_since, ops = {})
+        response = get('/bills/', :query => {:updated_since => updated_since.to_s}.merge(ops))
         parse(response)
       end
     end
