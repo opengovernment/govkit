@@ -6,6 +6,7 @@ Govkit is a Ruby gem that provides simple access to open government APIs around 
  *  [The Open States project](http://fiftystates-dev.sunlightlabs.com/), which has a RESTful API for accessing data about state legislators, bills, votes, etc.
  *  [Project Vote Smart](http://www.votesmart.org/services_api.php), which has an API with congressional addresses, etc.
  *  [Follow The Money](http://www.followthemoney.org/), whose API reveals campaign contribution data for state officials.
+ *  [TransparencyData API](http://transparencydata.com/api) (campaign contributions only)
 
 # Installation
 
