@@ -17,7 +17,6 @@ module GovKit
       # This method handles the basic responses we might get back from
       # Net::HTTP. But if a service returns something other than a 404 when an object is not found,
       # you'll need to handle that in the subclass.
-            
       raise ResourceNotFound, "Resource not found" unless !response.blank?
 
       if response.class == HTTParty::Response
@@ -87,7 +86,7 @@ module GovKit
     end
 
     def find_or_create_resource_for(name)
-      resource_name = name.to_s.gsub(/^[_+]/,'').gsub(/^(\d)/, "n#{$1}").gsub(/\s/, '').camelize
+      resource_name = name.to_s.gsub(/^[_+]/,'').gsub(/^(\-?\d)/, "n#{$1}").gsub(/\s/, '').camelize
       if self.class.parents.size > 1
         find_resource_in_modules(resource_name, self.class.parents)
       else
