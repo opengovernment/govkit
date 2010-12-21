@@ -4,6 +4,7 @@ require 'active_support'
 require 'nokogiri'
 require 'iconv'
 require 'httparty'
+require 'open-uri'
 require 'json'
 require 'gov_kit/configuration'
 
