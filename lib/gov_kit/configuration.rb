@@ -1,6 +1,6 @@
 module GovKit
   class Configuration
-    attr_accessor :sunlight_apikey, :openstates_base_url, :transparency_data_base_url
+    attr_accessor :sunlight_apikey, :openstates_base_url, :transparency_data_base_url, :transparency_data_categories_url
     attr_accessor :votesmart_apikey, :votesmart_base_url
     attr_accessor :ftm_apikey, :ftm_base_url
     attr_accessor :opencongress_apikey, :opencongress_base_url
@@ -19,6 +19,9 @@ module GovKit
       @google_blog_base_url = 'blogsearch.google.com'
       @google_news_base_url = 'news.google.com'
       @wikipedia_base_url = 'en.wikipedia.org'
+
+      # Permant home for contribution category mappings
+      @transparency_data_categories_url = 'assets.transparencydata.org.s3.amazonaws.com/docs/catcodes.csv'
     end
   end
 
