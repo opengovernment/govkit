@@ -21,7 +21,7 @@ module GovKit
       @wikipedia_base_url = 'en.wikipedia.org'
 
       # Permant home for contribution category mappings
-      @transparency_data_categories_url = 'assets.transparencydata.org.s3.amazonaws.com/docs/catcodes.csv'
+      @transparency_data_categories_url = 'http://assets.transparencydata.org.s3.amazonaws.com/docs/catcodes.csv'
     end
   end
 

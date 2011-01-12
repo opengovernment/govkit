@@ -1,5 +1,3 @@
-require 'fastercsv'
-
 module GovKit
   class TransparencyDataResource < Resource
     default_params :apikey => GovKit::configuration.sunlight_apikey
@@ -25,14 +23,19 @@ module GovKit
     
     class Categories
       # Contribution category code mapping table, in CSV format
-      # Returns an array of hashes.
+      # Returns an array of hashes, each with the following keys:
+      # :source, :code, :name, :industry, :order
       def self.all
+        # This provides Ruby 1.8 & 1.9 CSV compatibility
+        if CSV.const_defined? :Reader
+          csv = FasterCSV
+        else
+          csv = CSV
+        end
         categories = []
         open(GovKit::configuration.transparency_data_categories_url) do |f|
-          f.each_line do |line|
-            FasterCSV.parse(line) do |row|
-              categories << row.fields
-            end
+          csv.parse(f.read, :headers => true, :header_converters => :symbol) do |row|
+           categories << row.to_hash
           end
         end
         categories
