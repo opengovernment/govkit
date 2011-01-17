@@ -18,9 +18,11 @@ module GovKit
     end
 
     class Bill < OpenStatesResource
-      # http://openstates.sunlightlabs.com/api/v1/bills/ca/20092010/AB667/
+      # http://openstates.sunlightlabs.com/api/v1/bills/ca/20092010/AB 667/
       def self.find(state_abbrev, session, bill_id, chamber = '')
-        response = get("/bills/#{state_abbrev}/#{session}/#{chamber.blank? ? '' : chamber + '/'}#{bill_id}/")
+        escaped_bill_id = bill_id.gsub(/ /, '%20')
+        escaped_session = session.gsub(/ /, '%20')
+        response = get("/bills/#{state_abbrev.downcase}/#{escaped_session}/#{chamber.blank? ? '' : chamber + '/'}#{escaped_bill_id}/")
         parse(response)
       end
 
