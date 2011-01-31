@@ -35,4 +35,8 @@ module GovKit
   class InvalidRequest < GovKitError; end
 
   class ResourceNotFound < GovKitError; end
+  
+  class ServerError < GovKitError; end
+  
+  class ClientError < GovKitError; end
 end

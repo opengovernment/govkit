@@ -25,8 +25,14 @@ module GovKit
             raise ResourceNotFound, "404 Not Found"
           when Net::HTTPUnauthorized
             raise NotAuthorized, "401 Not Authorized; have you set up your API key?"
+          when Net::HTTPServerError
+            raise ServerError, '5xx server error'
+          when Net::HTTPClientError
+            raise ClientError, '4xx client error'
         end
       end
+
+      return response
       
       instantiate(response)
     end
