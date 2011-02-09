@@ -51,4 +51,8 @@ Please join the [Govkit Google Group](http://groups.google.com/group/govkit), es
 
 Govkit's main repo is on Github: [http://github.com/opengovernment/govkit](http://github.com/opengovernment/govkit), where your contributions, forks, and feedback are greatly welcomed.
 
+# TODOs
+
+Eachability: If an API call is expected to return zero or more records, then GovKit should always return an array or nil to the caller, not a single object, even if there's only one record returned in this particular API call.
+
 Copyright (c) 2010 Participatory Politics Foundation, released under the MIT license
