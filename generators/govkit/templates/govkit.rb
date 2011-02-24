@@ -2,7 +2,7 @@ if defined? GovKit
   GovKit.configure do |config|
     # Get an API key for Sunlight's Open States project here:
     # http://services.sunlightlabs.com/accounts/register/
-    config.openstates_apikey = 'YOUR_OPENSTATES_API_KEY'
+    config.sunlight_apikey = 'YOUR_SUNLIGHT_API_KEY'
 
     ##API key for Votesmart
     # http://votesmart.org/services_api.php
@@ -15,5 +15,11 @@ if defined? GovKit
     # Api key for OpenCongress
     # http://www.opencongress.org/api
     config.opencongress_apikey = 'YOUR_OPENCONGRESS_API_KEY'
+    
+    # Technorati API key
+    config.technorati_apikey = 'YOUR_TECHNORATI_APIKEY'
+    
+    # Other things you could set here include alternate URLs for
+    # the APIs. See GovKit::Configuration for available attributes.
   end
 end
