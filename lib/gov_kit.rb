@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 
+require 'digest/md5'
 require 'active_support'
 require 'nokogiri'
 require 'iconv'

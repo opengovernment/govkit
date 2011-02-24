@@ -13,6 +13,13 @@ module GovKit
       unload(attributes)
     end
 
+    # Returns a hash of the response object, potentially useful for comparison
+    # on sync
+    #
+    def to_md5
+      @md5 = Digest::MD5.hexdigest(@raw_response.body)
+    end
+
     def self.parse(response)
       # This method handles the basic responses we might get back from
       # Net::HTTP. But if a service returns something other than a 404 when an object is not found,
