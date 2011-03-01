@@ -1,6 +1,6 @@
 # Govkit
 
-Govkit is a Ruby gem that provides simple access to open government APIs around the web, including:
+Govkit is a Ruby gem that provides simple access to US open government APIs around the web, including:
 
  *  [OpenCongress](http://www.opencongress.org/api), which has an API for federal bills, votes, people, and news and blog coverage
  *  [The Open States project](http://fiftystates-dev.sunlightlabs.com/), which has a RESTful API for accessing data about state legislators, bills, votes, etc.
@@ -50,6 +50,14 @@ Please join the [Govkit Google Group](http://groups.google.com/group/govkit), es
 [Report a bug](https://participatorypolitics.lighthouseapp.com/projects/51485-govkit) on our Lighthouse page.
 
 Govkit's main repo is on Github: [http://github.com/opengovernment/govkit](http://github.com/opengovernment/govkit), where your contributions, forks, and feedback are greatly welcomed.
+
+# Dear Canadians
+
+For Canadian open government data, our friends up north have created a [https://github.com/jpmckinney/govkit-ca](govkit-ca) gem that lives in the GovKit::CA namespace and should interoperate just fine with this gem.
+
+# A GovKit for your country?
+
+Let us know if you'd like to build a govkit for your region! We'd love to link to you. Your gem should be called, for example, govkit-uk (ISO 3166 country code), and your methods should live in the GovKit::UK namespace (for example).
 
 # TODOs
 
