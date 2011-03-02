@@ -57,7 +57,7 @@ For Canadian open government data, our friends up north have created a [https://
 
 # A GovKit for your country?
 
-Let us know if you'd like to build a govkit for your region! We'd love to link to you. Your gem should be called, for example, govkit-uk (ISO 3166 country code), and your methods should live in the GovKit::UK namespace (for example).
+Let us know if you'd like to build a govkit for your region! We'd love to link to you. Your gem should be called, for example, govkit-uk (ISO 3166 country code), and your methods should live in the GovKit::GB namespace (for example).
 
 # TODOs
 
