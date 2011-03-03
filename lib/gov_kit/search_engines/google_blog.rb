@@ -4,24 +4,19 @@ module GovKit
       def self.search(options=[])
         query = options.join('+')
         host = GovKit::configuration.google_blog_base_url
-        path = "/blogsearch?hl=en&q=#{URI::encode(query)}&btnG=Search+Blogs&num=50"
+        path = "/blogsearch_feeds?q=#{URI::encode(query)}&hl=en&output=rss&num=50"
 
-        doc = Nokogiri::HTML(make_request(host, path))
-        stories = doc.search("td.j")
-        titles = (doc/"a").select { |a| (a.attributes["id"] && a.attributes["id"].value.match(/p-(.*)/)) }
+        doc = Nokogiri::XML(make_request(host, path))
 
         mentions = []
 
-        stories.each do |story|
+        doc.xpath('//item').each do |i|
           mention = GovKit::Mention.new
-          t = titles.shift
-
-          mention.title = t.text if t #.unpack("C*").pack("U*") if t
-          # mention.url = t.attributes["href"].value if t
-          mention.date = story.at("font:nth(1)").text.strip
-          mention.excerpt = (story.at("br + font").text) #.unpack("C*").pack("U*")
-          mention.source = story.at("a.f1").text
-          mention.url = story.at("a.f1").attributes["href"].value
+          mention.title = i.xpath('title').inner_text
+          mention.date = i.xpath('dc:date').inner_text
+          mention.excerpt = i.xpath('description').inner_text
+          mention.source = i.xpath('dc:publisher').inner_text
+          mention.url = i.xpath('link').inner_text
 
           mentions << mention
         end
