@@ -16,9 +16,9 @@ module GovKit::ActsAsNoteworthy
           has_many :mentions, :as => :owner
 
           with_options :as => :owner, :class_name => "Mention" do |c|
-            c.has_many :google_news_mentions, :conditions => {:search_source => "Google News"}
-            c.has_many :google_blog_mentions, :conditions => {:search_source => "Google Blogs"}
-            c.has_many :technorati_mentions, :conditions => {:search_source => "Technorati"}
+            c.has_many :google_news_mentions, :conditions => {:search_source => "Google News"}, :order => 'date desc'
+            c.has_many :google_blog_mentions, :conditions => {:search_source => "Google Blogs"}, :order => 'date desc'
+            c.has_many :technorati_mentions, :conditions => {:search_source => "Technorati"}, :order => 'date desc'
           end
         end
 
