@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.6.0"
+  s.version = "0.6.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2011-02-01}
+  s.date = %q{2011-03-03}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{develop@opencongress.org}
   s.extra_rdoc_files = [
@@ -71,7 +71,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/opengovernment/govkit}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.5.2}
   s.summary = %q{Simple access to open government APIs around the web}
   s.test_files = [
     "spec/follow_the_money_spec.rb",
@@ -80,7 +80,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
