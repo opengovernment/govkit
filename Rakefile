@@ -22,7 +22,7 @@ begin
     gem.email = "develop@opencongress.org"
     gem.homepage = "http://github.com/opengovernment/govkit"
     gem.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-    gem.add_dependency('httparty', '>= 0.5.2')
+    gem.add_dependency('httparty', '>= 0.7.4')
     gem.add_dependency('json', '>= 1.4.3')
     gem.add_dependency('nokogiri', '>= 1.4.4')
     gem.add_dependency('fastercsv', '>= 1.5.3')
