@@ -46,16 +46,12 @@ module GovKit
       if record.is_a?(Array)
         instantiate_collection(record)
       else
-        instantiate_record(record)
+        new(record)
       end
     end
 
-    def self.instantiate_record(record)
-      new(record)
-    end
-
     def self.instantiate_collection(collection)
-      collection.collect! { |record| instantiate_record(record) }
+      collection.collect! { |record| new(record) }
     end
 
     def unload(attributes)
