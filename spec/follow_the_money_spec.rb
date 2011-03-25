@@ -1,5 +1,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
+# Provides "String.singularize"
+# which is used by resource_for_collection, in resource.rb
+require 'active_support/inflector'
+
 module GovKit::FollowTheMoney
   describe GovKit::FollowTheMoney do
 

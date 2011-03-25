@@ -24,11 +24,11 @@ module GovKit
       # This method handles the basic responses we might get back from
       # Net::HTTP. But if a service returns something other than a 404 when an object is not found,
       # you'll need to handle that in the subclass.
-      raise ResourceNotFound, "Resource not found" unless !response.blank?
-
       if response.class == HTTParty::Response
         case response.response
           when Net::HTTPNotFound
+            raise ResourceNotFound, "404 Not Found"
+          when Net::HTTPGone
             raise ResourceNotFound, "404 Not Found"
           when Net::HTTPUnauthorized
             raise NotAuthorized, "401 Not Authorized; have you set up your API key?"
@@ -39,6 +39,8 @@ module GovKit
         end
       end
       
+      raise ResourceNotFound, "Resource not found" unless !response.blank?
+
       instantiate(response)
     end
 
