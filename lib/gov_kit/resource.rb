@@ -17,7 +17,7 @@ module GovKit
     # on sync
     #
     def to_md5
-      @md5 = Digest::MD5.hexdigest(@raw_response.body)
+      Digest::MD5.hexdigest(@raw_response.body)
     end
 
     def self.parse(response)
