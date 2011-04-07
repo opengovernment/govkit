@@ -24,6 +24,8 @@ module GovKit
   autoload :OpenCongress, 'gov_kit/open_congress'
   autoload :SearchEngines, 'gov_kit/search_engines'
   
+  # Convenience class to represent a news story or blog post.
+  # Used by GovKit::SearchEngines classes Technorati, GoogleBlog, and GoogleNews.
   class Mention
     attr_accessor :url, :excerpt, :title, :source, :date, :weight
   end
