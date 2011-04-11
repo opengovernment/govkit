@@ -1,4 +1,20 @@
 module GovKit
+
+  # This is the parent class to the classes that wrap
+  # the data returned to govkit.
+  #
+  # The subclasses are responsible for fetching the data as json from 
+  # different web services; Resource will then parse the json,
+  # converting returned fields to instance methods.
+  #
+  # Initialize a Resource with a hash of attributes, or an array of hashes.
+  # For each attribute, add a getter and setter to this instance.
+  # So if
+  #   res = Resource.new { "aaa" => "111", "bbb" => "222", "ccc" => "333" }
+  # then
+  #   res.aaa == "111"
+  #   res.bbb == "222"
+  #   res.ccc == "333"
   class Resource
     include HTTParty
     format :json
@@ -56,6 +72,9 @@ module GovKit
       collection.collect! { |record| new(record) }
     end
 
+    # Given a hash of attributes,
+    # then for each attribute, create or set a pair of member accessors with the name
+    # of the attribute's key.
     def unload(attributes)
       raise ArgumentError, "expected an attributes Hash, got #{attributes.inspect}" unless attributes.is_a?(Hash)
 
