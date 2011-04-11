@@ -79,7 +79,7 @@ module GovKit
         response = get('/Votes.getBillsByStateRecent', :query => {'stateId' => state_abbrev})
         parse(response['bills'])
       end
-      
+
       def self.find_by_category_and_year_and_state(category_id, year, state_abbrev = nil)
         response = get('/Votes.getBillsByCategoryYearState', :query => {'stateId' => state_abbrev, 'year' => year, 'categoryId' => category_id})
         raise(ResourceNotFound, response['error']['errorMessage']) if response['error'] && response['error']['errorMessage'] == 'No bills for this state, category, and year.'
@@ -91,7 +91,14 @@ module GovKit
         find_by_category_and_year_and_state(category_id, year)
       end
     end
-    
+
+    class BillAction < VoteSmartResource
+      def self.find(action_id)
+        response = get('/Votes.getBillAction', :query => {'actionId' => action_id})
+        parse(response['action'])
+      end
+    end
+
     class BillCategory < VoteSmartResource
       def self.find(year, state_abbrev)
         response = get("/Votes.getCategories", :query => {'year' => year, 'stateId' => state_abbrev})
