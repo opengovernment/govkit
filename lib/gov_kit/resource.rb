@@ -75,6 +75,9 @@ module GovKit
     # Given a hash of attributes,
     # then for each attribute, create or set a pair of member accessors with the name
     # of the attribute's key.
+    # If the value of the attribute is itself an array or a hash,
+    # then create a new class with the (singularized) key as a name, and with a parent class of Resource,
+    # and initialize it with the hash.
     def unload(attributes)
       raise ArgumentError, "expected an attributes Hash, got #{attributes.inspect}" unless attributes.is_a?(Hash)
 
