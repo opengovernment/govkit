@@ -15,10 +15,12 @@ module GovKit::TransparencyData
       base_uri = GovKit::TransparencyDataResource.base_uri.gsub(/\./, '\.')
 
       urls = [
-        ['/contributions.json\?',             'contributions.response'],
-        ['/lobbying.json\?',                  'lobbyists_find_all.response'],
-        ['/grants.json\?',                    'grants_find_all.response'],
-        ['/entities.json\?',                  'entities_search.response']
+        ['/contributions.json\?',                         'contributions.response'],
+        ['/lobbying.json\?',                              'lobbyists_find_all.response'],
+        ['/grants.json\?',                                'grants_find_all.response'],
+        ['/entities.json\?apikey=$',                      'entities_search.response'],
+        ['/entities.json\?apikey=&search=harry%20pelosi', 'entities_search_limit_0.response'],
+        ['/entities.json\?apikey=&search=nancy%2Bpelosi', 'entities_search_limit_1.response']
       ]
 
       urls.each do |u|
@@ -56,6 +58,21 @@ module GovKit::TransparencyData
         @entities.length.should eql(2)
         @entities[0].name.should eql("Nancy Pelosi (D)")
         @entities[1].name.should eql("Nancy Pelosi for Congress")
+      end
+
+      it 'should return an empty list when no elements found' do
+        lambda do
+          @entities = Entity.search( "harry pelosi" )
+        end.should_not raise_error
+
+        @entities.length.should eql(0)
+      end
+      it 'should return a list when one element found' do
+        lambda do
+          @entities = Entity.search( "nancy+pelosi" )
+        end.should_not raise_error
+
+        @entities.length.should eql(1)
       end
     end
   end

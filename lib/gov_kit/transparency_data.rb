@@ -2,6 +2,15 @@ module GovKit
   class TransparencyDataResource < Resource
     default_params :apikey => GovKit::configuration.sunlight_apikey
     base_uri GovKit::configuration.transparency_data_base_url
+
+    def self.search_for( path, ops = {} )
+      response = get(path, :query => ops)
+      if response == []
+        return response
+      end
+      parse(response) 
+    end
+
   end
 
   module TransparencyData
@@ -16,8 +25,7 @@ module GovKit
       end
 
       def self.search(ops = {})
-        response = get('/contributions.json', :query => ops)
-        parse(response)
+        search_for ('/contributions.json', ops)
       end
     end
 
@@ -34,8 +42,7 @@ module GovKit
         parse(response)
       end
       def self.search(ops = {})
-        response = get("/entities.json", :query => ops)
-        parse(response)
+        search_for("/entities.json", { :search => ops } )
       end
     end
 
@@ -43,8 +50,7 @@ module GovKit
     # for complete query options.
     class Contract < TransparencyDataResource
       def self.search(ops = {})
-        response = get('/contracts.json', :query => ops)
-        parse(response)
+        search_for('/contracts.json', :query => ops)
       end
     end
     
@@ -52,8 +58,7 @@ module GovKit
     # for complete query options.
     class LobbyingRecord < TransparencyDataResource
       def self.search(ops = {})
-        response = get('/lobbying.json', :query => ops)
-        parse(response)
+        search_for('/lobbying.json', :query => ops)
       end
     end
     
@@ -61,8 +66,7 @@ module GovKit
     # for complete query options.
     class Grant < TransparencyDataResource
       def self.search(ops = {})
-        response = get('/grants.json', :query => ops)
-        parse(response)
+        search_for('/grants.json', :query => ops)
       end
     end
     
