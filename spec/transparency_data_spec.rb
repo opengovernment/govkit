@@ -46,6 +46,20 @@ module GovKit::TransparencyData
     end
   end
   
+  describe Entity do 
+    context "#search" do
+      it "should find all entities" do
+        lambda do
+          @entities = Entity.search
+        end.should_not raise_error
+
+        @entities.length.should eql(2)
+        @entities[0].name.should eql("Nancy Pelosi (D)")
+        @entities[1].name.should eql("Nancy Pelosi for Congress")
+      end
+    end
+  end
+  
   describe LobbyingRecord do 
     context "#search" do
       it "should find all contributions" do

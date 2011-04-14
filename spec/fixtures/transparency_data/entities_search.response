@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Server: nginx/0.7.67
+Date: Thu, 14 Apr 2011 18:55:36 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+
+[{"name": "Nancy Pelosi (D)", "count_given": 0, "firm_income": 0.0, "count_lobbied": 0, "seat": "federal:house", "total_received": 12163810.0, "state": "CA", "lobbying_firm": null, "count_received": 9190, "party": "D", "total_given": 0.0, "type": "politician", "id": "85ab2e74589a414495d18cc7a9233981", "non_firm_spending": 0.0},{"name": "Nancy Pelosi for Congress", "count_given": 1133, "firm_income": 0.0, "count_lobbied": 0, "seat": null, "total_received": 0.0, "state": null, "lobbying_firm": false, "count_received": 0, "party": null, "total_given": 1538428.0, "type": "organization", "id": "afb432ec90454c8a83a3113061e7be27", "non_firm_spending": 0.0}]
