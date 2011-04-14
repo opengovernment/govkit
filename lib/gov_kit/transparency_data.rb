@@ -9,7 +9,13 @@ module GovKit
     # See http://transparencydata.com/api/contributions/
     # for complete query options.
     class Contribution < TransparencyDataResource
+      # Deprecated. Now use search instead.
       def self.find(ops = {})
+        response = get('/contributions.json', :query => ops)
+        parse(response)
+      end
+
+      def self.search(ops = {})
         response = get('/contributions.json', :query => ops)
         parse(response)
       end
@@ -18,8 +24,17 @@ module GovKit
     # See http://transparencydata.com/api/aggregates/contributions/
     # for complete query options.
     class Entity < TransparencyDataResource
+      # Deprecated. Use find(id) instead.
       def self.find_by_id(id)
         response = get("/entities/#{id}.json")
+        parse(response)
+      end
+      def self.find(id)
+        response = get("/entities/#{id}.json")
+        parse(response)
+      end
+      def self.search(ops = {})
+        response = get("/entities.json", :query => ops)
         parse(response)
       end
     end
@@ -27,7 +42,7 @@ module GovKit
     # See http://transparencydata.com/api/contracts/
     # for complete query options.
     class Contract < TransparencyDataResource
-      def self.find(ops = {})
+      def self.search(ops = {})
         response = get('/contracts.json', :query => ops)
         parse(response)
       end
@@ -36,7 +51,7 @@ module GovKit
     # See http://transparencydata.com/api/lobbying/
     # for complete query options.
     class LobbyingRecord < TransparencyDataResource
-      def self.find(ops = {})
+      def self.search(ops = {})
         response = get('/lobbying.json', :query => ops)
         parse(response)
       end
@@ -45,7 +60,7 @@ module GovKit
     # See http://transparencydata.com/api/grants/
     # for complete query options.
     class Grant < TransparencyDataResource
-      def self.find(ops = {})
+      def self.search(ops = {})
         response = get('/grants.json', :query => ops)
         parse(response)
       end

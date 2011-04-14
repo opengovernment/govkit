@@ -17,7 +17,8 @@ module GovKit::TransparencyData
       urls = [
         ['/contributions.json\?',             'contributions.response'],
         ['/lobbying.json\?',                  'lobbyists_find_all.response'],
-        ['/grants.json\?',                    'grants_find_all.response']
+        ['/grants.json\?',                    'grants_find_all.response'],
+        ['/entities.json\?',                  'entities_search.response']
       ]
 
       urls.each do |u|
@@ -33,10 +34,10 @@ module GovKit::TransparencyData
   end
 
   describe Contribution do 
-    context "#find" do
+    context "#search" do
       it "should find all contributions" do
         lambda do
-          @contributions = Contribution.find
+          @contributions = Contribution.search
         end.should_not raise_error
 
         @contributions.length.should eql(8)
@@ -46,10 +47,10 @@ module GovKit::TransparencyData
   end
   
   describe LobbyingRecord do 
-    context "#find" do
+    context "#search" do
       it "should find all contributions" do
         lambda do
-          @records = LobbyingRecord.find
+          @records = LobbyingRecord.search
         end.should_not raise_error
 
         @records.length.should eql(5)
@@ -59,10 +60,10 @@ module GovKit::TransparencyData
   end
 
   describe Grant do 
-    context "#find" do
+    context "#search" do
       it "should find all contributions" do
         lambda do
-          @records = Grant.find
+          @records = Grant.search
         end.should_not raise_error
 
         @records.length.should eql(3)
