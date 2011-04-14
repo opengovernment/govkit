@@ -13,7 +13,7 @@ module GovKit::ActsAsNoteworthy
 
       unless included_modules.include? InstanceMethods
         instance_eval do
-          has_many :mentions, :as => :owner
+          has_many :mentions, :as => :owner, :order => 'date desc'
 
           with_options :as => :owner, :class_name => "Mention" do |c|
             c.has_many :google_news_mentions, :conditions => {:search_source => "Google News"}, :order => 'date desc'
