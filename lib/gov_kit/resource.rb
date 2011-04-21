@@ -15,6 +15,10 @@ module GovKit
   #   res.aaa == "111"
   #   res.bbb == "222"
   #   res.ccc == "333"
+  #
+  # Includes HTTParty, which provides convenience methods like get().
+  #
+  # See http://rdoc.info/github/jnunemaker/httparty/master/HTTParty/ClassMethods
   class Resource
     include HTTParty
     format :json
@@ -45,7 +49,7 @@ module GovKit
     # you'll need to handle that in the subclass.
     #
     def self.parse(response)
-      raise ResourceNotFound, "Resource not found" unless !response.blank?
+      return [] unless !response.blank?
 
       if response.class == HTTParty::Response
         case response.response
