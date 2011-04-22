@@ -49,12 +49,12 @@ module GovKit
     # you'll need to handle that in the subclass.
     #
     def self.parse(response)
-      return [] unless !response.blank?
 
       if response.class == HTTParty::Response
         case response.response
           when Net::HTTPNotFound
-            raise ResourceNotFound, "404 Not Found"
+            return []
+            # raise ResourceNotFound, "404 Not Found"
           when Net::HTTPGone
             raise ResourceNotFound, "404 Not Found"
           when Net::HTTPUnauthorized
@@ -66,6 +66,8 @@ module GovKit
         end
       end
       
+      return [] unless !response.blank?
+
       instantiate(response)
     end
 

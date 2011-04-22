@@ -21,6 +21,7 @@ module GovKit::OpenStates
         ['/legislators/2462/\?',               'legislator.response'],
         ['/legislators/410/\?',                '410.response'],
         ['/legislators/401/\?',                '401.response'],
+        ['/legislators/404/\?',                '404.response'],
         ['/legislators/\?',                    'legislator_query.response']
       ]
 
@@ -112,12 +113,12 @@ module GovKit::OpenStates
           @legislator.last_name.should == "Cox"
         end
 
-        it "should raise a GovKitError if the legislator is not found" do
-          lambda do
-            @legislator = Legislator.find(410)
-          end.should raise_error(GovKit::ResourceNotFound)
+        it "should return an empty array if the legislator is not found" do
+          # The OpenStates server returns a 404 error.
+          # resource.rb parses that and returns an empty array.
+          @legislator = Legislator.find(404)
 
-          @legislator.should be_nil
+          @legislator.should eql([])
         end
       end
 
