@@ -10,7 +10,7 @@ require 'json'
 require 'gov_kit/configuration'
 require 'csv'
 
-if RUBY_VERSION[0,3] == "1.8"
+if VERSION[0,3] == "1.8"
   require 'fastercsv'
 end
 
