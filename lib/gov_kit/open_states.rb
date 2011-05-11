@@ -9,6 +9,24 @@ module GovKit
     # http://rubydoc.info/gems/httparty/0.7.4/HTTParty/ClassMethods#default_params-instance_method
     default_params :output => 'json', :apikey => GovKit::configuration.sunlight_apikey
     base_uri GovKit::configuration.openstates_base_url
+
+    # Do a GET query, with optional parameters.
+    #
+    # OpenStates returns a 404 error when a query
+    # returns nothing.
+    #
+    # So, if a query result is a resource not found error,
+    # we return an empty set.
+    def self.get_uri(uri, options={})
+      begin
+        response = get(uri, options)
+        result = parse(response)
+      rescue ResourceNotFound
+        return []
+      end
+      result
+    end
+
   end
 
   # Ruby module for interacting with the Open States Project API
@@ -32,8 +50,7 @@ module GovKit
     #
     class State < OpenStatesResource
       def self.find_by_abbreviation(abbreviation)
-        response = get("/metadata/#{abbreviation}/")
-        parse(response)
+        get_uri("/metadata/#{abbreviation}/")
       end
     end
 
@@ -47,13 +64,12 @@ module GovKit
       def self.find(state_abbrev, session, bill_id, chamber = '')
         escaped_bill_id = bill_id.gsub(/ /, '%20')
         escaped_session = session.gsub(/ /, '%20')
-        response = get("/bills/#{state_abbrev.downcase}/#{escaped_session}/#{chamber.blank? ? '' : chamber + '/'}#{escaped_bill_id}/")
-        parse(response)
+
+        get_uri("/bills/#{state_abbrev.downcase}/#{escaped_session}/#{chamber.blank? ? '' : chamber + '/'}#{escaped_bill_id}/")
       end
 
       def self.search(query, options = {})
-        response = get('/bills/', :query => {:q => query}.merge(options))
-        parse(response)
+        get_uri('/bills/', :query => {:q => query}.merge(options))
       end
 
       def self.latest(updated_since, ops = {})
@@ -69,13 +85,11 @@ module GovKit
     #
     class Legislator < OpenStatesResource
       def self.find(legislator_id)
-        response = get("/legislators/#{legislator_id}/")
-        parse(response)
+        get_uri("/legislators/#{legislator_id}/")
       end
 
       def self.search(options = {})
-        response = get('/legislators/', :query => options)
-        parse(response)
+        get_uri('/legislators/', :query => options)
       end
     end
     
@@ -86,13 +100,11 @@ module GovKit
     #
     class Committee < OpenStatesResource
       def self.find(committee_id)
-        response = get("/committees/#{committee_id}/")
-        parse(response)
+        get_uri("/committees/#{committee_id}/")
       end
 
       def self.search(options = {})
-        response = get('/committees/', :query => options)
-        parse(response)
+        get_uri('/committees/', :query => options)
       end
     end
     
