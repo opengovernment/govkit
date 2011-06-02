@@ -1,11 +1,10 @@
 require 'rubygems'
-require 'spec'
+require 'rspec'
 require 'fakeweb'
-require 'fakeweb_matcher'
 require File.dirname(__FILE__) + '/../lib/govkit'
 
 # prevent the use of `` in tests
-Spec::Runner.configure do |configuration|
+RSpec.configure do |c|
 end
 
 # When running specs in TextMate, provide an rputs method to cleanly print objects into HTML display

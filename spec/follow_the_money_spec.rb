@@ -1,5 +1,9 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
+# Provides "String.singularize"
+# which is used by resource_for_collection, in resource.rb
+require 'active_support/inflector'
+
 module GovKit::FollowTheMoney
   describe GovKit::FollowTheMoney do
 
@@ -25,10 +29,10 @@ module GovKit::FollowTheMoney
       end
     end
 
-    it "should raise NotAuthorizedError if the api key is not valid" do
+    it "should raise NotAuthorized if the api key is not valid" do
       lambda do 
         @contribution = Contribution.find(0)
-      end.should raise_error(GovKit::NotAuthorizedError)
+      end.should raise_error(GovKit::NotAuthorized)
 
       @contribution.should be_nil
     end

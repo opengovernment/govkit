@@ -1,0 +1,190 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.0
+Date: Fri, 29 Apr 2011 20:52:00 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+
+[
+    {
+        "updated_at": "2011-04-26 01:20:17", 
+        "parent_id": "MDC000009", 
+        "state": "md", 
+        "subcommittee": "ALCOHOLIC BEVERAGES SUBCOMMITTEE", 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000009"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000003", 
+        "state": "md", 
+        "subcommittee": "CAPITAL BUDGET SUBCOMMITTEE", 
+        "committee": "BUDGET & TAXATION COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000004"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000009", 
+        "state": "md", 
+        "subcommittee": "ENVIRONMENT SUBCOMMITTEE", 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000012"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000009", 
+        "state": "md", 
+        "subcommittee": "ETHICS & ELECTION LAW SUBCOMMITTEE", 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000013"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "FINANCE COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000015"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000015", 
+        "state": "md", 
+        "subcommittee": "HEALTH SUBCOMMITTEE", 
+        "committee": "FINANCE COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000016"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:53", 
+        "parent_id": "MDC000015", 
+        "state": "md", 
+        "subcommittee": "TRANSPORTATION SUBCOMMITTEE", 
+        "committee": "FINANCE COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000017"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:53", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "EXECUTIVE NOMINATIONS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000018"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000003", 
+        "state": "md", 
+        "subcommittee": "PUBLIC SAFETY, TRANSPORTATION & ENVIRONMENT SUBCOMMITTEE", 
+        "committee": "BUDGET & TAXATION COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000007"
+    }, 
+    {
+        "created_at": "2011-01-29 00:13:19", 
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000009", 
+        "state": "md", 
+        "subcommittee": "HEALTH OCCUPATIONS SUBCOMMITTEE", 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000068"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "BUDGET & TAXATION COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000003"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:53", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "SPECIAL COMMITTEE ON SUBSTANCE ABUSE", 
+        "chamber": "upper", 
+        "id": "MDC000019"
+    }, 
+    {
+        "created_at": "2011-01-29 00:13:19", 
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000009", 
+        "state": "md", 
+        "subcommittee": "LABOR LICENSING, & REGULATION SUBCOMMITTEE", 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000069"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000003", 
+        "state": "md", 
+        "subcommittee": "HEALTH & HUMAN SERVICES SUBCOMMITTEE", 
+        "committee": "BUDGET & TAXATION COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000067"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000003", 
+        "state": "md", 
+        "subcommittee": "EDUCATION, BUSINESS & ADMINISTRATION SUBCOMMITTEE", 
+        "committee": "BUDGET & TAXATION COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000066"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000003", 
+        "state": "md", 
+        "subcommittee": "PENSIONS SUBCOMMITTEE", 
+        "committee": "BUDGET & TAXATION COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000006"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000008"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": "MDC000009", 
+        "state": "md", 
+        "subcommittee": "EDUCATION SUBCOMMITTEE", 
+        "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000011"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "RULES COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000001"
+    }, 
+    {
+        "updated_at": "2011-04-29 01:19:52", 
+        "parent_id": null, 
+        "state": "md", 
+        "subcommittee": null, 
+        "committee": "JUDICIAL PROCEEDINGS COMMITTEE", 
+        "chamber": "upper", 
+        "id": "MDC000002"
+    }
+]

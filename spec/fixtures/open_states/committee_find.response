@@ -1,0 +1,53 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.0
+Date: Fri, 29 Apr 2011 21:05:59 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Authorization: 
+
+{
+    "members": [
+        {
+            "leg_id": "MDL000194", 
+            "role": "member", 
+            "name": "Joan Carter Conway"
+        }, 
+        {
+            "leg_id": "MDL000226", 
+            "role": "member", 
+            "name": "Paul G. Pinsky"
+        }, 
+        {
+            "leg_id": "MDL000379", 
+            "role": "member", 
+            "name": "Bill Ferguson"
+        }, 
+        {
+            "leg_id": "MDL000381", 
+            "role": "member", 
+            "name": "J. B. Jennings"
+        }, 
+        {
+            "leg_id": "MDL000384", 
+            "role": "member", 
+            "name": "Karen S. Montgomery"
+        }, 
+        {
+            "leg_id": "MDL000387", 
+            "role": "member", 
+            "name": "Ronald N. Young"
+        }
+    ], 
+    "updated_at": "2011-04-29 01:19:52", 
+    "parent_id": "MDC000009", 
+    "state": "md", 
+    "sources": [
+        {
+            "url": "http://www.msa.md.gov/msa/mdmanual/05sen/html/com/02eco.html"
+        }
+    ], 
+    "subcommittee": "ENVIRONMENT SUBCOMMITTEE", 
+    "committee": "EDUCATION, HEALTH & ENVIRONMENTAL AFFAIRS COMMITTEE", 
+    "chamber": "upper", 
+    "id": "MDC000012"
+}

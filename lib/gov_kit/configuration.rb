@@ -2,7 +2,7 @@ module GovKit
   class Configuration
     attr_accessor :sunlight_apikey, :openstates_base_url, :transparency_data_base_url, :transparency_data_categories_url
     attr_accessor :votesmart_apikey, :votesmart_base_url
-    attr_accessor :ftm_apikey, :ftm_base_url
+    attr_accessor :openstates_apikey, :ftm_apikey, :ftm_base_url
     attr_accessor :opencongress_apikey, :opencongress_base_url
     attr_accessor :technorati_apikey, :technorati_base_url
     attr_accessor :google_blog_base_url, :google_news_base_url
