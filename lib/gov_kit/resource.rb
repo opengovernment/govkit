@@ -1,7 +1,24 @@
 module GovKit
-    
-  # Parent class of resources returned by GovKit.
+
+  # This is the parent class to the classes that wrap
+  # the data returned to govkit.
   #
+  # The subclasses are responsible for fetching the data as json from 
+  # different web services; Resource will then parse the json,
+  # converting returned fields to instance methods.
+  #
+  # Initialize a Resource with a hash of attributes, or an array of hashes.
+  # For each attribute, add a getter and setter to this instance.
+  # So if
+  #   res = Resource.new { "aaa" => "111", "bbb" => "222", "ccc" => "333" }
+  # then
+  #   res.aaa == "111"
+  #   res.bbb == "222"
+  #   res.ccc == "333"
+  #
+  # Includes HTTParty, which provides convenience methods like get().
+  #
+  # See http://rdoc.info/github/jnunemaker/httparty/master/HTTParty/ClassMethods
   class Resource
     include HTTParty
     format :json
@@ -32,11 +49,12 @@ module GovKit
     # you'll need to handle that in the subclass.
     #
     def self.parse(response)
-      raise ResourceNotFound, "Resource not found" unless !response.blank?
 
       if response.class == HTTParty::Response
         case response.response
           when Net::HTTPNotFound
+            raise ResourceNotFound, "404 Not Found"
+          when Net::HTTPGone
             raise ResourceNotFound, "404 Not Found"
           when Net::HTTPUnauthorized
             raise NotAuthorized, "401 Not Authorized; have you set up your API key?"
@@ -47,6 +65,8 @@ module GovKit
         end
       end
       
+      return [] unless !response.blank?
+
       instantiate(response)
     end
 
@@ -55,14 +75,14 @@ module GovKit
     # +record+ is a hash of values returned by a service, 
     # or an array of hashes.
     #
-    # If +record+ is a hash, return a single GovKit::Resource.
+    # If +record+ is a hash, return an array containing a single GovKit::Resource.
     # If it is an array, return an array of GovKit::Resources.
     #
     def self.instantiate(record)
       if record.is_a?(Array)
         instantiate_collection(record)
       else
-        new(record)
+        [new(record)]
       end
     end
 
@@ -70,9 +90,12 @@ module GovKit
       collection.collect! { |record| new(record) }
     end
 
-    # Fills the @attributes hash with new resources generated from the 
-    # members of the +attributes+ hash, 
-    #
+    # Given a hash of attributes, assign it to the @attributes member, 
+    # then for each attribute, create or set a pair of member accessors with the name
+    # of the attribute's key.
+    # If the value of the attribute is itself an array or a hash,
+    # then create a new class with the (singularized) key as a name, and with a parent class of Resource,
+    # and initialize it with the hash.
     def unload(attributes)
       raise ArgumentError, "expected an attributes Hash, got #{attributes.inspect}" unless attributes.is_a?(Hash)
 
