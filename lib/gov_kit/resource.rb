@@ -64,7 +64,7 @@ module GovKit
             raise ClientError, '4xx client error'
         end
       end
-      
+
       return [] unless !response.blank?
 
       instantiate(response)
@@ -75,14 +75,14 @@ module GovKit
     # +record+ is a hash of values returned by a service, 
     # or an array of hashes.
     #
-    # If +record+ is a hash, return an array containing a single GovKit::Resource.
+    # If +record+ is a hash, return a single GovKit::Resource.
     # If it is an array, return an array of GovKit::Resources.
     #
     def self.instantiate(record)
       if record.is_a?(Array)
         instantiate_collection(record)
       else
-        [new(record)]
+        new(record)
       end
     end
 

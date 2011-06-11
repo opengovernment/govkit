@@ -82,12 +82,8 @@ module GovKit::OpenStates
 
         it "should find a state by abbreviation" do
           lambda do
-            @states = State.find_by_abbreviation('ca')
+            @state = State.find_by_abbreviation('ca')
           end.should_not raise_error
-
-          @states.should be_an_instance_of(Array)
-          @states.length.should eql(1)
-          @state = @states[0]
 
           @state.should be_an_instance_of(State)
           @state.name.should == "California"
@@ -100,12 +96,8 @@ module GovKit::OpenStates
       context "#find" do
         it "should find a bill by state abbreviation, session, chamber, bill_id" do
           lambda do
-            @bills = Bill.find('ca', '20092010', 'lower', 'AB667')
+            @bill = Bill.find('ca', '20092010', 'lower', 'AB667')
           end.should_not raise_error
-
-          @bills.should be_an_instance_of(Array)
-          @bills.length.should eql(1)
-          @bill = @bills[0]
 
           @bill.should be_an_instance_of(Bill)
           @bill.title.should include("An act to amend Section 1750.1 of the Business and Professions Code, and to amend Section 104830 of")
@@ -143,12 +135,8 @@ module GovKit::OpenStates
       context "#find" do
         it "should find a specific legislator" do
           lambda do
-            @legislators = Legislator.find(2462)
+            @legislator = Legislator.find(2462)
           end.should_not raise_error
-
-          @legislators.should be_an_instance_of(Array)
-          @legislators.length.should eql(1)
-          @legislator = @legislators[0]
 
           @legislator.should be_an_instance_of(Legislator)
           @legislator.first_name.should == "Dave"
@@ -190,14 +178,11 @@ module GovKit::OpenStates
       context "#find" do
         it "should find a specific committee" do
           lambda do
-            @committees = Committee.find( 'MDC000012' )
+            @committee = Committee.find( 'MDC000012' )
           end.should_not raise_error
 
-          @committees.should be_an_instance_of(Array)
-          @committees.length.should eql(1)
-          com = @committees[0]
-          com.should be_an_instance_of(Committee)
-          com['id'].should eql('MDC000012')
+          @committee.should be_an_instance_of(Committee)
+          @committee['id'].should eql('MDC000012')
         end
       end
       context "#search" do
