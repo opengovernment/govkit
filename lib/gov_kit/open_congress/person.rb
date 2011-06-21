@@ -10,6 +10,7 @@ module GovKit
     
       def initialize(params)
         params.each do |key, value|
+          key = key.to_sym if RUBY_VERSION[0,3] == "1.9"
           instance_variable_set("@#{key}", value) if Person.instance_methods.include? key.to_sym
         end      
       end
