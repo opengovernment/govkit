@@ -7,7 +7,7 @@ module GovKit
     
       def initialize(params)
         params.each do |key, value|
-          instance_variable_set("@#{key}", value) if PersonStat.instance_methods.include? key
+          instance_variable_set("@#{key}", value) if PersonStat.instance_methods.include? key.to_sym
         end      
       end      
       
