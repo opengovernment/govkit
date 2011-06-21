@@ -8,13 +8,6 @@ module GovKit
                     :youtube_id, :oc_user_comments, :oc_users_tracking, :abstains_percentage, :with_party_percentage, :recent_news,
                     :recent_blogs, :person_stats
     
-      def initialize(params)
-        params.each do |key, value|
-          key = key.to_sym if RUBY_VERSION[0,3] == "1.9"
-          instance_variable_set("@#{key}", value) if Person.instance_methods.include? key.to_sym
-        end      
-      end
-    
       def self.find(params)
 
         url = construct_url("people", params)
