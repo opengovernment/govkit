@@ -7,6 +7,10 @@ module GovKit
                     :name, :nickname, :osid, :party, :religion, :state, :title, :unaccented_name, :url, :user_approval,
                     :youtube_id, :oc_user_comments, :oc_users_tracking, :abstains_percentage, :with_party_percentage, :recent_news,
                     :recent_blogs, :person_stats
+      
+      def initialize(params)
+        super Person, params
+      end
     
       def self.find(params)
 

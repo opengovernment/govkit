@@ -14,10 +14,10 @@ module GovKit::OpenCongress
 
   class OpenCongressObject
     
-    def initialize(params)
+    def initialize(obj, params)
       params.each do |key, value|
         key = key.to_sym if RUBY_VERSION[0,3] == "1.9"
-        instance_variable_set("@#{key}", value) if Person.instance_methods.include? key.to_sym
+        instance_variable_set("@#{key}", value) if obj.instance_methods.include? key
       end      
     end
 

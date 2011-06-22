@@ -7,7 +7,7 @@ module GovKit
                     :other_votes
     
       def initialize(params)
-        super
+        super VotingComparison, params
         
         set_people
         set_votes

@@ -5,7 +5,7 @@ module GovKit
       attr_accessor :roll_call, :person1, :person2
     
       def initialize(params)
-        super
+        super RollCallComparison, params
       
         set_people
         set_roll_call

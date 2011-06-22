@@ -2,7 +2,11 @@ module GovKit
   module OpenCongress
     class Bill < OpenCongressObject
       attr_accessor :bill_type, :id, :introduced, :last_speech, :last_vote_date, :last_vote_roll, :last_vote_where, :last_action, :number, :plain_language_summary, :session, :sponsor, :co_sponsors, :title_full_common, :status, :most_recent_actions, :bill_titles, :recent_blogs, :recent_news, :ident
-    
+      
+      def initialize(params)
+        super Bill, params
+      end
+      
       def ident
         "#{session}-#{bill_type}#{number}"
       end
