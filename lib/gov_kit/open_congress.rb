@@ -1,6 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'json'
+require 'CGI'
 
 module GovKit::OpenCongress
   autoload :Bill,             'gov_kit/open_congress/bill'
@@ -12,6 +13,13 @@ module GovKit::OpenCongress
   autoload :PersonStat,       'gov_kit/open_congress/person_stat'
 
   class OpenCongressObject
+    
+    def initialize(obj, params)
+      params.each do |key, value|
+        key = key.to_sym if RUBY_VERSION[0,3] == "1.9"
+        instance_variable_set("@#{key}", value) if obj.instance_methods.include? key
+      end      
+    end
 
     def self.construct_url(api_method, params)
       url = nil

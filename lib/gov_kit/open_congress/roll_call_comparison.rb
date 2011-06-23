@@ -5,10 +5,7 @@ module GovKit
       attr_accessor :roll_call, :person1, :person2
     
       def initialize(params)
-        params.each do |key, value|
-          instance_variable_set("@#{key}", value) if RollCallComparison.instance_methods.include? key
-        end
-      
+        super RollCallComparison, params
       
         set_people
         set_roll_call

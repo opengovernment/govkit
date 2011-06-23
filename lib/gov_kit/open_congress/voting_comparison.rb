@@ -7,9 +7,7 @@ module GovKit
                     :other_votes
     
       def initialize(params)
-        params.each do |key, value|
-          instance_variable_set("@#{key}", value) if VotingComparison.instance_methods.include? key
-        end
+        super VotingComparison, params
         
         set_people
         set_votes
