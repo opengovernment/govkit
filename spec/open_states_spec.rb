@@ -20,7 +20,9 @@ module GovKit::OpenStates
       # as the result. 
       urls = [
         ['/bills/ca/20092010/AB667/',          'bill.response'],
-        ['/bills/\?',                          'bill_query.response'],
+        ['/bills/\?.*q=cooperatives.*',        'bill_query.response'],
+        ['/bills/\?.*state=tx.*',              'bill_query.response'],
+        ['/bills/\?.*q=single-employee.*',     'bill_query_single.response'],
         ['/bills/latest/\?',                   'bill_query.response'],
         ['/legislators/2462/\?',               'legislator.response'],
         ['/legislators/410/\?',                '410.response'],
@@ -114,6 +116,14 @@ module GovKit::OpenStates
           end
           @bills.collect(&:bill_id).should include("SB 921")
         end
+        
+        it "should return a single bill result as an array" do
+          @bills = Bill.search('single-employee')
+        
+          @bills.should be_an_instance_of(Array)
+          @bills.collect(&:bill_id).should include("SB 77")
+        end
+
       end
 
       context "#latest" do

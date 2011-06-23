@@ -1,0 +1,68 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 21:56:32 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Vary: Authorization
+
+{
+    "votes": [], 
+    "last_action": "2009-02-09 19:00:00", 
+    "first_action": "2008-11-09 19:00:00", 
+    "title": "Relating to participation by single-employee businesses in private purchasing cooperatives or health group cooperatives.", 
+    "updated_at": "2010-04-17 09:48:07", 
+    "actions": [
+        {
+            "date": "2009-02-09 19:00:00", 
+            "action": "Referred to State Affairs", 
+            "updated_at": "2010-04-14 20:12:40", 
+            "actor": "upper"
+        }, 
+        {
+            "date": "2009-02-09 19:00:00", 
+            "action": "Read first time", 
+            "updated_at": "2010-04-14 20:12:40", 
+            "actor": "upper"
+        }, 
+        {
+            "date": "2008-11-09 19:00:00", 
+            "action": "Filed", 
+            "updated_at": "2010-04-14 20:12:40", 
+            "actor": "upper"
+        }, 
+        {
+            "date": "2008-11-09 19:00:00", 
+            "action": "Received by the Secretary of the Senate", 
+            "updated_at": "2010-04-14 20:12:40", 
+            "actor": "upper"
+        }
+    ], 
+    "sponsors": [
+        {
+            "leg_id": 354, 
+            "type": "author", 
+            "full_name": "Jane Nelson"
+        }
+    ], 
+    "chamber": "upper", 
+    "state": "tx", 
+    "session": "81", 
+    "sources": [
+        {
+            "url": "ftp://ftp.legis.state.tx.us/bills/81R/billhistory/senate_bills/SB00001_SB00099/SB 77.xml", 
+            "retrieved": "2010-06-07 04:14:30"
+        }, 
+        {
+            "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00001_SB00099", 
+            "retrieved": "2010-06-07 04:14:33"
+        }
+    ], 
+    "versions": [
+        {
+            "url": "ftp://ftp.legis.state.tx.us/bills/81R/billtext/html/senate_bills/SB00001_SB00099/SB00077I.HTM", 
+            "name": "SB00077I", 
+            "updated_at": "2010-04-17 09:48:07"
+        }
+    ], 
+    "bill_id": "SB 77"
+}
