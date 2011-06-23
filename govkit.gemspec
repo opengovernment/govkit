@@ -66,7 +66,6 @@ Gem::Specification.new do |s|
     "spec/fixtures/open_states/state.response",
     "spec/follow_the_money_spec.rb",
     "spec/open_states_spec.rb",
-    "spec/spec.opts",
     "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/opengovernment/govkit}
