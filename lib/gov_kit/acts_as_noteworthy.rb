@@ -6,8 +6,6 @@ module GovKit::ActsAsNoteworthy
 
   module ActMethods
     def acts_as_noteworthy(options={})
-      options[:keywords] ||= []
-
       class_inheritable_accessor :options
       self.options = options
 
@@ -34,16 +32,22 @@ module GovKit::ActsAsNoteworthy
   module InstanceMethods
 
     def raw_mentions
-      params = self.options[:keywords].clone
-      attributes = self.options[:with].clone
+      opts = self.options.clone
+      attributes = opts.delete(:with)
 
-      attributes.each do |attr|
-        params << self.instance_eval("#{attr}")
+      if opts[:geo]
+        opts[:geo] = self.instance_eval("#{opts[:geo]}")
       end
+
+      query = []
+      attributes.each do |attr|
+        query << self.instance_eval("#{attr}")
+      end
+
       {
-        :google_news => GovKit::SearchEngines::GoogleNews.search(params),
-        :google_blogs => GovKit::SearchEngines::GoogleBlog.search(params),
-        :technorati => GovKit::SearchEngines::Technorati.search(params)
+        :google_news => GovKit::SearchEngines::GoogleNews.search(query, opts),
+        :google_blogs => GovKit::SearchEngines::GoogleBlog.search(query),
+        :technorati => GovKit::SearchEngines::Technorati.search(query)
       }
     end
   end

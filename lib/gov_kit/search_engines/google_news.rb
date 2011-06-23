@@ -10,15 +10,22 @@ module GovKit
       # Fetches stories about a topic from google news.
       # Returns an array of GovKit::Mention objects.
       #
-      # options:: The query wanted. For example:
+      # query: The query wanted For example:
       # mentions = GoogleNews.search("Nancy Pelosi")
+      #
+      # options: Any additional parameters to the search. eg.:
+      # :geo => 'Texas' will add &geo=Texas to the URL.
+      # :num => 100 will show 100 results per page.
       # 
-      def self.search(options=[])
-        query = options.join('+')
+      def self.search(query=[], options={})
+        query = query.join('+')
         host = GovKit::configuration.google_news_base_url
-        path = "/news?hl=en&ned=us&q=#{URI::encode(query)}&btnG=Search+News&num=50"
+        options[:num] ||= 50
+
+        path = "/news/search?aq=f&pz=1&cf=all&ned=us&hl=en&as_epq=#{URI::encode(query)}&as_drrb=q&as_qdr=a" + '&' + options.map { |k, v| URI::encode(k.to_s) + '=' + URI::encode(v.to_s) }.join('&')
 
         doc = Nokogiri::HTML(make_request(host, path))
+
         stories = doc.search("div.search-results > div.story")
 
         mentions = []
@@ -34,6 +41,9 @@ module GovKit
 
           mentions << mention
         end
+
+        print mentions.size.to_s + ' mentions'
+
         mentions
       end
 
