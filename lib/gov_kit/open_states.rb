@@ -89,7 +89,8 @@ module GovKit
       end
 
       def self.search(options = {})
-        get_uri('/legislators/', :query => options)
+        result = get_uri('/legislators/', :query => options)
+        return result.instance_of?(Array) ? result : [result]
       end
     end
     
