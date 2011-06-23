@@ -22,7 +22,7 @@ module GovKit::OpenStates
         ['/bills/ca/20092010/AB667/',          'bill.response'],
         ['/bills/\?.*q=cooperatives.*',        'bill_query.response'],
         ['/bills/\?.*state=tx.*',              'bill_query.response'],
-        ['/bills/\?.*q=single-employee.*',     'bill_query_single.response'],
+        ['/bills/\?.*q=professions.*',         'bill.response'],
         ['/bills/latest/\?',                   'bill_query.response'],
         ['/legislators/2462/\?',               'legislator.response'],
         ['/legislators/410/\?',                '410.response'],
@@ -118,10 +118,10 @@ module GovKit::OpenStates
         end
         
         it "should return a single bill result as an array" do
-          @bills = Bill.search('single-employee')
+          @bills = Bill.search('professions')
         
           @bills.should be_an_instance_of(Array)
-          @bills.collect(&:bill_id).should include("SB 77")
+          @bills.collect(&:bill_id).should include("AB667")
         end
 
       end
