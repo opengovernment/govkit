@@ -4,7 +4,7 @@ module GovKit
       include HTTParty
       default_params :format => 'xml'
       base_uri GovKit::configuration.wikipedia_base_url
-      headers 'User-Agent' => 'GovKit +http://ppolitics.org'
+      headers 'User-Agent' => 'GovKit +http://github.com/opengovernment/govkit'
 
       def self.search(query, options={})
         doc = Nokogiri::HTML(get("/wiki/#{query}"))

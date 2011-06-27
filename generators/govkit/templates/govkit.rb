@@ -19,6 +19,9 @@ if defined? GovKit
     # Technorati API key
     config.technorati_apikey = 'YOUR_TECHNORATI_APIKEY'
     
+    # Bing App ID
+    config.bing_appid = 'YOUR_BING_APPID'
+    
     # Other things you could set here include alternate URLs for
     # the APIs. See GovKit::Configuration for available attributes.
   end

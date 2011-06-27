@@ -17,6 +17,7 @@ module GovKit::ActsAsNoteworthy
             c.has_many :google_news_mentions, :conditions => {:search_source => "Google News"}, :order => 'date desc'
             c.has_many :google_blog_mentions, :conditions => {:search_source => "Google Blogs"}, :order => 'date desc'
             c.has_many :technorati_mentions, :conditions => {:search_source => "Technorati"}, :order => 'date desc'
+            c.has_many :bing_mentions, :conditions => {:search_source => "Bing"}, :order => 'date desc'
           end
         end
 
@@ -46,8 +47,9 @@ module GovKit::ActsAsNoteworthy
 
       {
         :google_news => GovKit::SearchEngines::GoogleNews.search(query, opts),
-        :google_blogs => GovKit::SearchEngines::GoogleBlog.search(query),
-        :technorati => GovKit::SearchEngines::Technorati.search(query)
+        :google_blogs => GovKit::SearchEngines::GoogleBlog.search(query, opts),
+#        :technorati => GovKit::SearchEngines::Technorati.search(query),
+        :bing => GovKit::SearchEngines::Bing.search(query, opts)
       }
     end
   end

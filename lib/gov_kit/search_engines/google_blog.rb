@@ -1,8 +1,8 @@
 module GovKit
   module SearchEngines
     class GoogleBlog
-      def self.search(options=[])
-        query = options.join('+')
+      def self.search(query=[], options = {})
+        query = [query, options.delete(:geo)].compact.join('+')
         host = GovKit::configuration.google_blog_base_url
         path = "/blogsearch_feeds?q=#{URI::encode(query)}&hl=en&output=rss&num=50"
 
@@ -13,6 +13,7 @@ module GovKit
         doc.xpath('//item').each do |i|
           mention = GovKit::Mention.new
           mention.title = i.xpath('title').inner_text
+          mention.search_source = 'Google Blogs'
           mention.date = i.xpath('dc:date').inner_text
           mention.excerpt = i.xpath('description').inner_text
           mention.source = i.xpath('dc:publisher').inner_text

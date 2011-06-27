@@ -7,6 +7,7 @@ module GovKit
     attr_accessor :technorati_apikey, :technorati_base_url
     attr_accessor :google_blog_base_url, :google_news_base_url
     attr_accessor :wikipedia_base_url
+    attr_accessor :bing_appid, :bing_base_url
 
     def initialize
       @openstates_apikey = @votesmart_apikey = @ftm_apikey = ''
@@ -16,6 +17,7 @@ module GovKit
       @ftm_base_url = 'api.followthemoney.org/'
       @opencongress_base_url = 'www.opencongress.org/'
       @technorati_base_url = 'api.technorati.com'
+      @bing_base_url = 'api.search.live.net'
       @google_blog_base_url = 'blogsearch.google.com'
       @google_news_base_url = 'news.google.com'
       @wikipedia_base_url = 'en.wikipedia.org'

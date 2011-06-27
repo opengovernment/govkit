@@ -17,6 +17,7 @@ module GovKit
 #          mention.excerpt = i.text("excerpt")
 #          mention.date = i.text("created")
 #          mention.source = i.text("weblog/name")
+#          mention.search_source = 'Technorati'
 #          mention.url = i.text("weblog/url")
 #          mention.weight = i.text("weblog/inboundlinks")
 #

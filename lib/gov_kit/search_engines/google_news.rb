@@ -35,6 +35,7 @@ module GovKit
 
           mention.title = story.at("h2.title a").text
           mention.url = story.at("h2.title a").attributes["href"].value
+          mention.search_source = 'Google News'          
           mention.date = story.at("div.sub-title > span.date").text
           mention.source = story.at("div.sub-title > span.source").text
           mention.excerpt = story.at("div.body > div.snippet").text
@@ -42,13 +43,12 @@ module GovKit
           mentions << mention
         end
 
-        print mentions.size.to_s + ' mentions'
+        puts mentions.size.to_s + ' mentions from Google News'
 
         mentions
       end
 
       def self.make_request(host, path)
-        puts host+path
         response = Net::HTTP.get(host, path)
       end
     end
