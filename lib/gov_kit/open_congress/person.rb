@@ -105,7 +105,8 @@ module GovKit
       def self.parse_results(result)
 
           people = []
-          result["people"].each do |person|
+          result.each do |res|
+            person = res["person"]
           
             these_recent_blogs = person["recent_blogs"]
             blogs = []

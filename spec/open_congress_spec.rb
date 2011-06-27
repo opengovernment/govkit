@@ -11,7 +11,8 @@ module GovKit::OpenCongress
       # then return the contents of the corresponding file
       # as the result. 
       urls = [
-       [ "people?key=YOUR_OPENCONGRESS_API_KEY&district=1&state=FL&format=json", "person.response" ] 
+       [ "people?key=YOUR_OPENCONGRESS_API_KEY&district=1&state=FL&format=json", "person.response" ],
+       [ "most_blogged_bills_this_week?key=YOUR_OPENCONGRESS_API_KEY&format=json", "bill.response" ]
       ]
       
       urls.each do |u|
@@ -29,6 +30,20 @@ module GovKit::OpenCongress
           @person.should be_an_instance_of(Person)
           @person.firstname.should == "Jeff"
           @person.lastname.should == "Miller"
+        end
+      end
+    end
+    
+    describe Bill do
+      context "#most_blogged_bills_this_week" do
+        it "should find specific bills" do
+          lambda do
+            @bill = Bill.most_blogged_bills_this_week.first
+          end.should_not raise_error
+          
+          @bill.should be_an_instance_of(Bill)
+          @bill.number.should == 782
+          @bill.bill_type.should == "s"
         end
       end
     end

@@ -123,7 +123,8 @@ module GovKit
       def self.parse_results(result)
       
         bills = []
-        result["bills"].each do |bill|
+        result.each do |res|
+          bill = res["bill"]
         
           these_recent_blogs = bill["recent_blogs"]
           blogs = []
