@@ -3,11 +3,11 @@ module GovKit
     class Bing
       def self.search(query=[], options={})
         host = GovKit::configuration.bing_base_url
-        query = [query, options.delete(:geo)].compact.join('+')
+        query = [query, options[:geo]].compact.join('+')
 
         options['Sources'] ||= 'news'
 
-        path = "/json.aspx?Query=#{URI::encode(query)}&AppId=#{GovKit::configuration.bing_appid}" + '&' + options.map { |k, v| URI::encode(k.to_s) + '=' + URI::encode(v.to_s) }.join('&')
+        path = "/json.aspx?Query=#{URI::encode(query)}&AppId=#{GovKit::configuration.bing_appid}"
 
         doc = JSON.parse(make_request(host, path))
 
@@ -31,7 +31,7 @@ module GovKit
       end
 
       def self.make_request(host, path)
-        response = Net::HTTP.get(host, path)
+        Net::HTTP.get(host, path)
       end
     end
   end

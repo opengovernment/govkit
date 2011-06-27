@@ -2,7 +2,7 @@ module GovKit
   module SearchEngines
     class GoogleBlog
       def self.search(query=[], options = {})
-        query = [query, options.delete(:geo)].compact.join('+')
+        query = [query, options[:geo]].compact.join('+')
         host = GovKit::configuration.google_blog_base_url
         path = "/blogsearch_feeds?q=#{URI::encode(query)}&hl=en&output=rss&num=50"
 
