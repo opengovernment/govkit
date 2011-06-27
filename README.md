@@ -61,7 +61,7 @@ Let us know if you'd like to build a govkit for your region! We'd love to link t
 
 # TODOs
 
-  * Guaranteed Eachability: If an API call is expected to return zero or more records, then GovKit should always return an array or nil to the caller, not a single object, even if there's only one record returned in this particular API call.
+  * Better test coverage, especially on the OpenCongress API 
   * Migration & documentation for acts_as_noteworthy
 
 Copyright (c) 2010 Participatory Politics Foundation, released under the MIT license
