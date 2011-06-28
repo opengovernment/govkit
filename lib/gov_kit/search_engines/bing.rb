@@ -7,7 +7,7 @@ module GovKit
 
         options['Sources'] ||= 'news'
 
-        path = "/json.aspx?Query=#{URI::encode(query)}&AppId=#{GovKit::configuration.bing_appid}"
+        path = "/json.aspx?Query=#{URI::encode(query)}&AppId=#{GovKit::configuration.bing_appid}&Sources=#{options['Sources']}"
 
         doc = JSON.parse(make_request(host, path))
 
