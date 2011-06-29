@@ -59,9 +59,4 @@ For Canadian open government data, our friends up north have created a [govkit-c
 
 Let us know if you'd like to build a govkit for your region! We'd love to link to you. Your gem should be called, for example, govkit-uk (ISO 3166 country code), and your methods should live in the GovKit::GB namespace (for example).
 
-# TODOs
-
-  * Better test coverage, especially on the OpenCongress API 
-  * Migration & documentation for acts_as_noteworthy
-
 Copyright (c) 2010 Participatory Politics Foundation, released under the MIT license
