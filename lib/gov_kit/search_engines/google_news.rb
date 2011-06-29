@@ -1,6 +1,3 @@
-require 'uri'
-require 'net/http'
-
 module GovKit
   module SearchEngines
 
@@ -18,37 +15,32 @@ module GovKit
       # :num => 100 will show 100 results per page.
       # 
       def self.search(query=[], options={})
-        query = query.join('+')
+        query = Array(query).join('+')
         host = GovKit::configuration.google_news_base_url
         options[:num] ||= 50
 
-        path = "/news/search?aq=f&pz=1&cf=all&ned=us&hl=en&as_epq=#{URI::encode(query)}&as_drrb=q&as_qdr=a" + '&' + options.map { |k, v| URI::encode(k.to_s) + '=' + URI::encode(v.to_s) }.join('&')
+        path = "/news?q=#{URI::encode(query)}&output=rss" + '&' + options.map { |k, v| URI::encode(k.to_s) + '=' + URI::encode(v.to_s) }.join('&')
 
-        doc = Nokogiri::HTML(make_request(host, path))
-
-        stories = doc.search("div.search-results > div.story")
+        doc = Nokogiri::XML(make_request(host, path))
 
         mentions = []
 
-        stories.each do |story|
+        doc.xpath('//item').each do |i|
           mention = GovKit::Mention.new
 
-          mention.title = story.at("h2.title a").text
-          mention.url = story.at("h2.title a").attributes["href"].value
-          mention.date = story.at("div.sub-title > span.date").text
-          mention.source = story.at("div.sub-title > span.source").text
-          mention.excerpt = story.at("div.body > div.snippet").text
+          mention.title = i.xpath('title').inner_text.split(" - ").first
+          mention.date = i.xpath('pubDate').inner_text
+          mention.excerpt = i.xpath('description').inner_text
+          mention.source = i.xpath('title').inner_text.split(" - ").last
+          mention.url = i.xpath('link').inner_text
 
           mentions << mention
         end
-
-        print mentions.size.to_s + ' mentions'
 
         mentions
       end
 
       def self.make_request(host, path)
-        puts host+path
         response = Net::HTTP.get(host, path)
       end
     end
