@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.6.1"
+  s.version = "0.7.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2011-03-03}
+  s.date = %q{2011-06-29}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{develop@opencongress.org}
   s.extra_rdoc_files = [
@@ -18,6 +18,8 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rspec",
+    "Gemfile",
     "LICENSE",
     "README.md",
     "Rakefile",
@@ -46,6 +48,7 @@ Gem::Specification.new do |s|
     "lib/gov_kit/railtie.rb",
     "lib/gov_kit/resource.rb",
     "lib/gov_kit/search_engines.rb",
+    "lib/gov_kit/search_engines/bing.rb",
     "lib/gov_kit/search_engines/google_blog.rb",
     "lib/gov_kit/search_engines/google_news.rb",
     "lib/gov_kit/search_engines/technorati.rb",
@@ -53,47 +56,73 @@ Gem::Specification.new do |s|
     "lib/gov_kit/transparency_data.rb",
     "lib/gov_kit/vote_smart.rb",
     "lib/govkit.rb",
+    "spec/fixtures/bing/news_search.response",
+    "spec/fixtures/bing/no_results.response",
     "spec/fixtures/follow_the_money/business-page0.response",
     "spec/fixtures/follow_the_money/business-page1.response",
     "spec/fixtures/follow_the_money/contribution.response",
     "spec/fixtures/follow_the_money/unauthorized.response",
+    "spec/fixtures/open_congress/person.response",
     "spec/fixtures/open_states/401.response",
+    "spec/fixtures/open_states/404.response",
     "spec/fixtures/open_states/410.response",
     "spec/fixtures/open_states/bill.response",
     "spec/fixtures/open_states/bill_query.response",
+    "spec/fixtures/open_states/committee_find.response",
+    "spec/fixtures/open_states/committee_query.response",
     "spec/fixtures/open_states/legislator.response",
     "spec/fixtures/open_states/legislator_query.response",
     "spec/fixtures/open_states/state.response",
+    "spec/fixtures/search_engines/google_news.response",
+    "spec/fixtures/transparency_data/contributions.response",
+    "spec/fixtures/transparency_data/entities_search.response",
+    "spec/fixtures/transparency_data/entities_search_limit_0.response",
+    "spec/fixtures/transparency_data/entities_search_limit_1.response",
+    "spec/fixtures/transparency_data/grants_find_all.response",
+    "spec/fixtures/transparency_data/lobbyists_find_all.response",
     "spec/follow_the_money_spec.rb",
+    "spec/open_congress_spec.rb",
     "spec/open_states_spec.rb",
-    "spec/spec_helper.rb"
+    "spec/search_engines_spec.rb",
+    "spec/spec_helper.rb",
+    "spec/transparency_data_spec.rb"
   ]
   s.homepage = %q{http://github.com/opengovernment/govkit}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.2}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Simple access to open government APIs around the web}
-  s.test_files = [
-    "spec/follow_the_money_spec.rb",
-    "spec/open_states_spec.rb",
-    "spec/spec_helper.rb"
-  ]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<httparty>, [">= 0.5.2"])
+      s.add_runtime_dependency(%q<govkit>, [">= 0"])
+      s.add_runtime_dependency(%q<active_support>, [">= 0"])
+      s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
+      s.add_runtime_dependency(%q<httparty>, [">= 0"])
+      s.add_runtime_dependency(%q<i18n>, [">= 0"])
+      s.add_runtime_dependency(%q<httparty>, [">= 0.7.4"])
       s.add_runtime_dependency(%q<json>, [">= 1.4.3"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.4"])
       s.add_runtime_dependency(%q<fastercsv>, [">= 1.5.3"])
     else
-      s.add_dependency(%q<httparty>, [">= 0.5.2"])
+      s.add_dependency(%q<govkit>, [">= 0"])
+      s.add_dependency(%q<active_support>, [">= 0"])
+      s.add_dependency(%q<nokogiri>, [">= 0"])
+      s.add_dependency(%q<httparty>, [">= 0"])
+      s.add_dependency(%q<i18n>, [">= 0"])
+      s.add_dependency(%q<httparty>, [">= 0.7.4"])
       s.add_dependency(%q<json>, [">= 1.4.3"])
       s.add_dependency(%q<nokogiri>, [">= 1.4.4"])
       s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
     end
   else
-    s.add_dependency(%q<httparty>, [">= 0.5.2"])
+    s.add_dependency(%q<govkit>, [">= 0"])
+    s.add_dependency(%q<active_support>, [">= 0"])
+    s.add_dependency(%q<nokogiri>, [">= 0"])
+    s.add_dependency(%q<httparty>, [">= 0"])
+    s.add_dependency(%q<i18n>, [">= 0"])
+    s.add_dependency(%q<httparty>, [">= 0.7.4"])
     s.add_dependency(%q<json>, [">= 1.4.3"])
     s.add_dependency(%q<nokogiri>, [">= 1.4.4"])
     s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
