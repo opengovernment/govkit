@@ -69,7 +69,8 @@ module GovKit
       end
 
       def self.search(query, options = {})
-        get_uri('/bills/', :query => {:q => query}.merge(options))
+        result = get_uri('/bills/', :query => {:q => query}.merge(options))
+        return Array(result)
       end
 
       def self.latest(updated_since, ops = {})
@@ -90,7 +91,7 @@ module GovKit
 
       def self.search(options = {})
         result = get_uri('/legislators/', :query => options)
-        return result.instance_of?(Array) ? result : [result]
+        return Array(result)
       end
     end
     
