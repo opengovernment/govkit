@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Server: nginx/0.6.35
+Date: Tue, 15 Jun 2010 21:50:08 GMT
+Content-Type: application/json; charset=utf-8
+Connection: close
+Vary: Authorization
+
+{"people":[], "bills":[]}
