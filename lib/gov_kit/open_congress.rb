@@ -4,13 +4,13 @@ require 'json'
 require 'CGI'
 
 module GovKit::OpenCongress
-  autoload :Bill,             'gov_kit/open_congress/bill'
-  autoload :BlogPost,         'gov_kit/open_congress/blog_post'
-  autoload :NewsPost,         'gov_kit/open_congress/news_post'
-  autoload :VotingComparison, 'gov_kit/open_congress/voting_comparison'
+  autoload :Bill,               'gov_kit/open_congress/bill'
+  autoload :BlogPost,           'gov_kit/open_congress/blog_post'
+  autoload :NewsPost,           'gov_kit/open_congress/news_post'
+  autoload :VotingComparison,   'gov_kit/open_congress/voting_comparison'
   autoload :RollCallComparison, 'gov_kit/open_congress/roll_call_comparison'
-  autoload :Person,           'gov_kit/open_congress/person'
-  autoload :PersonStat,       'gov_kit/open_congress/person_stat'
+  autoload :Person,             'gov_kit/open_congress/person'
+  autoload :PersonStat,         'gov_kit/open_congress/person_stat'
 
   class OpenCongressObject
     
@@ -23,11 +23,8 @@ module GovKit::OpenCongress
 
     def self.construct_url(api_method, params)
       url = nil
-      if GovKit::configuration.opencongress_apikey == nil || GovKit::configuration.opencongress_apikey == ''
-        raise "Failed to provide OpenCongress API Key"
-      else
-        url = "http://#{GovKit::configuration.opencongress_base_url}api/#{api_method}?key=#{GovKit::configuration.opencongress_apikey}#{hash2get(params)}&format=json"
-      end
+      getkey = GovKit::configuration.opencongress_apikey.nil? ? GovKit::configuration.opencongress_apikey = "" : "&key=#{GovKit::configuration.opencongress_apikey}"
+      url = "http://#{GovKit::configuration.opencongress_base_url}api/#{api_method}?format=json#{hash2get(params)}#{getkey}"
       return url
     end
 

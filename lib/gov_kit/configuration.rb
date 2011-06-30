@@ -25,10 +25,19 @@ module GovKit
       # Permant home for contribution category mappings
       @transparency_data_categories_url = 'http://assets.transparencydata.org.s3.amazonaws.com/docs/catcodes.csv'
     end
+    
+    def opencongress_apikey= key
+      warn "[DEPRECATION] OpenCongress no longer requires an API Key. Ability to set it will be removed in future versions"
+      @opencongress_apikey = key
+    end
   end
 
   class << self
     attr_accessor :configuration
+    
+    def self.initalize
+      self.configuration = Configuration.new
+    end
   end
 
   # Configure GovKit in config/initializers/govkit.rb
@@ -40,10 +49,5 @@ module GovKit
   def self.configure
     self.configuration ||= Configuration.new
     yield(configuration)
-  end
-  
-  def opencongress_apikey= key
-    warn "[DEPRECATION] OpenCongress no longer requires an API Key. Ability to set it will be removed in future versions"
-    @opencongress_apikey = key
   end
 end
