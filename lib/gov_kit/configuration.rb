@@ -41,4 +41,9 @@ module GovKit
     self.configuration ||= Configuration.new
     yield(configuration)
   end
+  
+  def opencongress_apikey= key
+    warn "[DEPRECATION] OpenCongress no longer requires an API Key. Ability to set it will be removed in future versions"
+    @opencongress_apikey = key
+  end
 end
