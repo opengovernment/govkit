@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2011-06-29}
+  s.date = %q{2011-06-30}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{develop@opencongress.org}
   s.extra_rdoc_files = [
@@ -96,6 +96,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<govkit>, [">= 0"])
       s.add_runtime_dependency(%q<active_support>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
       s.add_runtime_dependency(%q<httparty>, [">= 0"])
@@ -105,6 +106,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.4"])
       s.add_runtime_dependency(%q<fastercsv>, [">= 1.5.3"])
     else
+      s.add_dependency(%q<govkit>, [">= 0"])
       s.add_dependency(%q<active_support>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 0"])
       s.add_dependency(%q<httparty>, [">= 0"])
@@ -115,6 +117,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
     end
   else
+    s.add_dependency(%q<govkit>, [">= 0"])
     s.add_dependency(%q<active_support>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 0"])
     s.add_dependency(%q<httparty>, [">= 0"])
