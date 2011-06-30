@@ -23,7 +23,7 @@ module GovKit::OpenCongress
 
     def self.construct_url(api_method, params)
       url = nil
-      getkey = GovKit::configuration.opencongress_apikey.nil? ? GovKit::configuration.opencongress_apikey = "" : "&key=#{GovKit::configuration.opencongress_apikey}"
+      getkey = GovKit::configuration.opencongress_apikey.nil? ? "" : "&key=#{GovKit::configuration.opencongress_apikey}"
       url = "http://#{GovKit::configuration.opencongress_base_url}api/#{api_method}?format=json#{hash2get(params)}#{getkey}"
       return url
     end

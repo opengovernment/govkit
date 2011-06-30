@@ -35,8 +35,9 @@ module GovKit
   class << self
     attr_accessor :configuration
     
-    def self.initalize
-      self.configuration = Configuration.new
+    def configuration
+      @configuration = Configuration.new if @configuration.nil?
+      @configuration
     end
   end
 
@@ -47,7 +48,6 @@ module GovKit
   #     config.openstates_apikey = ''
   #   end
   def self.configure
-    self.configuration ||= Configuration.new
     yield(configuration)
   end
 end

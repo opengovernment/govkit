@@ -33,5 +33,4 @@ GovKit.configure do |config|
   config.openstates_apikey = 'YOUR_OPENSTATES_API_KEY'
   config.votesmart_apikey = 'YOUR_VOTESMART_API_KEY'
   config.ftm_apikey = 'YOUR_FTM_API_KEY'
-  config.opencongress_apikey = 'YOUR_OPENCONGRESS_API_KEY'
 end

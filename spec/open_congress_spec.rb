@@ -12,12 +12,12 @@ module GovKit::OpenCongress
       # then return the contents of the corresponding file
       # as the result. 
       urls = [
-       [ "people?key=YOUR_OPENCONGRESS_API_KEY&district=1&state=FL&format=json", "fl01.response" ],
-       [ "people?key=YOUR_OPENCONGRESS_API_KEY&district=0&state=ZZ&format=json", "empty.response" ],
-       [ "most_blogged_representatives_this_week?key=YOUR_OPENCONGRESS_API_KEY&format=json", "person.response" ],
-       [ "bills?key=YOUR_OPENCONGRESS_API_KEY&number=0&format=json", "empty.response" ],
-       [ "bills?key=YOUR_OPENCONGRESS_API_KEY&number=501&format=json", "501.response" ],
-       [ "most_blogged_bills_this_week?key=YOUR_OPENCONGRESS_API_KEY&format=json", "bill.response" ] 
+       [ "people?format=json&district=1&state=FL", "fl01.response" ],
+       [ "people?format=json&district=0&state=ZZ", "empty.response" ],
+       [ "most_blogged_representatives_this_week?format=json", "person.response" ],
+       [ "bills?format=json&number=0", "empty.response" ],
+       [ "bills?format=json&number=501", "501.response" ],
+       [ "most_blogged_bills_this_week?format=json", "bill.response" ] 
       ]
       
       urls.each do |u|
@@ -27,7 +27,7 @@ module GovKit::OpenCongress
     
     it "should construct a url properly" do
       @oc_objs.each do |klass|
-        klass.construct_url(klass.to_s.split("::").last, {}).should == "http://www.opencongress.org/api/#{klass.to_s.split("::").last}?key=YOUR_OPENCONGRESS_API_KEY&format=json"
+        klass.construct_url(klass.to_s.split("::").last, {}).should == "http://www.opencongress.org/api/#{klass.to_s.split("::").last}?format=json"
       end
     end
     
