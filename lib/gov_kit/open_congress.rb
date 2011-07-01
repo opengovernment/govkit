@@ -12,6 +12,13 @@ module GovKit::OpenCongress
   autoload :Person,             'gov_kit/open_congress/person'
   autoload :PersonStat,         'gov_kit/open_congress/person_stat'
 
+  # Parent class for classes that wrap {http://www.opencongress.org/api OpenCongress data}.
+  #
+  # Unlike the wrapper classes for data from {FollowTheMoneyResource FollowTheMoney}, 
+  # {OpenStatesResource OpenStates}, {TransparencyDataResource TransparencyData}, 
+  # and {VoteSmartResource VoteSmart}, OpenCongressObject does not inherit 
+  # from {GovKit::Resource}
+  #
   class OpenCongressObject
     
     def initialize(obj, params)
@@ -21,6 +28,8 @@ module GovKit::OpenCongress
       end      
     end
 
+    # Create a query url, by adding the method path and query parameters to the
+    # base url of {http://www.opencongress.org/api}.
     def self.construct_url(api_method, params)
       url = nil
       getkey = GovKit::configuration.opencongress_apikey.nil? ? "" : "&key=#{GovKit::configuration.opencongress_apikey}"
@@ -28,6 +37,10 @@ module GovKit::OpenCongress
       return url
     end
 
+    # Convert a hash to a string of query parameters.
+    #
+    # @param [Hash] h a hash.
+    # @return [String] a string of query parameters.
     def self.hash2get(h)
       get_string = ""
     
@@ -38,6 +51,17 @@ module GovKit::OpenCongress
       get_string
     end
 
+    # Iterates through the array returned by {make_call}, 
+    # converting each hash to an OpenCongressObject subclass.
+    #
+    # @param [Hash] results the array returned by make_call.
+    # @return a hash of arrays of OpenCongressObject objects, with these keys: 
+    #   * :also_supporting_bills 
+    #   * :also_opposing_bills
+    #   * :also_disapproved_senators
+    #   * :also_disapproved_representatives
+    #   * :also_approved_senators
+    #   * :also_approved_representatives
     def self.parse_supporting_results(result)
       working = result["opencongress_users_tracking"]
 
@@ -80,6 +104,12 @@ module GovKit::OpenCongress
     
     end
   
+    # Get the data from {http://www.opencongress.org/api OpenCongress data}. Called by subclasses.
+    #
+    # Parses the data using {http://flori.github.com/json/doc/index.html JSON.parse}, which
+    # returns an array of hashes.
+    #
+    # @return the returned data, as an array of hashes.
     def self.make_call(this_url)
       result = nil
       begin
