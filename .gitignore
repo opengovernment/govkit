@@ -21,3 +21,8 @@ pkg
 Gemfile.lock
 
 ## PROJECT::SPECIFIC
+
+## YARD
+doc
+.yardoc
+
