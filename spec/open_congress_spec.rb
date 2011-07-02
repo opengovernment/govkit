@@ -14,6 +14,7 @@ module GovKit::OpenCongress
       urls = [
        [ "people?format=json&district=1&state=FL", "fl01.response" ],
        [ "people?format=json&district=0&state=ZZ", "empty.response" ],
+       [ "senators_most_in_the_news_this_week?format=json", "person_most_in_news.response" ],
        [ "most_blogged_representatives_this_week?format=json", "person.response" ],
        [ "bills?format=json&number=0", "empty.response" ],
        [ "bills?format=json&number=501", "501.response" ],
@@ -33,7 +34,7 @@ module GovKit::OpenCongress
     
     it "should reformat a hash to a GET request" do
       @oc_objs.each do |klass|
-        klass.hash2get(:key => "key", :format => "json").should == "&key=key&format=json"
+        klass.hash2get(:key => "key", :format => "json").should == "&format=json&key=key"
       end
     end
     
@@ -59,6 +60,18 @@ module GovKit::OpenCongress
         end
       end
       
+      context "#senators most in the news this week" do
+        it "should find reps" do
+          lambda do
+            @person = Person.senators_most_in_the_news_this_week.first
+          end.should_not raise_error
+
+          @person.should be_an_instance_of(Person)
+          @person.firstname.should == "Jeff"
+          @person.lastname.should == "Miller"
+        end
+      end
+
       context "#most blogged representatives this week" do
         it "should find reps" do
           lambda do
