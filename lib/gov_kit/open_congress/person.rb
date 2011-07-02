@@ -104,9 +104,14 @@ module GovKit
 
       def self.parse_results(result)
 
-          people = []
-          result["people"].each do |person|
-          
+          parsed_people = []
+          if result.class == Hash
+            unparsed_people = result["people"]
+          else
+            unparsed_people = result
+          end
+
+          unparsed_people.each do |person|
             these_recent_blogs = person["recent_blogs"]
             blogs = []
             these_recent_blogs.each do |trb|
@@ -126,10 +131,10 @@ module GovKit
           
             person["recent_news"] = news
           
-            people << Person.new(person)
+            parsed_people << Person.new(person)
           end      
         
-          people
+          parsed_people
             
       end    
       
