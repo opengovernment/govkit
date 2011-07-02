@@ -67,8 +67,8 @@ module GovKit::OpenCongress
           end.should_not raise_error
 
           @person.should be_an_instance_of(Person)
-          @person.firstname.should == "Jeff"
-          @person.lastname.should == "Miller"
+          @person.firstname.should == "Mitch"
+          @person.lastname.should == "McConnell"
         end
       end
 
