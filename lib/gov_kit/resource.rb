@@ -1,29 +1,30 @@
 module GovKit
 
-  # This is the parent class to the classes that wrap
+
+  # This is the parent class for the classes that wrap
   # the data returned to govkit.
   #
-  # The subclasses are responsible for fetching the data as json from 
-  # different web services; Resource will then parse the json,
+  # Subclasses are responsible for fetching the data from 
+  # different web services; Resource will then parse the returned data,
   # converting returned fields to instance methods.
   #
   # Initialize a Resource with a hash of attributes, or an array of hashes.
   # For each attribute, add a getter and setter to this instance.
-  # So if
+  # @example
   #   res = Resource.new { "aaa" => "111", "bbb" => "222", "ccc" => "333" }
-  # then
   #   res.aaa == "111"
   #   res.bbb == "222"
   #   res.ccc == "333"
   #
-  # Includes HTTParty, which provides convenience methods like get().
-  #
-  # See http://rdoc.info/github/jnunemaker/httparty/master/HTTParty/ClassMethods
+  # Includes {http://rdoc.info/github/jnunemaker/httparty/master/HTTParty/ClassMethods HTTParty}, which provides convenience methods like get().
   class Resource
     include HTTParty
     format :json
 
+    # The attributes data returned by the service.
     attr_reader :attributes
+
+    # The response returned by the service.
     attr_reader :raw_response
 
     def initialize(attributes = {})
@@ -33,20 +34,21 @@ module GovKit
       unload(attributes)
     end
 
-    # Returns a hash of the response object, potentially useful for comparison
-    # on sync
+    # @return [Hash] the response object, potentially useful for comparison on sync
     #
     def to_md5
       Digest::MD5.hexdigest(@raw_response.body)
     end
 
-    # Handles the basic responses we might get back from Net::HTTP. 
-    # On success, returns a new Resource based on the response.
+    # Handles the basic responses we might get back from a web service.
     #
     # On failure, throws an error.
     #
     # If a service returns something other than a 404 when an object is not found,
     # you'll need to handle that in the subclass.
+    #
+    # @param [Object] response the object.
+    # @return [Resource] a new Resource created from the response.
     #
     def self.parse(response)
 
@@ -72,8 +74,8 @@ module GovKit
 
     # Instantiate new GovKit::Resources.
     #
-    # +record+ is a hash of values returned by a service, 
-    # or an array of hashes.
+    # @param [Hash] record a hash of values returned by a service, or an array of hashes.
+    # @return [Resource]
     #
     # If +record+ is a hash, return a single GovKit::Resource.
     # If it is an array, return an array of GovKit::Resources.
@@ -86,16 +88,24 @@ module GovKit
       end
     end
 
+    # Instantiate a set of records.
+    #
+    # @return [Array] Array of records
+    # @param [Array] collection An array of records
     def self.instantiate_collection(collection)
       collection.collect! { |record| new(record) }
     end
 
-    # Given a hash of attributes, assign it to the @attributes member, 
-    # then for each attribute, create or set a pair of member accessors with the name
+    # Given a hash of attributes, assign it to the @attributes member.
+    # Then for each attribute, create or set a pair of member accessors with the name
     # of the attribute's key.
+    #
     # If the value of the attribute is itself an array or a hash,
     # then create a new class with the (singularized) key as a name, and with a parent class of Resource,
     # and initialize it with the hash.
+    #
+    # @param [Hash] attributes the attributes returned by the web service.
+    #
     def unload(attributes)
       raise ArgumentError, "expected an attributes Hash, got #{attributes.inspect}" unless attributes.is_a?(Hash)
 
