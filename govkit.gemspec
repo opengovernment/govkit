@@ -31,6 +31,8 @@ Gem::Specification.new do |s|
     "init.rb",
     "lib/generators/govkit/govkit_generator.rb",
     "lib/generators/govkit/templates/govkit.rb",
+    "lib/generators/govkit/templates/mention.rb",
+    "lib/generators/govkit/templates/create_mentions.rb",
     "lib/gov_kit.rb",
     "lib/gov_kit/acts_as_noteworthy.rb",
     "lib/gov_kit/configuration.rb",
