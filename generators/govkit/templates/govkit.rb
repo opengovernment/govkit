@@ -11,13 +11,9 @@ if defined? GovKit
     # API key for NIMSP. Request one here:
     # http://www.followthemoney.org/membership/settings.phtml
     config.ftm_apikey = 'YOUR_FTM_API_KEY'
-
-    # Api key for OpenCongress
-    # http://www.opencongress.org/api
-    config.opencongress_apikey = 'YOUR_OPENCONGRESS_API_KEY'
     
     # Technorati API key
-    config.technorati_apikey = 'YOUR_TECHNORATI_APIKEY'
+    # config.technorati_apikey = 'YOUR_TECHNORATI_APIKEY'
     
     # Bing App ID
     config.bing_appid = 'YOUR_BING_APPID'
