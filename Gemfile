@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gemspec
 
-gem "activesupport"
+gem "activesupport", :require => 'active_support'
 gem "nokogiri"
 gem "httparty"
 gem "i18n"
