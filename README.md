@@ -20,6 +20,14 @@ Add govkit to your environment.rb or Gemfile
 
 Run <code>rails generate govkit</code> (Rails 3.x) or <code>script/generate govkit</code> (Rails 2.x) to copy a config file into <code>config/initializers/govkit.rb</code>. You will need to add your API keys to this config file.
 
+Outside of Rails you can configure your API keys like so:
+
+    >> GovKit.configure do |config|
+    >>   config.sunlight_apikey   = 'YOUR_SUNLIGHT_API_KEY'
+    >>   config.votesmart_apikey  = 'YOUR_VOTESMART_API_KEY'
+    >>   config.ftm_apikey        = 'YOUR_FTM_API_KEY'
+    >> end
+
 # Usage Examples
 
     >> GovKit::OpenStates::State.find_by_abbreviation('CA')
