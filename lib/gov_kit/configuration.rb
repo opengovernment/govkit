@@ -10,7 +10,7 @@ module GovKit
     attr_accessor :bing_appid, :bing_base_url
 
     def initialize
-      @openstates_apikey = @votesmart_apikey = @ftm_apikey = ''
+      @sunlight_apikey = @openstates_apikey = @votesmart_apikey = @ftm_apikey = ''
       @openstates_base_url = 'openstates.sunlightlabs.com/api/v1/'
       @transparency_data_base_url = 'transparencydata.com/api/1.0/'
       @votesmart_base_url = 'api.votesmart.org/'
@@ -30,6 +30,11 @@ module GovKit
       warn "[DEPRECATION] OpenCongress no longer requires an API Key. Ability to set it will be removed in future versions"
       @opencongress_apikey = key
     end
+
+    def openstates_apikey= key
+      warn "[DEPRECATION] Use sunlight_apikey instead of openstates_apikey. Ability to set it will be removed in future versions"
+      @sunlight_apikey = key
+    end
   end
 
   class << self
@@ -45,7 +50,7 @@ module GovKit
   #
   # @example
   #   GovKit.configure do |config|
-  #     config.openstates_apikey = ''
+  #     config.sunlight_apikey = ''
   #   end
   def self.configure
     yield(configuration)
