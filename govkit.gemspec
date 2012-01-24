@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{govkit}
-  s.version = "0.7.1"
+  s.version = "0.7.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = %q{2011-06-30}
+  s.date = %q{2012-01-23}
   s.description = %q{Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API.}
   s.email = %q{develop@opencongress.org}
   s.extra_rdoc_files = [
@@ -26,13 +26,15 @@ Gem::Specification.new do |s|
     "USAGE",
     "VERSION",
     "generators/govkit/govkit_generator.rb",
+    "generators/govkit/templates/create_mentions.rb",
     "generators/govkit/templates/govkit.rb",
+    "generators/govkit/templates/mention.rb",
     "govkit.gemspec",
     "init.rb",
     "lib/generators/govkit/govkit_generator.rb",
+    "lib/generators/govkit/templates/create_mentions.rb",
     "lib/generators/govkit/templates/govkit.rb",
     "lib/generators/govkit/templates/mention.rb",
-    "lib/generators/govkit/templates/create_mentions.rb",
     "lib/gov_kit.rb",
     "lib/gov_kit/acts_as_noteworthy.rb",
     "lib/gov_kit/configuration.rb",
@@ -64,6 +66,10 @@ Gem::Specification.new do |s|
     "spec/fixtures/follow_the_money/business-page1.response",
     "spec/fixtures/follow_the_money/contribution.response",
     "spec/fixtures/follow_the_money/unauthorized.response",
+    "spec/fixtures/open_congress/501.response",
+    "spec/fixtures/open_congress/bill.response",
+    "spec/fixtures/open_congress/empty.response",
+    "spec/fixtures/open_congress/fl01.response",
     "spec/fixtures/open_congress/person.response",
     "spec/fixtures/open_states/401.response",
     "spec/fixtures/open_states/404.response",
@@ -91,13 +97,23 @@ Gem::Specification.new do |s|
   ]
   s.homepage = %q{http://github.com/opengovernment/govkit}
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Simple access to open government APIs around the web}
+  s.test_files = [
+    "spec/follow_the_money_spec.rb",
+    "spec/open_congress_spec.rb",
+    "spec/open_states_spec.rb",
+    "spec/search_engines_spec.rb",
+    "spec/spec_helper.rb",
+    "spec/transparency_data_spec.rb"
+  ]
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<govkit>, [">= 0"])
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
       s.add_runtime_dependency(%q<nokogiri>, [">= 0"])
       s.add_runtime_dependency(%q<httparty>, [">= 0"])
@@ -107,6 +123,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.4"])
       s.add_runtime_dependency(%q<fastercsv>, [">= 1.5.3"])
     else
+      s.add_dependency(%q<govkit>, [">= 0"])
       s.add_dependency(%q<activesupport>, [">= 0"])
       s.add_dependency(%q<nokogiri>, [">= 0"])
       s.add_dependency(%q<httparty>, [">= 0"])
@@ -117,6 +134,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
     end
   else
+    s.add_dependency(%q<govkit>, [">= 0"])
     s.add_dependency(%q<activesupport>, [">= 0"])
     s.add_dependency(%q<nokogiri>, [">= 0"])
     s.add_dependency(%q<httparty>, [">= 0"])
@@ -127,3 +145,4 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
   end
 end
+
