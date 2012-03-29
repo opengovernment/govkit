@@ -19,7 +19,8 @@ module GovKit
     # we return an empty set.
     def self.get_uri(uri, options={})
       begin
-        response = get(uri, options)
+	
+        response = get(URI.encode(uri), options)
         result = parse(response)
       rescue ResourceNotFound
         return []
