@@ -8,6 +8,7 @@ module GovKit
   class FollowTheMoneyResource < Resource
     default_params :key => GovKit::configuration.ftm_apikey
     base_uri GovKit::configuration.ftm_base_url
+    format :xml
 
     # Common method used by subclasses to get data from the service.
     #
@@ -19,7 +20,7 @@ module GovKit
     #   doc = get_xml("/base_level.industries.list.php", :query => {:page => page_num})
     #
     def self.get_xml(path, options)
-      doc = Nokogiri::XML(get(path, options))
+      doc = Nokogiri::XML(get(path, options).body)
 
       e = doc.search("//error")
 
