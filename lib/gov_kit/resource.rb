@@ -19,7 +19,6 @@ module GovKit
   # Includes {http://rdoc.info/github/jnunemaker/httparty/master/HTTParty/ClassMethods HTTParty}, which provides convenience methods like get().
   class Resource
     include HTTParty
-    format :json
 
     # The attributes data returned by the service.
     attr_reader :attributes
