@@ -49,6 +49,8 @@ module GovKit
     # http://openstates.sunlightlabs.com/api/metadata/, 
     #
     class State < OpenStatesResource
+      format :json
+
       def self.find_by_abbreviation(abbreviation)
         get_uri("/metadata/#{abbreviation}/")
       end

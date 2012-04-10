@@ -18,9 +18,9 @@ module GovKit::TransparencyData
         ['/contributions.json\?',                         'contributions.response'],
         ['/lobbying.json\?',                              'lobbyists_find_all.response'],
         ['/grants.json\?',                                'grants_find_all.response'],
-        ['/entities.json\?apikey=&search=$',              'entities_search.response'],
-        ['/entities.json\?apikey=&search=harry%20pelosi', 'entities_search_limit_0.response'],
-        ['/entities.json\?apikey=&search=nancy%2Bpelosi', 'entities_search_limit_1.response']
+        ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=$',              'entities_search.response'],
+        ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=harry%20pelosi', 'entities_search_limit_0.response'],
+        ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=nancy%2Bpelosi', 'entities_search_limit_1.response']
       ]
 
       urls.each do |u|
