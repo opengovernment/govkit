@@ -15,7 +15,7 @@ module GovKit
       @transparency_data_base_url = 'transparencydata.com/api/1.0/'
       @votesmart_base_url = 'api.votesmart.org/'
       @ftm_base_url = 'api.followthemoney.org/'
-      @opencongress_base_url = 'www.opencongress.org/'
+      @opencongress_base_url = 'api.opencongress.org/'
       @technorati_base_url = 'api.technorati.com'
       @bing_base_url = 'api.search.live.net'
       @google_blog_base_url = 'blogsearch.google.com'
