@@ -8,6 +8,7 @@ gem "httparty"
 gem "i18n"
 
 group :test do
+  gem "rake"
   gem "rspec"
   gem "fakeweb"
 end
