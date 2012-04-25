@@ -4,7 +4,7 @@ module GovKit::OpenCongress
   describe GovKit::OpenCongress do
     before(:all) do
       @oc_objs = [Bill, Person]
-      base_uri = "http://www.opencongress.org/api/"
+      base_uri = "http://api.opencongress.org/"
       
       # An array of uris and filenames
       # Use FakeWeb to intercept net requests;
@@ -27,7 +27,7 @@ module GovKit::OpenCongress
     
     it "should construct a url properly" do
       @oc_objs.each do |klass|
-        klass.construct_url(klass.to_s.split("::").last, {}).should == "http://www.opencongress.org/api/#{klass.to_s.split("::").last}?format=json"
+        klass.construct_url(klass.to_s.split("::").last, {}).should == "http://api.opencongress.org/#{klass.to_s.split("::").last}?format=json"
       end
     end
     
