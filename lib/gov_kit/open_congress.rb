@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'open-uri'
 require 'json'
-require 'CGI'
+require 'cgi'
 
 module GovKit::OpenCongress
   autoload :Bill,               'gov_kit/open_congress/bill'

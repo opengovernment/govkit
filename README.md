@@ -1,4 +1,4 @@
-# Govkit
+# Govkit [![Build Status](https://secure.travis-ci.org/opengovernment/govkit.png)](http://travis-ci.org/opengovernment/govkit)
 
 Govkit is a Ruby gem that provides simple access to US open government APIs around the web, including:
 

@@ -9,6 +9,7 @@ gem "i18n"
 gem "rake"
 
 group :test do
+  gem "rake"
   gem "rspec"
   gem "fakeweb"
 end
