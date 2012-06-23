@@ -5,6 +5,23 @@ module GovKit
   end
 
   module VoteSmart
+    class State < VoteSmartResource
+      def self.find_all
+        response = get("/State.getStateIDs")
+        parse(response['stateList']['list']['state'])
+      end
+      
+      def self.find_counties(stateId)
+        response = get("/Local.getCounties", :query => {"stateId" => stateId})
+        parse(response['counties']['county'])
+      end
+      
+      def self.find_cities(stateId)
+        response = get("/Local.getCities", :query => {"stateId" => stateId})
+        parse(response['cities']['city'])
+      end
+    end
+
     class Address < VoteSmartResource
       def self.find(candidate_id)
         response = get("/Address.getOffice", :query => {"candidateId" => candidate_id})
