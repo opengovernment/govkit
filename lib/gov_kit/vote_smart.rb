@@ -21,12 +21,21 @@ module GovKit
 
     class Bio < VoteSmartResource
       def self.find(candidate_id)
+      def self.find(candidate_id, include_office = false)
         response = get("/CandidateBio.getBio", :query => {"candidateId" => candidate_id})
 
         # Sometimes VoteSmart returns nil if no one is found!
         raise(ResourceNotFound, 'Could not find bio for candidate') if response.blank? || response['error']
 
         parse(response['bio']['candidate'])
+        
+        # Previous versions ommitted "office" data from response.
+        # include_office is optional so to not break backwards compatibility.
+        if include_office
+          parse(response['bio'])
+        else
+          parse(response['bio']['candidate'])          
+        end
       end
     end
 
