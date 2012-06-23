@@ -22,6 +22,18 @@ module GovKit
       end
     end
 
+    class Official < VoteSmartResource
+      def self.find_by_government(stateOrLocalId)
+        if stateOrLocalId.match(/[A-Za-z]/) # We're looking for state officals
+          response = get("/Officials.getStatewide", :query => {"stateId" => stateId})
+        else # We're looking for local officials
+          response = get("/Local.getOfficials", :query => {"localId" => stateId})
+        end
+        
+        parse(response['candidateList']['candidate'])
+      end
+    end
+    
     class Address < VoteSmartResource
       def self.find(candidate_id)
         response = get("/Address.getOffice", :query => {"candidateId" => candidate_id})
@@ -37,14 +49,11 @@ module GovKit
     end
 
     class Bio < VoteSmartResource
-      def self.find(candidate_id)
       def self.find(candidate_id, include_office = false)
         response = get("/CandidateBio.getBio", :query => {"candidateId" => candidate_id})
 
         # Sometimes VoteSmart returns nil if no one is found!
         raise(ResourceNotFound, 'Could not find bio for candidate') if response.blank? || response['error']
-
-        parse(response['bio']['candidate'])
         
         # Previous versions ommitted "office" data from response.
         # include_office is optional so to not break backwards compatibility.
