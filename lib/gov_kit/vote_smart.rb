@@ -5,6 +5,66 @@ module GovKit
   end
 
   module VoteSmart
+    class State < VoteSmartResource
+      def self.find_all
+        response = get("/State.getStateIDs")
+        parse(response['stateList']['list']['state'])
+      end
+      
+      def self.find_counties(stateId)
+        response = get("/Local.getCounties", :query => {"stateId" => stateId})
+        return [] if !response['counties']
+
+        if response['counties']['county'].instance_of?(Array)
+          parse(response['counties']['county'])
+        else
+          [ parse(response['counties']['county']) ]         
+        end
+      end
+      
+      def self.find_cities(stateId)
+        response = get("/Local.getCities", :query => {"stateId" => stateId})
+        return [] if !response['cities']
+        
+        if response['cities']['city'].instance_of?(Array)
+          parse(response['cities']['city'])
+        else
+          [ parse(response['cities']['city']) ]         
+        end
+      end
+    end
+
+    class Official < VoteSmartResource
+      def self.find_all(stateOrLocalId)
+        if stateOrLocalId.match(/[A-Za-z]/) # We're looking for state officals
+          response = get("/Officials.getStatewide", :query => {"stateId" => stateOrLocalId})
+        else # We're looking for local officials
+          response = get("/Local.getOfficials", :query => {"localId" => stateOrLocalId})
+        end
+        
+        return [] if !response['candidateList']
+        
+        if response['candidateList']['candidate'].instance_of?(Array)
+          parse(response['candidateList']['candidate'])
+        else
+          [ parse(response['candidateList']['candidate']) ]
+        end
+      end
+      
+      def self.find_by_office_state(officeId, stateId = 'NA')
+        response = get("/Officials.getByOfficeState", :query => { "officeId" => officeId,
+                                                                  "stateId" => stateId })
+                                                          
+        return [] if !response['candidateList']
+        
+        if response['candidateList']['candidate'].instance_of?(Array)
+          parse(response['candidateList']['candidate'])
+        else
+          [ parse(response['candidateList']['candidate']) ]
+        end
+      end
+    end
+    
     class Address < VoteSmartResource
       def self.find(candidate_id)
         response = get("/Address.getOffice", :query => {"candidateId" => candidate_id})
@@ -15,18 +75,30 @@ module GovKit
     class WebAddress < VoteSmartResource
       def self.find(candidate_id)
         response = get("/Address.getOfficeWebAddress", :query => {"candidateId" => candidate_id})
-        parse(response['webaddress'])
+        
+        return [] if !response['webaddress']
+        
+        if response['webaddress']['address'].instance_of?(Array)
+          parse(response['webaddress']['address'])
+        else
+          [ parse(response['webaddress']['address']) ]          
+        end
       end
     end
 
     class Bio < VoteSmartResource
-      def self.find(candidate_id)
+      def self.find(candidate_id, include_office = false)
         response = get("/CandidateBio.getBio", :query => {"candidateId" => candidate_id})
 
-        # Sometimes VoteSmart returns nil if no one is found!
-        raise(ResourceNotFound, 'Could not find bio for candidate') if response.blank? || response['error']
-
-        parse(response['bio']['candidate'])
+        return false if response.blank? || response['error']
+        
+        # Previous versions ommitted "office" data from response.
+        # include_office is optional so to not break backwards compatibility.
+        if include_office
+          parse(response['bio'])
+        else
+          parse(response['bio']['candidate'])          
+        end
       end
     end
 
