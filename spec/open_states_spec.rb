@@ -1,13 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-# Provides "String.singularize"
-# which is used by resource_for_collection, in resource.rb
-require 'active_support/inflector'
-
-# Provides string.last()
-# which is used by method_missing in resource.rb
-require 'active_support/core_ext/string'
-
 module GovKit::OpenStates
   describe GovKit::OpenStates do
     before(:all) do
@@ -72,11 +64,17 @@ module GovKit::OpenStates
     end
 
     it "should raise NotAuthorized if the api key is not valid" do
+      api_key = GovKit.configuration.sunlight_apikey
+
+      GovKit.configuration.sunlight_apikey = nil
+
       lambda do
-        @legislator = Legislator.find(401)
+        @legislator = Legislator.find 'XXL123456'
       end.should raise_error(GovKit::NotAuthorized)
 
       @legislator.should be_nil
+
+      GovKit.configuration.sunlight_apikey = api_key
     end
 
     describe State do
@@ -91,7 +89,7 @@ module GovKit::OpenStates
 
           @state.should be_an_instance_of(State)
           @state.name.should == "California"
-          @state.sessions.size.should == 8
+          @state.terms.first.sessions.size.should == 9
         end
       end
     end
@@ -100,7 +98,7 @@ module GovKit::OpenStates
       context "#find" do
         it "should find a bill by state abbreviation, session, chamber, bill_id" do
           lambda do
-            @bill = Bill.find('ca', '20092010', 'lower', 'AB667')
+            @bill = Bill.find('ca', '20092010', 'AB 667', 'lower')
           end.should_not raise_error
 
           @bill.should be_an_instance_of(Bill)
@@ -116,29 +114,21 @@ module GovKit::OpenStates
           @bills.each do |b|
             b.should be_an_instance_of(Bill)
           end
-          @bills.collect(&:bill_id).should include("SB 921")
+          @bills.collect(&:bill_id).should include("SB 207")
         end
-        
-        it "should return a single bill result as an array" do
-          @bills = Bill.search('professions')
-        
-          @bills.should be_an_instance_of(Array)
-          @bills.collect(&:bill_id).should include("AB667")
-        end
-
       end
 
       context "#latest" do
         it "should get the latest bills by given criteria" do
           lambda do
-            @latest = Bill.latest('2010-01-01', :state => 'tx')
+            @latest = Bill.latest('2012-11-01', :state => 'tx')
           end.should_not raise_error
 
           @latest.should be_an_instance_of(Array)
           @latest.each do |b|
             b.should be_an_instance_of(Bill)
           end
-          @latest.collect(&:bill_id).should include("SB 2236")
+          @latest.collect(&:bill_id).should include("HB 41")
         end
       end
     end
@@ -147,16 +137,16 @@ module GovKit::OpenStates
       context "#find" do
         it "should find a specific legislator" do
           lambda do
-            @legislator = Legislator.find(2462)
+            @legislator = Legislator.find('CAL000088')
           end.should_not raise_error
 
           @legislator.should be_an_instance_of(Legislator)
-          @legislator.first_name.should == "Dave"
-          @legislator.last_name.should == "Cox"
+          @legislator.first_name.should == "Bob"
+          @legislator.last_name.should == "Blumenfield"
         end
 
         it "should return an empty array if the legislator is not found" do
-          @legislator = Legislator.find(404)
+          @legislator = Legislator.find('CAL999999')
 
           @legislator.should eql([])
         end
@@ -204,10 +194,10 @@ module GovKit::OpenStates
           end.should_not raise_error
 
           @committees.should be_an_instance_of(Array)
-          @committees.length.should eql(20)
+          @committees.length.should eql(21)
           com = @committees[0]
           com.should be_an_instance_of(Committee)
-          com['id'].should eql('MDC000009')
+          com['id'].should eql('MDC000001')
         end
       end
     end
