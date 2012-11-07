@@ -9,6 +9,14 @@ require 'json'
 require 'gov_kit/configuration'
 require 'csv'
 
+# String#singularize in Resource#resource_for_collection
+require 'active_support/inflector'
+# String#last in Resource#method_missing
+require 'active_support/core_ext/string'
+# Object#blank? in Resource#parse
+# Object#duplicable? in Resource#unload
+require 'active_support/core_ext/object'
+
 if RUBY_VERSION[0,3] == "1.8"
   require 'fastercsv'
 end
