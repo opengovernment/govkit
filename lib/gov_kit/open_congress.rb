@@ -111,15 +111,7 @@ module GovKit::OpenCongress
     #
     # @return the returned data, as an array of hashes.
     def self.make_call(this_url)
-      result = nil
-      begin
-        result = JSON.parse(open(this_url).read)
-      rescue => e
-        puts e
-      end
-    
-      return result
-    
+      JSON.parse(open(this_url).read)
     end
   end
 end
