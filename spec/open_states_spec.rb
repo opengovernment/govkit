@@ -6,11 +6,7 @@ module GovKit::OpenStates
       unless FakeWeb.allow_net_connect?
         base_uri = GovKit::OpenStatesResource.base_uri.gsub(/\./, '\.')
 
-        # An array of uris and filenames
-        # Use FakeWeb to intercept net requests;
-        # if a requested uri matches one of the following,
-        # then return the contents of the corresponding file
-        # as the result.
+        # @todo The fixtures are out-of-date.
         urls = [
           ['/bills/ca/20092010/AB667/',          'bill.response'],
           ['/bills/\?.*q=cooperatives.*',        'bill_query.response'],
