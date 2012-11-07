@@ -21,6 +21,7 @@ pkg
 Gemfile.lock
 
 ## PROJECT::SPECIFIC
+spec/support/api_keys.rb
 
 ## YARD
 doc
