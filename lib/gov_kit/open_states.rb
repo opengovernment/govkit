@@ -60,10 +60,7 @@ module GovKit
     class Bill < OpenStatesResource
       # http://openstates.sunlightlabs.com/api/v1/bills/ca/20092010/AB 667/
       def self.find(state_abbrev, session, bill_id, chamber = '')
-        escaped_bill_id = bill_id.gsub(/ /, '%20')
-        escaped_session = session.gsub(/ /, '%20')
-
-        get_uri("/bills/#{state_abbrev.downcase}/#{escaped_session}/#{chamber.blank? ? '' : chamber + '/'}#{escaped_bill_id}/")
+        get_uri("/bills/#{state_abbrev.downcase}/#{session}/#{chamber.blank? ? '' : chamber + '/'}#{bill_id}/")
       end
 
       def self.search(query, options = {})
