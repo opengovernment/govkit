@@ -3,11 +3,6 @@ module GovKit
   # Parent class for OpenStates resources
   # See http://openstates.sunlightlabs.com/api/
   class OpenStatesResource < Resource
-
-    # Uses default_params from the HTTParty gem.
-    # See HTTParty::ClassMethods:
-    # http://rubydoc.info/gems/httparty/0.7.4/HTTParty/ClassMethods#default_params-instance_method
-    default_params :output => 'json', :apikey => GovKit::configuration.sunlight_apikey
     base_uri GovKit::configuration.openstates_base_url
 
     # Do a GET query, with optional parameters.
@@ -18,13 +13,14 @@ module GovKit
     # So, if a query result is a resource not found error,
     # we return an empty set.
     def self.get_uri(uri, options={})
+      options[:query] ||= {}
+      options[:query][:apikey] = GovKit::configuration.sunlight_apikey
+
       begin
-        response = get(URI.encode(uri), options)
-        result = parse(response)
+        parse(get(URI.encode(uri), options))
       rescue ResourceNotFound
-        return []
+        []
       end
-      result
     end
 
   end
@@ -76,8 +72,8 @@ module GovKit
       end
 
       def self.latest(updated_since, ops = {})
-        response = get('/bills/', :query => {:updated_since => updated_since.to_s}.merge(ops))
-        parse(response)
+        result = get_uri('/bills/', :query => {:updated_since => updated_since.to_s}.merge(ops))
+        return Array(result)
       end
     end
 
