@@ -27,11 +27,17 @@ module GovKit::FollowTheMoney
     end
 
     it "should raise NotAuthorized if the api key is not valid" do
+      api_key = GovKit.configuration.ftm_apikey
+
+      GovKit.configuration.ftm_apikey = nil
+
       lambda do 
         @contribution = Contribution.find(0)
       end.should raise_error(GovKit::NotAuthorized)
 
       @contribution.should be_nil
+
+      GovKit.configuration.ftm_apikey = api_key
     end
 
     describe Business do

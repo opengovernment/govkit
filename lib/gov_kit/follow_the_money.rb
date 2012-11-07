@@ -6,7 +6,6 @@ module GovKit
   #
   # For the details on the FollowTheMoney queries, see {http://www.followthemoney.org/services/methods.phtml the FollowTheMoney API documentation}.
   class FollowTheMoneyResource < Resource
-    default_params :key => GovKit::configuration.ftm_apikey
     base_uri GovKit::configuration.ftm_base_url
     format :xml
 
@@ -20,6 +19,9 @@ module GovKit
     #   doc = get_xml("/base_level.industries.list.php", :query => {:page => page_num})
     #
     def self.get_xml(path, options)
+      options[:query] ||= {}
+      options[:query][:key] = GovKit::configuration.ftm_apikey
+
       doc = Nokogiri::XML(get(path, options).body)
 
       e = doc.search("//error")
