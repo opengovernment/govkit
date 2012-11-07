@@ -1,13 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-# Provides "String.singularize"
-# which is used by resource_for_collection, in resource.rb
-require 'active_support/inflector'
-
-# Provides the blank? method
-# which is used by parse in resource.rb
-require 'active_support/core_ext/object'
-
 module GovKit::FollowTheMoney
   describe GovKit::FollowTheMoney do
 

@@ -1,13 +1,5 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-# Provides "String.singularize"
-# which is used by resource_for_collection, in resource.rb
-require 'active_support/inflector'
-
-# Provides string.last()
-# which is used by method_missing in resource.rb
-require 'active_support/core_ext/string'
-
 module GovKit::TransparencyData
 
   describe GovKit::TransparencyData do
