@@ -36,7 +36,7 @@ module GovKit::TransparencyData
           @contributions = Contribution.search
         end.should_not raise_error
 
-        @contributions.length.should eql(8) # 1000 unless using FakeWeb
+        @contributions.length.should eql(FakeWeb.allow_net_connect? ? 1000 : 8)
         @contributions[0].contributor_city.should eql("ANCHORAGE")
       end
     end
@@ -56,7 +56,7 @@ module GovKit::TransparencyData
           @entities = Entity.search( "nancy+pelosi" )
         end.should_not raise_error
 
-        @entities.length.should eql(1) # 2 unless using FakeWeb
+        @entities.length.should eql(FakeWeb.allow_net_connect? ? 2 : 1)
       end
     end
   end
@@ -68,7 +68,7 @@ module GovKit::TransparencyData
           @records = LobbyingRecord.search
         end.should_not raise_error
 
-        @records.length.should eql(5) # 1000 unless using FakeWeb
+        @records.length.should eql(FakeWeb.allow_net_connect? ? 1000 : 5)
         @records[0].lobbyists[0].lobbyist_name.should eql('Dunn, Jennifer B')
       end
     end
@@ -81,7 +81,7 @@ module GovKit::TransparencyData
           @records = Grant.search
         end.should_not raise_error
 
-        @records.length.should eql(3) # 1000 unless using FakeWeb
+        @records.length.should eql(FakeWeb.allow_net_connect? ? 1000 : 3)
         @records[0].project_description.should eql('NATIONAL FLOOD INSURANCE PROGRAM')
       end
     end

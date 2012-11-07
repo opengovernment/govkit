@@ -38,9 +38,7 @@ module GovKit::OpenCongress
     describe Person do
       context "#find" do
         it "should find a specific person" do
-          lambda do
-            @person = Person.find(:district => 1, :state => "FL").first
-          end.should_not raise_error
+          @person = Person.find(:district => 1, :state => "FL").first
 
           @person.should be_an_instance_of(Person)
           @person.firstname.should == "Jeff"
@@ -48,9 +46,7 @@ module GovKit::OpenCongress
         end
         
         it "should return an empty array when no person fits the criteria" do
-          lambda do
-            @person = Person.find(:district => 0, :state => "ZZ")
-          end.should_not raise_error
+          @person = Person.find(:district => 0, :state => "ZZ")
           
           @person.should be_an_instance_of(Array)
           @person.empty?.should be_true
@@ -59,9 +55,7 @@ module GovKit::OpenCongress
       
       context "#most blogged representatives this week" do
         it "should find reps" do
-          lambda do
-            @person = Person.most_blogged_representatives_this_week.first
-          end.should_not raise_error
+          @person = Person.most_blogged_representatives_this_week.first
 
           @person.should be_an_instance_of(Person)
           @person.firstname.should == "Jeff"
@@ -73,13 +67,11 @@ module GovKit::OpenCongress
     describe Bill do
       context "#find" do
         it "should find a specific bill" do
-          lambda do
-            @bill = Bill.find(:number => 501).first
-          end.should_not raise_error
+          @bill = Bill.find(:number => 501).first
         
           @bill.should be_an_instance_of(Bill)
           @bill.number.should == 501
-          @bill.bill_type.should == "h"
+          @bill.bill_type.should == (FakeWeb.allow_net_connect? ? "hr" : "h")
         end
         
         it "should return an empty array when no bill fits the criteria" do
@@ -92,9 +84,7 @@ module GovKit::OpenCongress
       
       context "#most blogged bills this week" do
         it "should find specific bills" do
-          lambda do
-            @bill = Bill.most_blogged_bills_this_week.first
-          end.should_not raise_error
+          @bill = Bill.most_blogged_bills_this_week.first
           
           @bill.should be_an_instance_of(Bill)
           @bill.number.should == 2678

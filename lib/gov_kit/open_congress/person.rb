@@ -105,30 +105,31 @@ module GovKit
       def self.parse_results(result)
 
           people = []
-          result["people"].each do |person|
-          
-            these_recent_blogs = person["recent_blogs"]
-            blogs = []
-            these_recent_blogs.each do |trb|
-              blogs << BlogPost.new(trb)
+          if Hash === result
+            result["people"].each do |person|
+              person = person['person']
+
+              these_recent_blogs = person["recent_blogs"]
+              blogs = []
+              these_recent_blogs.each do |trb|
+                blogs << BlogPost.new(trb)
+              end
+              person["recent_blogs"] = blogs
+
+              these_recent_news = person["recent_news"]
+              news = []
+              these_recent_news.each do |trb|
+                news << NewsPost.new(trb)
+              end
+
+              person["person_stats"] = PersonStat.new(person["person_stats"]) if person["person_stats"]
+
+              person["recent_news"] = news
+
+              people << Person.new(person)
             end
+          end
 
-            person["recent_blogs"] = blogs
-
-
-            these_recent_news = person["recent_news"]
-            news = []
-            these_recent_news.each do |trb|
-              news << NewsPost.new(trb)
-            end
-          
-            person["person_stats"] = PersonStat.new(person["person_stats"]) if person["person_stats"]
-          
-            person["recent_news"] = news
-          
-            people << Person.new(person)
-          end      
-        
           people
             
       end    
