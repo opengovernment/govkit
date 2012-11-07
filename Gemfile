@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gemspec
 
+gem "jeweler"
 gem "activesupport", :require => 'active_support'
 gem "nokogiri"
 gem "httparty"
