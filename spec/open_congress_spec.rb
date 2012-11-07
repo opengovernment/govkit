@@ -4,24 +4,22 @@ module GovKit::OpenCongress
   describe GovKit::OpenCongress do
     before(:all) do
       @oc_objs = [Bill, Person]
-      base_uri = "http://api.opencongress.org/"
-      
-      # An array of uris and filenames
-      # Use FakeWeb to intercept net requests;
-      # if a requested uri matches one of the following,
-      # then return the contents of the corresponding file
-      # as the result. 
-      urls = [
-       [ "people?format=json&district=1&state=FL", "fl01.response" ],
-       [ "people?format=json&district=0&state=ZZ", "empty.response" ],
-       [ "most_blogged_representatives_this_week?format=json", "person.response" ],
-       [ "bills?format=json&number=0", "empty.response" ],
-       [ "bills?format=json&number=501", "501.response" ],
-       [ "most_blogged_bills_this_week?format=json", "bill.response" ] 
-      ]
-      
-      urls.each do |u|
-        FakeWeb.register_uri(:get, "#{base_uri}#{u[0]}", :response => File.join(FIXTURES_DIR, 'open_congress', u[1]))
+
+      unless FakeWeb.allow_net_connect?
+        base_uri = "http://api.opencongress.org/"
+
+        urls = [
+         [ "people?format=json&district=1&state=FL", "fl01.response" ],
+         [ "people?format=json&district=0&state=ZZ", "empty.response" ],
+         [ "most_blogged_representatives_this_week?format=json", "person.response" ],
+         [ "bills?format=json&number=0", "empty.response" ],
+         [ "bills?format=json&number=501", "501.response" ],
+         [ "most_blogged_bills_this_week?format=json", "bill.response" ] 
+        ]
+
+        urls.each do |u|
+          FakeWeb.register_uri(:get, "#{base_uri}#{u[0]}", :response => File.join(FIXTURES_DIR, 'open_congress', u[1]))
+        end
       end
     end
     

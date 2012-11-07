@@ -12,19 +12,21 @@ module GovKit::TransparencyData
 
   describe GovKit::TransparencyData do
     before(:all) do
-      base_uri = GovKit::TransparencyDataResource.base_uri.gsub(/\./, '\.')
+      unless FakeWeb.allow_net_connect?
+        base_uri = GovKit::TransparencyDataResource.base_uri.gsub(/\./, '\.')
 
-      urls = [
-        ['/contributions.json\?',                         'contributions.response'],
-        ['/lobbying.json\?',                              'lobbyists_find_all.response'],
-        ['/grants.json\?',                                'grants_find_all.response'],
-        ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=$',              'entities_search.response'],
-        ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=harry%20pelosi', 'entities_search_limit_0.response'],
-        ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=nancy%2Bpelosi', 'entities_search_limit_1.response']
-      ]
+        urls = [
+          ['/contributions.json\?',                         'contributions.response'],
+          ['/lobbying.json\?',                              'lobbyists_find_all.response'],
+          ['/grants.json\?',                                'grants_find_all.response'],
+          ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=$',              'entities_search.response'],
+          ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=harry%20pelosi', 'entities_search_limit_0.response'],
+          ['/entities.json\?apikey=YOUR_OPENSTATES_API_KEY&search=nancy%2Bpelosi', 'entities_search_limit_1.response']
+        ]
 
-      urls.each do |u|
-        FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'transparency_data', u[1]))
+        urls.each do |u|
+          FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'transparency_data', u[1]))
+        end
       end
     end
 

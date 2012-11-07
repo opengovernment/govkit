@@ -12,18 +12,19 @@ module GovKit::FollowTheMoney
   describe GovKit::FollowTheMoney do
 
     before(:all) do
-      base_uri = GovKit::FollowTheMoneyResource.base_uri.gsub(/\./, '\.')
+      unless FakeWeb.allow_net_connect?
+        base_uri = GovKit::FollowTheMoneyResource.base_uri.gsub(/\./, '\.')
 
-      urls = [
-        ['/base_level\.industries\.list\.php\?.*page=0',                          'business-page0.response'],
-        ['/base_level\.industries\.list\.php\?.*page=1',                          'business-page1.response'],
-        ['/candidates\.contributions\.php\?imsp_candidate_id=111933',             'contribution.response'],
-        ['/candidates\.contributions\.php\?imsp_candidate_id=0',                  'unauthorized.response'],
-      ]
+        urls = [
+          ['/base_level\.industries\.list\.php\?.*page=0',                          'business-page0.response'],
+          ['/base_level\.industries\.list\.php\?.*page=1',                          'business-page1.response'],
+          ['/candidates\.contributions\.php\?imsp_candidate_id=111933',             'contribution.response'],
+          ['/candidates\.contributions\.php\?imsp_candidate_id=0',                  'unauthorized.response'],
+        ]
 
-      urls.each do |u|
-        FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'follow_the_money', u[1]))
-        # puts "registered #{base_uri}#{u[0]}"
+        urls.each do |u|
+          FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'follow_the_money', u[1]))
+        end
       end
     end
 

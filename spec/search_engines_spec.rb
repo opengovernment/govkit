@@ -3,19 +3,16 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 module GovKit::SearchEngines
   describe GovKit::SearchEngines do
     before(:all) do
-      google_news_uri = "http://news.google.com/"
-      
-      # An array of uris and filenames
-      # Use FakeWeb to intercept net requests;
-      # if a requested uri matches one of the following,
-      # then return the contents of the corresponding file
-      # as the result. 
-      urls = [
-       [ "news?q=congress&output=rss&num=50", "google_news.response" ] 
-      ]
-      
-      urls.each do |u|
-        FakeWeb.register_uri(:get, "#{google_news_uri}#{u[0]}", :response => File.join(FIXTURES_DIR, 'search_engines', u[1]))
+      unless FakeWeb.allow_net_connect?
+        google_news_uri = "http://news.google.com/"
+
+        urls = [
+         [ "news?q=congress&output=rss&num=50", "google_news.response" ]
+        ]
+
+        urls.each do |u|
+          FakeWeb.register_uri(:get, "#{google_news_uri}#{u[0]}", :response => File.join(FIXTURES_DIR, 'search_engines', u[1]))
+        end
       end
     end
     

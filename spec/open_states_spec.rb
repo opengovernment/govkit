@@ -11,55 +11,57 @@ require 'active_support/core_ext/string'
 module GovKit::OpenStates
   describe GovKit::OpenStates do
     before(:all) do
-      base_uri = GovKit::OpenStatesResource.base_uri.gsub(/\./, '\.')
+      unless FakeWeb.allow_net_connect?
+        base_uri = GovKit::OpenStatesResource.base_uri.gsub(/\./, '\.')
 
-      # An array of uris and filenames
-      # Use FakeWeb to intercept net requests;
-      # if a requested uri matches one of the following,
-      # then return the contents of the corresponding file
-      # as the result. 
-      urls = [
-        ['/bills/ca/20092010/AB667/',          'bill.response'],
-        ['/bills/\?.*q=cooperatives.*',        'bill_query.response'],
-        ['/bills/\?.*state=tx.*',              'bill_query.response'],
-        ['/bills/\?.*q=professions.*',         'bill.response'],
-        ['/bills/latest/\?',                   'bill_query.response'],
-        ['/legislators/2462/\?',               'legislator.response'],
-        ['/legislators/410/\?',                '410.response'],
-        ['/legislators/401/\?',                '401.response'],
-        ['/legislators/404/\?',                '404.response'],
-        ['/legislators/\?.*state=zz.*',        '404.response'],
-        ['/legislators/\?.*state=ca.*',        'legislator.response'],
-        ['/committees/MDC000012/',             'committee_find.response'],
-        ['/committees/\?.*state=md',           'committee_query.response'],
-        ['/metadata/ca/\?',                    'state.response']
-      ]
+        # An array of uris and filenames
+        # Use FakeWeb to intercept net requests;
+        # if a requested uri matches one of the following,
+        # then return the contents of the corresponding file
+        # as the result.
+        urls = [
+          ['/bills/ca/20092010/AB667/',          'bill.response'],
+          ['/bills/\?.*q=cooperatives.*',        'bill_query.response'],
+          ['/bills/\?.*state=tx.*',              'bill_query.response'],
+          ['/bills/\?.*q=professions.*',         'bill.response'],
+          ['/bills/latest/\?',                   'bill_query.response'],
+          ['/legislators/2462/\?',               'legislator.response'],
+          ['/legislators/410/\?',                '410.response'],
+          ['/legislators/401/\?',                '401.response'],
+          ['/legislators/404/\?',                '404.response'],
+          ['/legislators/\?.*state=zz.*',        '404.response'],
+          ['/legislators/\?.*state=ca.*',        'legislator.response'],
+          ['/committees/MDC000012/',             'committee_find.response'],
+          ['/committees/\?.*state=md',           'committee_query.response'],
+          ['/metadata/ca/\?',                    'state.response']
+        ]
 
-      # First convert each of the uri strings above into regexp's before 
-      # passing them on to register_uri. 
-      #
-      # Internally, before checking if a new uri string matches one of the registered uri's,
-      # FakeWeb normalizes it by parsing it with URI.parse(string), and then 
-      # calling URI.normalize on the resulting URI.  This appears to reorder any
-      # query parameters alphabetically by key.
-      #
-      # So the uri
-      #   http://openstates.sunlightlabs.com/api/v1/legislators/?state=zz&output=json&apikey=
-      # would actually not match a registered uri of
-      #   ['/legislators/\?state=zz',                                  '404.response'],
-      # or 
-      #   ['/legislators/\?state=zz*',                                 '404.response'],
-      # or even
-      #   ['/legislators/\?state=zz&output=json&apikey=',              '404.response'],
-      #
-      # But it would match a registered uri of 
-      #   ['/legislators/\?apikey=&output=json&state=zz',              '404.response'],
-      #   or
-      #   ['/legislators/\?(.*)state=zz(.*)',                          '404.response'],
+        # First convert each of the uri strings above into regexp's before
+        # passing them on to register_uri.
+        #
+        # Internally, before checking if a new uri string matches one of the registered uri's,
+        # FakeWeb normalizes it by parsing it with URI.parse(string), and then
+        # calling URI.normalize on the resulting URI.  This appears to reorder any
+        # query parameters alphabetically by key.
+        #
+        # So the uri
+        #   http://openstates.sunlightlabs.com/api/v1/legislators/?state=zz&output=json&apikey=
+        # would actually not match a registered uri of
+        #   ['/legislators/\?state=zz',                                  '404.response'],
+        # or
+        #   ['/legislators/\?state=zz*',                                 '404.response'],
+        # or even
+        #   ['/legislators/\?state=zz&output=json&apikey=',              '404.response'],
+        #
+        # But it would match a registered uri of
+        #   ['/legislators/\?apikey=&output=json&state=zz',              '404.response'],
+        #   or
+        #   ['/legislators/\?(.*)state=zz(.*)',                          '404.response'],
 
 
-      urls.each do |u|
-        FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'open_states', u[1]))
+        urls.each do |u|
+          FakeWeb.register_uri(:get, %r|#{base_uri}#{u[0]}|, :response => File.join(FIXTURES_DIR, 'open_states', u[1]))
+        end
       end
     end
 

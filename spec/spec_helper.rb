@@ -25,6 +25,7 @@ module Kernel
   end
 end
 
+# Set to true to run tests against the live URLs
 FakeWeb.allow_net_connect = false
 
 FIXTURES_DIR = File.join(File.dirname(__FILE__), 'fixtures')
