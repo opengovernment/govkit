@@ -36,7 +36,7 @@ module GovKit::TransparencyData
           @contributions = Contribution.search
         end.should_not raise_error
 
-        @contributions.length.should eql(8)
+        @contributions.length.should eql(8) # 1000 unless using FakeWeb
         @contributions[0].contributor_city.should eql("ANCHORAGE")
       end
     end
@@ -44,16 +44,6 @@ module GovKit::TransparencyData
   
   describe Entity do 
     context "#search" do
-      it "should find all entities" do
-        lambda do
-          @entities = Entity.search
-        end.should_not raise_error
-
-        @entities.length.should eql(2)
-        @entities[0].name.should eql("Nancy Pelosi (D)")
-        @entities[1].name.should eql("Nancy Pelosi for Congress")
-      end
-
       it 'should return an empty list when no elements found' do
         lambda do
           @entities = Entity.search( "harry pelosi" )
@@ -66,7 +56,7 @@ module GovKit::TransparencyData
           @entities = Entity.search( "nancy+pelosi" )
         end.should_not raise_error
 
-        @entities.length.should eql(1)
+        @entities.length.should eql(1) # 2 unless using FakeWeb
       end
     end
   end
@@ -78,7 +68,7 @@ module GovKit::TransparencyData
           @records = LobbyingRecord.search
         end.should_not raise_error
 
-        @records.length.should eql(5)
+        @records.length.should eql(5) # 1000 unless using FakeWeb
         @records[0].lobbyists[0].lobbyist_name.should eql('Dunn, Jennifer B')
       end
     end
@@ -91,7 +81,7 @@ module GovKit::TransparencyData
           @records = Grant.search
         end.should_not raise_error
 
-        @records.length.should eql(3)
+        @records.length.should eql(3) # 1000 unless using FakeWeb
         @records[0].project_description.should eql('NATIONAL FLOOD INSURANCE PROGRAM')
       end
     end

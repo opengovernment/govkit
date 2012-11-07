@@ -82,7 +82,7 @@ module GovKit
       #
       # Example query:
       #   entities = GovKit::TransparencyData::Entity.search('nancy+pelosi')
-      def self.search(search_string = '')
+      def self.search(search_string)
         search_for("/entities.json", { :search => search_string } )
       end
     end
