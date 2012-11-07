@@ -65,7 +65,7 @@ module GovKit::OpenStates
 
     it "should have the base uri set properly" do
       [State, Bill, Legislator].each do |klass|
-        klass.base_uri.should == "http://openstates.sunlightlabs.com/api/v1"
+        klass.base_uri.should == "http://openstates.org/api/v1"
       end
     end
 
