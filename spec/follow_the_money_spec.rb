@@ -52,6 +52,7 @@ module GovKit::FollowTheMoney
 
     describe Contribution do
       it "should get a list of campaign contributions for a given person" do
+        pending 'This API call is restricted'
         @contributions = Contribution.find(111933)
         @contributions.should be_an_instance_of(Array)
         @contributions.each do |c|
