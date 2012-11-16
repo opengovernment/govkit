@@ -73,3 +73,26 @@ if defined?(RSpec)
     t.rcov_opts = ['--exclude', 'spec,Library']
   end
 end
+
+desc "Generate RSpec fixtures"
+task :generate_rspec_fixtures do |t,args|
+  if ENV['APIKEY'].nil?
+    abort "Usage: APIKEY=12345... rake generate_rspec_fixtures"
+  end
+
+  { "/legislators/XXL123456/" => '401.response',
+    "/metadata/ca/?apikey=#{ENV['APIKEY']}" => 'state.response',
+    "/bills/ca/20092010/lower/AB%20667/?apikey=#{ENV['APIKEY']}" => 'bill.response',
+    "/bills/?apikey=#{ENV['APIKEY']}&q=cooperatives" => 'bill_find.response',
+    "/bills/?apikey=#{ENV['APIKEY']}&updated_since=2012-11-01&state=tx" => 'bill_query.response',
+    "/legislators/CAL000088/?apikey=#{ENV['APIKEY']}" => 'legislator_find.response',
+    "/legislators/CAL999999/?apikey=#{ENV['APIKEY']}" => '404.response',
+    "/legislators/?apikey=#{ENV['APIKEY']}&state=ca" => 'legislator_query.response',
+    "/legislators/?apikey=#{ENV['APIKEY']}&state=zz" => '404.response',
+    "/committees/MDC000012/?apikey=#{ENV['APIKEY']}" => 'committee_find.response',
+    "/committees/?apikey=#{ENV['APIKEY']}&state=md&chamber=upper" => 'committee_query.response',
+  }.each do |path,basename|
+    filepath = File.expand_path("../spec/fixtures/open_states/#{basename}", __FILE__)
+    `curl -s -i -o #{filepath} "http://openstates.org/api/v1#{path}"`
+  end
+end

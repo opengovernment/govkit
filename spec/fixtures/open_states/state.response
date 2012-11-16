@@ -1,60 +1,9 @@
 HTTP/1.1 200 OK
-Server: nginx/0.6.35
-Date: Tue, 15 Jun 2010 21:44:48 GMT
-Content-Type: 
-Connection: close
+Server: nginx/1.2.1
+Date: Fri, 16 Nov 2012 23:40:31 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
 Vary: Authorization
 
-{
-    "lower_chamber_name": "Assembly", 
-    "lower_chamber_title": "Assemblymember", 
-    "upper_chamber_title": "Senator", 
-    "name": "California", 
-    "sessions": [
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 1"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 2"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 3"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 4"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 5"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 6"
-        }, 
-        {
-            "end_year": 2010, 
-            "start_year": 2009, 
-            "name": "20092010 Special Session 7"
-        }
-    ], 
-    "upper_chamber_term": 4, 
-    "abbreviation": "ca", 
-    "upper_chamber_name": "Senate", 
-    "legislature_name": "California State Legislature", 
-    "lower_chamber_term": 3
-}
+{"lower_chamber_title": "Assemblymember", "capitol_timezone": "America/Los_Angeles", "abbreviation": "ca", "feature_flags": ["subjects", "influenceexplorer"], "id": "ca", "session_details": {"20092010 Special Session 5": {"type": "special", "display_name": "2009-2010, 5th Special Session"}, "20092010 Special Session 4": {"type": "special", "display_name": "2009-2010, 4th Special Session"}, "20092010 Special Session 7": {"type": "special", "display_name": "2009-2010, 7th Special Session"}, "20092010 Special Session 6": {"type": "special", "display_name": "2009-2010, 6th Special Session"}, "20092010 Special Session 1": {"type": "special", "display_name": "2009-2010, 1st Special Session"}, "20112012 Special Session 1": {"type": "special", "display_name": "2011-2012, 1st Special Session"}, "20092010 Special Session 3": {"type": "special", "display_name": "2009-2010, 3rd Special Session"}, "20092010 Special Session 2": {"type": "special", "display_name": "2009-2010, 2nd Special Session"}, "20092010": {"display_name": "2009-2010 Regular Session", "type": "primary", "start_date": "2008-12-01 00:00:00"}, "20092010 Special Session 8": {"type": "special", "display_name": "2009-2010, 8th Special Session"}, "20112012": {"display_name": "2011-2012 Regular Session", "type": "primary", "start_date": "2010-12-06 00:00:00"}}, "latest_json_date": "2012-11-01 19:53:09", "legislature_name": "California State Legislature", "upper_chamber_title": "Senator", "terms": [{"end_year": 2010, "start_year": 2009, "+start_date": "2008-12-01 00:00:00", "name": "20092010", "sessions": ["20092010", "20092010 Special Session 1", "20092010 Special Session 2", "20092010 Special Session 3", "20092010 Special Session 4", "20092010 Special Session 5", "20092010 Special Session 6", "20092010 Special Session 7", "20092010 Special Session 8"]}, {"end_year": 2012, "start_year": 2011, "+start_date": "2010-12-06 00:00:00", "name": "20112012", "sessions": ["20112012 Special Session 1", "20112012"]}], "latest_csv_url": "http://static.openstates.org/downloads/2012-11-01-ca-csv.zip", "upper_chamber_term": 4, "latest_csv_date": "2012-11-01 13:52:32", "latest_update": "2012-11-07 00:22:19", "upper_chamber_name": "Senate", "lower_chamber_term": 2, "lower_chamber_name": "Assembly", "latest_json_url": "http://static.openstates.org/downloads/2012-11-01-ca-json.zip", "name": "California"}

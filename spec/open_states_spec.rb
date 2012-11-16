@@ -9,16 +9,13 @@ module GovKit::OpenStates
         # @todo The fixtures are out-of-date.
         urls = [
           ['/bills/ca/20092010/lower/AB%20667/', 'bill.response'],
-          ['/bills/\?.*q=cooperatives.*',        'bill_query.response'],
+          ['/bills/\?.*q=cooperatives.*',        'bill_find.response'],
           ['/bills/\?.*state=tx.*',              'bill_query.response'],
-          ['/bills/\?.*q=professions.*',         'bill.response'],
-          ['/bills/latest/\?',                   'bill_query.response'],
-          ['/legislators/CAL000088/\?',          'legislator.response'],
-          ['/legislators/410/\?',                '410.response'],
+          ['/legislators/CAL000088/\?',          'legislator_find.response'],
           ['/legislators/XXL123456/\?',          '401.response'],
           ['/legislators/CAL999999/\?',          '404.response'],
           ['/legislators/\?.*state=zz.*',        '404.response'],
-          ['/legislators/\?.*state=ca.*',        'legislator.response'],
+          ['/legislators/\?.*state=ca.*',        'legislator_query.response'],
           ['/committees/MDC000012/',             'committee_find.response'],
           ['/committees/\?.*state=md',           'committee_query.response'],
           ['/metadata/ca/\?',                    'state.response']
