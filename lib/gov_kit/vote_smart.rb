@@ -105,6 +105,9 @@ module GovKit
     class Category < VoteSmartResource
       def self.list(state_id)
         response = get("/Rating.getCategories", :query => {"stateId" => state_id})
+
+        raise(ResourceNotFound, response['error']['errorMessage']) if response['error']
+
         parse(response['categories']['category'])
       end
     end
