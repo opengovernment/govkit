@@ -1,13 +1,17 @@
 $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.include?(File.expand_path(File.dirname(__FILE__)))
 
-require 'digest/md5'
-require 'nokogiri'
-require 'iconv'
-require 'httparty'
-require 'open-uri'
-require 'json'
-require 'gov_kit/configuration'
 require 'csv'
+require 'digest/md5'
+require 'iconv'
+require 'json'
+require 'open-uri'
+
+if RUBY_VERSION[0,3] == "1.8"
+  require 'fastercsv'
+end
+
+require 'nokogiri'
+require 'httparty'
 
 # String#singularize in Resource#resource_for_collection
 require 'active_support/inflector'
@@ -17,9 +21,8 @@ require 'active_support/core_ext/string'
 # Object#duplicable? in Resource#unload
 require 'active_support/core_ext/object'
 
-if RUBY_VERSION[0,3] == "1.8"
-  require 'fastercsv'
-end
+require 'gov_kit/railtie'
+require 'gov_kit/configuration'
 
 module GovKit
   autoload :Resource, 'gov_kit/resource'

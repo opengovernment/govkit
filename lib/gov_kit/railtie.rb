@@ -1,5 +1,3 @@
-require 'govkit'
-
 module GovKit
   if defined? Rails::Railtie
     require 'rails'
