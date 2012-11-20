@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "govkit"
-  s.version = "0.7.2"
+  s.version = "0.7.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Participatory Politics Foundation", "Srinivas Aki", "Carl Tashian"]
-  s.date = "2012-11-16"
+  s.date = "2012-11-20"
   s.description = "Govkit lets you quickly get encapsulated Ruby objects for common open government APIs. We're starting with Sunlight's Open States API and the Project Vote Smart API."
   s.email = "develop@opencongress.org"
   s.extra_rdoc_files = [
@@ -31,7 +31,6 @@ Gem::Specification.new do |s|
     "generators/govkit/templates/govkit.rb",
     "generators/govkit/templates/mention.rb",
     "govkit.gemspec",
-    "init.rb",
     "lib/generators/govkit/govkit_generator.rb",
     "lib/generators/govkit/templates/create_mentions.rb",
     "lib/generators/govkit/templates/govkit.rb",
@@ -61,6 +60,7 @@ Gem::Specification.new do |s|
     "lib/gov_kit/transparency_data.rb",
     "lib/gov_kit/vote_smart.rb",
     "lib/govkit.rb",
+    "rails/init.rb",
     "spec/fixtures/bing/news_search.response",
     "spec/fixtures/bing/no_results.response",
     "spec/fixtures/follow_the_money/business-page0.response",
@@ -74,12 +74,12 @@ Gem::Specification.new do |s|
     "spec/fixtures/open_congress/person.response",
     "spec/fixtures/open_states/401.response",
     "spec/fixtures/open_states/404.response",
-    "spec/fixtures/open_states/410.response",
     "spec/fixtures/open_states/bill.response",
+    "spec/fixtures/open_states/bill_find.response",
     "spec/fixtures/open_states/bill_query.response",
     "spec/fixtures/open_states/committee_find.response",
     "spec/fixtures/open_states/committee_query.response",
-    "spec/fixtures/open_states/legislator.response",
+    "spec/fixtures/open_states/legislator_find.response",
     "spec/fixtures/open_states/legislator_query.response",
     "spec/fixtures/open_states/state.response",
     "spec/fixtures/search_engines/google_news.response",
@@ -107,7 +107,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<i18n>, [">= 0"])
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
-      s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.4"])
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.5.5"])
       s.add_runtime_dependency(%q<httparty>, [">= 0.7.4"])
       s.add_runtime_dependency(%q<json>, [">= 1.4.3"])
       s.add_runtime_dependency(%q<fastercsv>, [">= 1.5.3"])
@@ -116,7 +116,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<i18n>, [">= 0"])
       s.add_dependency(%q<activesupport>, [">= 0"])
-      s.add_dependency(%q<nokogiri>, [">= 1.4.4"])
+      s.add_dependency(%q<nokogiri>, ["~> 1.5.5"])
       s.add_dependency(%q<httparty>, [">= 0.7.4"])
       s.add_dependency(%q<json>, [">= 1.4.3"])
       s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
@@ -126,7 +126,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<i18n>, [">= 0"])
     s.add_dependency(%q<activesupport>, [">= 0"])
-    s.add_dependency(%q<nokogiri>, [">= 1.4.4"])
+    s.add_dependency(%q<nokogiri>, ["~> 1.5.5"])
     s.add_dependency(%q<httparty>, [">= 0.7.4"])
     s.add_dependency(%q<json>, [">= 1.4.3"])
     s.add_dependency(%q<fastercsv>, [">= 1.5.3"])
