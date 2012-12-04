@@ -1,0 +1,19 @@
+HTTP/1.1 200 OK
+Server: nginx/0.7.67
+Date: Mon, 11 Apr 2011 19:46:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Authorization: 
+
+[
+{"sector": "W", "count": "71817", "amount": "37323600.00"},
+{"sector": "Y", "count": "62679", "amount": "33282627.00"},
+{"sector": "K", "count": "15936", "amount": "14159075.00"},
+{"sector": "N", "count": "14632", "amount": "11190303.00"},
+{"sector": "F", "count": "11544", "amount": "11149458.00"},
+{"sector": "B", "count": "12273", "amount": "9915532.00"},
+{"sector": "H", "count": "13378", "amount": "7596654.00"},
+{"sector": "Q", "count": "8652", "amount": "6329427.00"},
+{"sector": "C", "count": "2649", "amount": "1902891.00"},
+{"sector": "E", "count": "1589", "amount": "1190790.00"}
+]
