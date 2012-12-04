@@ -13,7 +13,9 @@ module GovKit::TransparencyData
           ['/grants.json\?',                                'grants_find_all.response'],
           ['/entities.json\?apikey=&search=$',              'entities_search.response'],
           ['/entities.json\?apikey=&search=harry%20pelosi', 'entities_search_limit_0.response'],
-          ['/entities.json\?apikey=&search=nancy%2Bpelosi', 'entities_search_limit_1.response']
+          ['/entities.json\?apikey=&search=nancy%2Bpelosi', 'entities_search_limit_1.response'],
+          ['/aggregates/pol/4148b26f6f1c437cb50ea9ca4699417a/contributors/sectors.json\?apikey=&cycle=2012',  'aggregates_contributors_sectors.response'],
+          ['/aggregates/pol/a_bogus_politician_id/contributors/sectors.json\?apikey=',  '404.response']
         ]
 
         urls.each do |u|
@@ -83,6 +85,26 @@ module GovKit::TransparencyData
 
         @records.length.should eql(FakeWeb.allow_net_connect? ? 1000 : 3)
         @records[0].project_description.should eql('NATIONAL FLOOD INSURANCE PROGRAM')
+      end
+    end
+  end
+
+  describe Aggregate do
+    context "#top_sector_contributors" do
+      it "should find the top sector contributors for Obama in 2012" do
+        lambda do
+          @sector_contributors = Aggregate.top_sector_contributors('4148b26f6f1c437cb50ea9ca4699417a', { :cycle => '2012' })
+        end.should_not raise_error
+
+        @sector_contributors.length.should eql(10)
+        @sector_contributors[0].sector.should eql("W")
+        @sector_contributors[9].count.should eql("1589")
+      end
+
+      it 'should return a 404 error for an invalid politician ID' do
+        lambda do
+          @sector_contributors = Aggregate.top_sector_contributors('a_bogus_politician_id')
+        end.should raise_error
       end
     end
   end

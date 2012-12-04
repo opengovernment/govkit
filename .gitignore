@@ -27,3 +27,5 @@ spec/support/api_keys.rb
 doc
 .yardoc
 
+## RUBYMINE
+.idea
