@@ -118,7 +118,16 @@ module GovKit
         search_for('/grants.json', ops)
       end
     end
-    
+
+    class Aggregate < TransparencyDataResource
+      # generated URL:
+      # http://transparencydata.com/api/1.0/aggregates/pol/4148b26f6f1c437cb50ea9ca4699417a/contributors/sectors.json?apikey=<key>&cycle=2012
+      def self.top_sector_contributors(id, ops = {})
+        response = get("/aggregates/pol/#{id}/contributors/sectors.json", :query => ops)
+        parse(response)
+      end
+    end
+
     class Categories
       # Contribution category code mapping table, in CSV format
       # Returns an array of hashes, each with the following keys:
