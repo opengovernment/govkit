@@ -15,7 +15,9 @@ module GovKit::TransparencyData
           ['/entities.json\?apikey=&search=harry%20pelosi', 'entities_search_limit_0.response'],
           ['/entities.json\?apikey=&search=nancy%2Bpelosi', 'entities_search_limit_1.response'],
           ['/aggregates/pol/4148b26f6f1c437cb50ea9ca4699417a/contributors/sectors.json\?apikey=&cycle=2012',  'aggregates_contributors_sectors.response'],
-          ['/aggregates/pol/a_bogus_politician_id/contributors/sectors.json\?apikey=',  '404.response']
+          ['/aggregates/pol/a_bogus_politician_id/contributors/sectors.json\?apikey=',  '404.response'],
+          ['/aggregates/pol/4148b26f6f1c437cb50ea9ca4699417a/contributors/type_breakdown.json\?apikey=&cycle=2012',  'aggregates_contributor_type_breakdown.response'],
+          ['/aggregates/pol/a_bogus_politician_id/contributors/type_breakdown.json\?apikey=',  '404.response']
         ]
 
         urls.each do |u|
@@ -107,6 +109,24 @@ module GovKit::TransparencyData
         end.should raise_error
       end
     end
+
+    context "#contributor_type_breakdown" do
+      it "should report the contributor type breakdown for Obama in 2012" do
+        lambda do
+          @type_breakdown = Aggregate.contributor_type_breakdown('4148b26f6f1c437cb50ea9ca4699417a', { :cycle => '2012' })
+        end.should_not raise_error
+
+        @type_breakdown.Individuals[1].should eql '136149229.00'
+        @type_breakdown.PACs[1].should eql '-1000.00'
+      end
+
+      it 'should return a 404 error for an invalid politician ID' do
+        lambda do
+          @type_breakdown = Aggregate.contributor_type_breakdown('a_bogus_politician_id')
+        end.should raise_error
+      end
+    end
+
   end
 end
 

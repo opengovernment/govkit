@@ -126,6 +126,13 @@ module GovKit
         response = get("/aggregates/pol/#{id}/contributors/sectors.json", :query => ops)
         parse(response)
       end
+
+      # generated URL:
+      # http://transparencydata.com/api/1.0/aggregates/pol/4148b26f6f1c437cb50ea9ca4699417a/contributors/type_breakdown.json?apikey=<key>&cycle=2012
+      def self.contributor_type_breakdown(id, ops = {})
+        response = get("/aggregates/pol/#{id}/contributors/type_breakdown.json", :query => ops)
+        parse(response)
+      end
     end
 
     class Categories
@@ -149,5 +156,4 @@ module GovKit
       end
     end
   end
-
 end
