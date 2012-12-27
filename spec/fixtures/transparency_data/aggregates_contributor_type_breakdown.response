@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Server: nginx/0.7.67
+Date: Wed, 26 Dec 2012 19:46:53 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+Authorization:
+
+{"Individuals": ["218551", "136149229.00"], "PACs": ["1", "-1000.00"]}
