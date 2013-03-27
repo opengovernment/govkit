@@ -141,7 +141,7 @@ module GovKit::TransparencyData
 
       it 'should return a 404 error for an invalid politician ID' do
         lambda do
-          @sector_contributors = Aggregate.top_sector_contributors('a_bogus_politician_id')
+          @sector_contributors = Aggregate.top_industry_contributors('a_bogus_politician_id')
         end.should raise_error
       end
     end
