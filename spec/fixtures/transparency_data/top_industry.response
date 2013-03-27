@@ -1,0 +1,7 @@
+HTTP/1.1 200 OK
+Server: nginx/1.0.5
+Date: Wed, 27 Mar 2013 16:28:15 GMT
+Content-Type: application/json; charset=utf-8
+Connection: keep-alive
+
+[{"count": "88315", "amount": "43633891.00", "id": "b21467ae32924f84ada9076535401a91", "should_show_entity": false, "name": "RETIRED"},{"count": "29116", "amount": "22547853.00", "id": "f50cf984a2e3477c8167d32e2b14e052", "should_show_entity": true, "name": "LAWYERS/LAW FIRMS"},{"count": "35121", "amount": "16971085.00", "id": "31657d3c187e4cecb670d228d7e674d2", "should_show_entity": true, "name": "EDUCATION"},{"count": "15592", "amount": "8396517.00", "id": "a05a0d06f6814b31bece35a81fcb40c7", "should_show_entity": true, "name": "HEALTH PROFESSIONALS"},{"count": "10542", "amount": "7027745.00", "id": "e5175721aac9406795a1f97cae01e01d", "should_show_entity": true, "name": "BUSINESS SERVICES"},{"count": "13597", "amount": "6513032.00", "id": "9e701425eeb14b4c874cfb4415a4ac3b", "should_show_entity": true, "name": "CIVIL SERVANTS/PUBLIC OFFICIALS"},{"count": "9662", "amount": "6374741.00", "id": "042288e0185a44ec82982814c69abdca", "should_show_entity": true, "name": "COMPUTERS/INTERNET"},{"count": "9474", "amount": "6344932.00", "id": "6e1074968db94bf4851c0245cd8583bf", "should_show_entity": true, "name": "WOMEN'S ISSUES"},{"count": "4760", "amount": "5459825.00", "id": "0af3f418f426497e8bbf916bfc074ebc", "should_show_entity": true, "name": "SECURITIES & INVESTMENT"},{"count": "9319", "amount": "5394743.00", "id": "d9c4a26cd671436eac3c501184364fc4", "should_show_entity": false, "name": "MISC BUSINESS"}]
