@@ -2,7 +2,6 @@ $LOAD_PATH.unshift(File.expand_path(File.dirname(__FILE__))) unless $LOAD_PATH.i
 
 require 'csv'
 require 'digest/md5'
-require 'iconv'
 require 'json'
 require 'open-uri'
 
