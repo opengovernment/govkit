@@ -1,6 +1,6 @@
 module GovKit
 
-  # Subclass of {Resource} for FollowTheMoney data. This 
+  # Subclass of {Resource} for FollowTheMoney data. This
   # is subclassed further for each of the different types of record
   # returned by FollowTheMoney.
   #
@@ -42,7 +42,7 @@ module GovKit
 
       doc
     end
-    
+
   # Convert the hash array returned by Nokogiri, which has Nokogiri::XML::Attr objects as values,
   # to an array of hashes with string values.
   #
@@ -53,7 +53,7 @@ module GovKit
     end
   end
 
-  # Provides classes to wrap {http://www.followthemoney.org/index.phtml FollowTheMoney} data. 
+  # Provides classes to wrap {http://www.followthemoney.org/index.phtml FollowTheMoney} data.
   #
   # For the details on the FollowTheMoney queries, see {http://www.followthemoney.org/services/methods.phtml the FollowTheMoney API documentation}.
   module FollowTheMoney
@@ -115,7 +115,7 @@ module GovKit
       #
       # @return [[Contribution]] an array of Contribution objects.
       def self.top(nimsp_id)
-        doc = get_xml("/candidates.top_contributor.php", :query => {"imsp_candidate_id" => nimsp_id})
+        doc = get_xml("/candidates.top_contributors.php", :query => {"imsp_candidate_id" => nimsp_id})
         result = doc.search('//top_contributor').collect { |x| x.attributes }
 
         stringify_values_of(result)
