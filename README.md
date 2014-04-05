@@ -61,7 +61,7 @@ Govkit's main repo is on Github: [http://github.com/opengovernment/govkit](http:
 
 # Dear Canadians
 
-For Canadian open government data, our friends up north have created a [govkit-ca](https://github.com/jpmckinney/govkit-ca) gem that lives in the GovKit::CA namespace and should interoperate just fine with this gem.
+For Canadian open government data, our friends up north have created a [govkit-ca](https://github.com/opennorth/govkit-ca) gem that lives in the GovKit::CA namespace and should interoperate just fine with this gem.
 
 # A GovKit for your country?
 
